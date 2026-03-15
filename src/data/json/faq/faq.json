@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "question": "What exactly is NativPost?",
+    "answer": "NativPost is a premium content creation and social media management platform. We produce studio-quality branded content, graphics, captions, and scheduling, that gets automatically published to your social channels. Think of us as your digital creative studio, not just another scheduling tool."
+  },
+  {
+    "id": 2,
+    "question": "How is NativPost different from Buffer or Hootsuite?",
+    "answer": "Buffer and Hootsuite only schedule and post content, you still have to create everything yourself. NativPost creates the content for you: on-brand graphics, platform-optimized captions, and smart hashtag strategies. We handle the full pipeline from creation to publishing."
+  },
+  {
+    "id": 3,
+    "question": "What is a Brand Profile and why does it matter?",
+    "answer": "Your Brand Profile is the creative DNA behind all your content. It captures your brand voice, visual identity, audience preferences, content examples you admire, and anti-patterns to avoid. This is what makes NativPost content sound and look like your in-house creative team made it."
+  },
+  {
+    "id": 4,
+    "question": "Is there a free trial?",
+    "answer": "Yes, we offer a 7-day free trial on the Growth plan so you can experience the full NativPost workflow. No credit card required to start. Your first content batch will be ready within 48 hours of completing your Brand Profile."
+  }
+]

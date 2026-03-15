@@ -1,0 +1,88 @@
+import { cn } from '@/utils/cn';
+import RevealAnimation from '../animation/RevealAnimation';
+import LinkButton from '../ui/button/LinkButton';
+
+interface ServiceCard {
+  id: number;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const servicesData: ServiceCard[] = [
+  {
+    id: 1,
+    icon: 'ns-shape-9',
+    title: 'Brand Profile system',
+    description:
+      'We learn your voice, colors, style, and audience — then generate content that sounds and looks like your in-house creative team made it.',
+  },
+  {
+    id: 2,
+    icon: 'ns-shape-3',
+    title: 'Content creation engine',
+    description:
+      'Studio-quality graphics, on-brand captions, and optimized hashtags — created for every platform and ready for your approval.',
+  },
+  {
+    id: 3,
+    icon: 'ns-shape-12',
+    title: 'Auto-publish & schedule',
+    description:
+      'Approve content in one click and it goes live across Instagram, LinkedIn, X, Facebook, and TikTok at the perfect time.',
+  },
+];
+
+const Services = () => {
+  return (
+    <section className="bg-background-2 dark:bg-background-7 py-[50px] lg:py-[100px]">
+      <div className="main-container">
+        <div className="mb-[70px] space-y-5 text-center">
+          <RevealAnimation delay={0.1}>
+            <span className="badge badge-green">How it works</span>
+          </RevealAnimation>
+          <div className="space-y-3">
+            <RevealAnimation delay={0.2}>
+              <h2>
+                Your digital <span className="text-primary-500">creative studio</span>
+              </h2>
+            </RevealAnimation>
+            <RevealAnimation delay={0.3}>
+              <p className="mx-auto max-w-[490px]">
+                NativPost replaces expensive agencies and robotic tools with studio-crafted content that actually sounds
+                like your brand.
+              </p>
+            </RevealAnimation>
+          </div>
+        </div>
+        <div className="grid grid-cols-12 gap-y-6 md:gap-8">
+          {servicesData.map((service, index) => (
+            <RevealAnimation delay={0.4 + index * 0.1} key={service.id}>
+              <div
+                className={cn(index !== 2 ? 'col-span-12 md:col-span-6 lg:col-span-4' : 'col-span-12 lg:col-span-4')}>
+                <div className="dark:bg-background-9 space-y-4 rounded-[20px] bg-white p-6 text-center duration-500 ease-in-out hover:-translate-y-2 sm:space-y-6 sm:p-8">
+                  <div className="mx-auto w-fit">
+                    <span className={`${service.icon} text-secondary dark:text-accent text-[40px] md:text-[52px]`} />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="xl:text-heading-5 text-heading-6">{service.title}</h3>
+                    <p className="line-clamp-2">{service.description}</p>
+                  </div>
+                  <div>
+                    <LinkButton
+                      href="/features"
+                      className="btn btn-white dark:btn-transparent hover:btn-secondary dark:hover:btn-accent btn-md">
+                      Learn more
+                    </LinkButton>
+                  </div>
+                </div>
+              </div>
+            </RevealAnimation>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;

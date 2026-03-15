@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "quote": "NativPost completely changed how we handle social media. The content actually sounds like us — our voice, our style. Our followers noticed the difference immediately.",
+    "avatar": "/images/ns-avatar-1.png",
+    "name": "Adaeze Okonkwo",
+    "position": "Founder, Lagos Fashion House",
+    "rating": "5.0"
+  },
+  {
+    "id": 2,
+    "quote": "I was spending 2 hours every day creating social posts. Now NativPost handles everything and the quality is better than what I was producing myself. I got my mornings back.",
+    "avatar": "/images/ns-avatar-2.png",
+    "name": "James Whitfield",
+    "position": "CEO, Whitfield Consulting",
+    "rating": "5.0"
+  },
+  {
+    "id": 3,
+    "quote": "We tried three AI tools before NativPost. They all produced content that screamed 'robot made this.' NativPost is the first one where clients actually think we have an in-house creative team.",
+    "avatar": "/images/ns-avatar-3.png",
+    "name": "Maria Santos",
+    "position": "Agency Director, BrightSpark Marketing",
+    "rating": "4.9"
+  },
+  {
+    "id": 4,
+    "quote": "The Brand Profile onboarding was worth the setup fee alone. They understood our tone better in one session than our previous agency did in six months.",
+    "avatar": "/images/ns-avatar-4.png",
+    "name": "Chinedu Eze",
+    "position": "Co-founder, TechBridge Solutions",
+    "rating": "5.0"
+  },
+  {
+    "id": 5,
+    "quote": "Our LinkedIn engagement tripled in the first month. The content is professional, on-brand, and never feels generic. This is what we needed.",
+    "avatar": "/images/ns-avatar-5.png",
+    "name": "Priya Mehta",
+    "position": "Head of Marketing, FinServe Global",
+    "rating": "4.8"
+  },
+  {
+    "id": 6,
+    "quote": "We manage 12 client brands through NativPost now. The multi-brand feature and approval dashboard saved us from hiring three more content creators.",
+    "avatar": "/images/ns-avatar-6.png",
+    "name": "Oliver Hartmann",
+    "position": "Managing Partner, Hartmann Digital",
+    "rating": "4.9"
+  },
+  {
+    "id": 7,
+    "quote": "I run a restaurant in Lekki and social media was always my weakness. NativPost makes my food posts look like they came from a professional food photographer's studio.",
+    "avatar": "/images/ns-avatar-7.png",
+    "name": "Funke Adeyemi",
+    "position": "Owner, Spice & Soul Kitchen",
+    "rating": "5.0"
+  },
+  {
+    "id": 8,
+    "quote": "The anti-slop filter is genius. No more 'in today's fast-paced world' nonsense. Every caption feels natural and intentional. Our audience can tell the difference.",
+    "avatar": "/images/ns-avatar-8.png",
+    "name": "Daniel Osei",
+    "position": "Brand Manager, Accra Creatives Co.",
+    "rating": "4.8"
+  },
+  {
+    "id": 9,
+    "quote": "From signup to first published post in 36 hours. That is faster than any agency I have ever worked with. And the content was on point from day one.",
+    "avatar": "/images/ns-avatar-9.png",
+    "name": "Sarah Mitchell",
+    "position": "Founder, Mitchell Fitness Studio",
+    "rating": "4.9"
+  }
+]

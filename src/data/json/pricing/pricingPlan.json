@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Starter",
+    "price": "$19/mo",
+    "description": "For solopreneurs and small businesses getting started",
+    "ctaHref": "/signup",
+    "ctaText": "Start free trial",
+    "setupFee": "$29 one-time setup",
+    "cells": [
+      { "type": "text", "value": "20 posts" },
+      { "type": "text", "value": "3 platforms" },
+      { "type": "text", "value": "Basic" },
+      { "type": "text", "value": "Templates" },
+      { "type": "text", "value": "Self-approve" }
+    ]
+  },
+  {
+    "name": "Growth",
+    "price": "$49/mo",
+    "description": "Most popular — for growing businesses",
+    "ctaHref": "/signup",
+    "ctaText": "Start free trial",
+    "isSecondary": true,
+    "withGradientImg": true,
+    "setupFee": "$79 one-time setup",
+    "cells": [
+      { "type": "text", "value": "40 posts" },
+      { "type": "text", "value": "5 platforms" },
+      { "type": "text", "value": "Detailed" },
+      { "type": "text", "value": "Custom" },
+      { "type": "text", "value": "Self-approve" }
+    ]
+  },
+  {
+    "name": "Pro",
+    "price": "$99/mo",
+    "description": "For brands that need premium quality and team review",
+    "ctaHref": "/signup",
+    "ctaText": "Start free trial",
+    "setupFee": "$149 one-time setup",
+    "cells": [
+      { "type": "text", "value": "80 posts" },
+      { "type": "text", "value": "All platforms" },
+      { "type": "text", "value": "Premium" },
+      { "type": "text", "value": "Premium custom" },
+      { "type": "text", "value": "Our team reviews" }
+    ]
+  },
+  {
+    "name": "Enterprise",
+    "price": "Custom",
+    "description": "For agencies and enterprise clients",
+    "ctaHref": "/contact-us",
+    "ctaText": "Contact us",
+    "setupFee": "Custom onboarding",
+    "cells": [
+      { "type": "text", "value": "Unlimited" },
+      { "type": "text", "value": "All + white-label" },
+      { "type": "text", "value": "Custom" },
+      { "type": "text", "value": "Bespoke" },
+      { "type": "text", "value": "Account manager" }
+    ]
+  }
+]

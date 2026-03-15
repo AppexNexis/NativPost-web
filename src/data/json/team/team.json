@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "[Founder Name]",
+    "role": "Founder & CEO",
+    "location": "Nigeria",
+    "image": "/images/ns-avatar-1.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com",
+      "twitter": "https://x.com"
+    }
+  },
+  {
+    "id": 2,
+    "name": "[Backend Developer]",
+    "role": "Backend Developer",
+    "location": "Nigeria",
+    "image": "/images/ns-avatar-2.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com",
+      "twitter": "https://x.com"
+    }
+  },
+  {
+    "id": 3,
+    "name": "[UI/UX Designer]",
+    "role": "UI/UX Designer",
+    "location": "Nigeria",
+    "image": "/images/ns-avatar-3.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com",
+      "twitter": "https://x.com"
+    }
+  }
+]
