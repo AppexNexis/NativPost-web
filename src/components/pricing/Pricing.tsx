@@ -58,7 +58,9 @@ const Pricing = () => {
                   <div className="bg-background-3 dark:bg-background-7 space-y-8 rounded-[20px] px-6 py-8">
                     <div>
                       <p className="text-tagline-1 mb-3 font-medium">Starter</p>
-                      <h3 className="text-heading-5 font-normal">$19<span className="text-tagline-1 font-normal">/mo</span></h3>
+                      <h3 className="text-heading-5 font-normal">
+                        $19<span className="text-tagline-1 font-normal">/mo</span>
+                      </h3>
                       <p>+ $29 one-time setup fee</p>
                     </div>
                     <Link
@@ -99,7 +101,9 @@ const Pricing = () => {
                     </div>
                     <div>
                       <p className="text-tagline-1 text-accent/60 mb-3 font-medium">Growth — Most Popular</p>
-                      <h3 className="text-heading-5 text-accent font-normal">$49<span className="text-tagline-1 font-normal">/mo</span></h3>
+                      <h3 className="text-heading-5 text-accent font-normal">
+                        $49<span className="text-tagline-1 font-normal">/mo</span>
+                      </h3>
                       <p className="text-accent/60">+ $79 one-time setup fee</p>
                     </div>
                     <Link
@@ -137,7 +141,9 @@ const Pricing = () => {
                   <div className="bg-background-3 dark:bg-background-7 space-y-8 rounded-[20px] px-6 py-8">
                     <div>
                       <p className="text-tagline-1 mb-3 font-medium">Pro</p>
-                      <h3 className="text-heading-5 font-normal">$99<span className="text-tagline-1 font-normal">/mo</span></h3>
+                      <h3 className="text-heading-5 font-normal">
+                        $99<span className="text-tagline-1 font-normal">/mo</span>
+                      </h3>
                       <p>+ $149 one-time setup fee</p>
                     </div>
                     <Link

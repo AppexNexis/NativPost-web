@@ -19,7 +19,7 @@ const platforms = [
   {
     id: 'instagram',
     name: 'Instagram',
-    description: 'Posts, Stories, Reels, and Carousels — all from your NativPost dashboard.',
+    description: 'Posts, Stories, Reels, and Carousels, all from your NativPost dashboard.',
     features: [
       'Single image posts with on-brand graphics',
       'Carousel posts (multi-slide with consistent branding)',
@@ -45,7 +45,7 @@ const platforms = [
   {
     id: 'linkedin',
     name: 'LinkedIn',
-    description: 'Company pages and personal profiles — build thought leadership effortlessly.',
+    description: 'Company pages and personal profiles, build thought leadership effortlessly.',
     features: [
       'Company page publishing',
       'Personal profile support',
@@ -84,7 +84,7 @@ const platforms = [
   {
     id: 'whatsapp',
     name: 'WhatsApp Status',
-    description: 'Share content to WhatsApp Business Status — essential for African and Middle Eastern markets.',
+    description: 'Share content to WhatsApp Business Status, essential for African and Middle Eastern markets.',
     features: [
       'Business Status updates',
       'Visual content formatted for WhatsApp',
@@ -111,8 +111,8 @@ const page = () => {
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
               <p className="mx-auto max-w-[600px]">
-                Connect your social accounts once and NativPost handles publishing across all platforms. Preview how your
-                content looks on each platform before it goes live.
+                Connect your social accounts once and NativPost handles publishing across all platforms. Preview how
+                your content looks on each platform before it goes live.
               </p>
             </RevealAnimation>
           </div>

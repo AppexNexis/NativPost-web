@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   ...defaultMetadata,
   title: 'Contact Us — NativPost | Get Support & Talk to Our Team',
   description:
-    'Reach the NativPost team. Email, live chat, or WhatsApp — we respond within 2 hours during business hours. Available globally.',
+    'Reach the NativPost team. Email, live chat, or WhatsApp, we respond within 2 hours during business hours. Available globally.',
 };
 
 const ContactUs = () => {

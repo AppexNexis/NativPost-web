@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...defaultMetadata,
   title: 'About — NativPost by AppexNexis | Our Story & Mission',
   description:
-    'NativPost is a product of AppexNexis LTD. We build studio-crafted social media content for businesses worldwide — the antidote to generic, robotic content.',
+    'NativPost is a product of AppexNexis LTD. We build studio-crafted social media content for businesses worldwide, the antidote to generic, robotic content.',
 };
 
 const values = [
@@ -32,14 +32,14 @@ const values = [
     icon: 'ns-shape-9',
     title: 'Brand-native always',
     description:
-      'Your content should sound like your creative team made it. Our Brand Profile system ensures every post is deeply aligned with your voice and visual identity.',
+      'Your content should sound like your creative team made it. Our ystem ensures every post is deeply aligned with your voice and visual identity.',
   },
   {
     id: 'global-local',
     icon: 'ns-shape-12',
     title: 'Global product, local understanding',
     description:
-      'Built for businesses from Lagos to London to Los Angeles. We understand that great content looks different in every market — and we adapt accordingly.',
+      'Built for businesses from Lagos to London to Los Angeles. We understand that great content looks different in every market, and we adapt accordingly.',
   },
   {
     id: 'transparency',
@@ -97,8 +97,8 @@ const page = () => {
                 <Link href="https://www.appexnexis.site/" target="_blank" className="text-primary-500 underline">
                   AppexNexis LTD
                 </Link>
-                . We build studio-crafted social media content for businesses worldwide — the global antidote to
-                generic, robotic content that destroys trust and engagement.
+                . We build studio-crafted social media content for businesses worldwide, the global antidote to generic,
+                robotic content that destroys trust and engagement.
               </p>
             </RevealAnimation>
           </div>
@@ -182,7 +182,7 @@ const page = () => {
                     quality gate, and refined by human eyes before it ever reaches your audience.
                   </p>
                   <p className="text-secondary dark:text-accent font-medium">
-                    The technology is the engine — but the promise is content so good, nobody will ever wonder if a
+                    The technology is the engine, but the promise is content so good, nobody will ever wonder if a
                     machine made it.
                   </p>
                 </div>

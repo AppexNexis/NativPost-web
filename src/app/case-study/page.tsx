@@ -32,7 +32,7 @@ const caseStudies = [
       { metric: '15hrs', label: 'Saved per week on content creation' },
       { metric: '85%', label: 'First-pass content approval rate' },
     ],
-    quote: 'NativPost finally made our social media look like we hired an agency — but at a fraction of the cost.',
+    quote: 'NativPost finally made our social media look like we hired an agency, but at a fraction of the cost.',
   },
   {
     id: 'saas-london',
@@ -48,7 +48,8 @@ const caseStudies = [
       { metric: '4X', label: 'More inbound leads from social' },
       { metric: '0hrs', label: 'Founder time spent on content' },
     ],
-    quote: 'I went from spending hours on LinkedIn posts to zero. NativPost handles everything and the quality is better than what I was producing myself.',
+    quote:
+      'I went from spending hours on LinkedIn posts to zero. NativPost handles everything and the quality is better than what I was producing myself.',
   },
   {
     id: 'agency-newyork',
@@ -58,13 +59,14 @@ const caseStudies = [
     challenge:
       'A boutique marketing agency was turning away clients because they did not have capacity to produce content for more accounts. Hiring more staff was too expensive.',
     solution:
-      'NativPost\'s multi-brand management allowed them to create separate Brand Profiles for each client. The approval dashboard let their account managers review and approve content across all clients from one interface.',
+      "NativPost's multi-brand management allowed them to create separate Brand Profiles for each client. The approval dashboard let their account managers review and approve content across all clients from one interface.",
     results: [
       { metric: '15', label: 'Clients managed simultaneously' },
       { metric: '$0', label: 'Additional hiring costs' },
       { metric: '3X', label: 'Revenue increase' },
     ],
-    quote: 'NativPost became our secret weapon. Our clients think we have a huge content team. We don\'t — we have NativPost.',
+    quote:
+      "NativPost became our secret weapon. Our clients think we have a huge content team. We don't — we have NativPost.",
   },
 ];
 
@@ -106,7 +108,7 @@ const page = () => {
                 </div>
                 <h2 className="text-heading-4 mb-8">{study.title}</h2>
 
-                <div className="grid grid-cols-12 gap-8 mb-10">
+                <div className="mb-10 grid grid-cols-12 gap-8">
                   <div className="col-span-12 md:col-span-6">
                     <h3 className="text-tagline-1 text-secondary dark:text-accent mb-3 font-medium">The Challenge</h3>
                     <p>{study.challenge}</p>

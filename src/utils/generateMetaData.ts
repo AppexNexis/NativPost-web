@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 export const DEFAULT_URL = 'https://nativpost.com/';
 export const DEFAULT_TITLE = 'NativPost — Studio-Crafted Social Media Content for Your Brand';
 export const DEFAULT_DESCRIPTION =
-  'NativPost creates studio-quality branded content — graphics, copy, and scheduling — automatically published to your social channels. Agency quality at product pricing. The antidote to generic, robotic content. A product of AppexNexis LTD.';
+  'NativPost creates studio-quality branded content — graphics, copy, and scheduling, automatically published to your social channels. Agency quality at product pricing. The antidote to generic, robotic content. A product of AppexNexis LTD.';
 export const DEFAULT_IMAGE_URL = 'https://nativpost.com/og-image.jpg'; // TODO: Replace with actual OG image
 
 const defaultMetadata: Metadata = {

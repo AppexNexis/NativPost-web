@@ -21,24 +21,39 @@ const useCases = [
     icon: 'ns-shape-8',
     title: 'Restaurants & Food Businesses',
     description:
-      'Showcase your dishes with mouthwatering visuals, share daily specials, promote events, and keep your audience engaged with behind-the-scenes content — all on brand and on schedule.',
-    features: ['Menu highlights & daily specials', 'Behind-the-scenes kitchen content', 'Event promotions & seasonal campaigns', 'Customer review spotlights'],
+      'Showcase your dishes with mouthwatering visuals, share daily specials, promote events, and keep your audience engaged with behind-the-scenes content, all on brand and on schedule.',
+    features: [
+      'Menu highlights & daily specials',
+      'Behind-the-scenes kitchen content',
+      'Event promotions & seasonal campaigns',
+      'Customer review spotlights',
+    ],
   },
   {
     id: 'saas',
     icon: 'ns-shape-3',
     title: 'SaaS & Technology Companies',
     description:
-      'Build thought leadership on LinkedIn, share product updates, create educational content, and maintain a consistent presence across channels — without your founder spending hours on content.',
-    features: ['Thought leadership posts', 'Product update announcements', 'Educational content & tips', 'Founder personal branding'],
+      'Build thought leadership on LinkedIn, share product updates, create educational content, and maintain a consistent presence across channels, without your founder spending hours on content.',
+    features: [
+      'Thought leadership posts',
+      'Product update announcements',
+      'Educational content & tips',
+      'Founder personal branding',
+    ],
   },
   {
     id: 'ecommerce',
     icon: 'ns-shape-12',
     title: 'E-Commerce & Retail Brands',
     description:
-      'Showcase products with scroll-stopping visuals, run promotional campaigns, share user-generated content, and drive traffic to your store — all with content that matches your brand perfectly.',
-    features: ['Product showcase carousels', 'Sale & promotion campaigns', 'User-generated content curation', 'Seasonal content calendars'],
+      'Showcase products with scroll-stopping visuals, run promotional campaigns, share user-generated content, and drive traffic to your store, all with content that matches your brand perfectly.',
+    features: [
+      'Product showcase carousels',
+      'Sale & promotion campaigns',
+      'User-generated content curation',
+      'Seasonal content calendars',
+    ],
   },
   {
     id: 'agencies',
@@ -46,39 +61,64 @@ const useCases = [
     title: 'Marketing Agencies',
     description:
       'Scale your client content without hiring more staff. Manage multiple Brand Profiles, use the approval dashboard across all clients, and offer white-label content as a service.',
-    features: ['Multi-brand management', 'Client approval workflows', 'White-label content delivery', 'Scalable without hiring'],
+    features: [
+      'Multi-brand management',
+      'Client approval workflows',
+      'White-label content delivery',
+      'Scalable without hiring',
+    ],
   },
   {
     id: 'professional',
     icon: 'ns-shape-9',
     title: 'Professional Services',
     description:
-      'Consulting firms, law offices, accounting practices, and financial advisors — build trust and authority with consistent, professional social media content that reflects your expertise.',
-    features: ['Industry expertise posts', 'Client success highlights', 'Professional tone management', 'LinkedIn-optimized content'],
+      'Consulting firms, law offices, accounting practices, and financial advisors, build trust and authority with consistent, professional social media content that reflects your expertise.',
+    features: [
+      'Industry expertise posts',
+      'Client success highlights',
+      'Professional tone management',
+      'LinkedIn-optimized content',
+    ],
   },
   {
     id: 'fitness',
     icon: 'ns-shape-46',
     title: 'Fitness & Wellness',
     description:
-      'Keep your community motivated with workout tips, transformation stories, class schedules, and nutrition advice — all with visuals that match your brand energy.',
-    features: ['Workout tips & routines', 'Transformation spotlights', 'Class schedule promotions', 'Motivational content (no generic clichés)'],
+      'Keep your community motivated with workout tips, transformation stories, class schedules, and nutrition advice, all with visuals that match your brand energy.',
+    features: [
+      'Workout tips & routines',
+      'Transformation spotlights',
+      'Class schedule promotions',
+      'Motivational content (no generic clichés)',
+    ],
   },
   {
     id: 'realestate',
     icon: 'ns-shape-47',
     title: 'Real Estate',
     description:
-      'Showcase properties with beautiful visuals, share market insights, highlight neighborhood features, and build your personal brand as a trusted agent — all consistently.',
-    features: ['Property listing showcases', 'Market insight posts', 'Neighborhood spotlight content', 'Agent personal branding'],
+      'Showcase properties with beautiful visuals, share market insights, highlight neighborhood features, and build your personal brand as a trusted agent, all consistently.',
+    features: [
+      'Property listing showcases',
+      'Market insight posts',
+      'Neighborhood spotlight content',
+      'Agent personal branding',
+    ],
   },
   {
     id: 'startups',
     icon: 'ns-shape-8',
     title: 'Startups & Solopreneurs',
     description:
-      'You have a product to build — let NativPost handle your social presence. Consistent posting, professional content, and growing engagement without stealing hours from your core work.',
-    features: ['Build-in-public content', 'Launch announcements', 'Consistent brand presence', 'Founder time reclaimed'],
+      'You have a product to build, let NativPost handle your social presence. Consistent posting, professional content, and growing engagement without stealing hours from your core work.',
+    features: [
+      'Build-in-public content',
+      'Launch announcements',
+      'Consistent brand presence',
+      'Founder time reclaimed',
+    ],
   },
 ];
 

@@ -28,8 +28,16 @@ const ProcessOperation = () => {
             <RevealAnimation delay={0.4}>
               <div>
                 <figure className="mx-auto max-h-[547px] max-w-[478px] lg:mx-0">
-                  <Image src={ProcessImage} alt="NativPost onboarding" className="block h-full w-full object-cover dark:hidden" />
-                  <Image src={ProcessDarkImage} alt="NativPost onboarding" className="hidden h-full w-full object-cover dark:block" />
+                  <Image
+                    src={ProcessImage}
+                    alt="NativPost onboarding"
+                    className="block h-full w-full object-cover dark:hidden"
+                  />
+                  <Image
+                    src={ProcessDarkImage}
+                    alt="NativPost onboarding"
+                    className="hidden h-full w-full object-cover dark:block"
+                  />
                 </figure>
               </div>
             </RevealAnimation>
@@ -64,7 +72,7 @@ const ProcessOperation = () => {
                       Review & approve your content
                     </h3>
                     <p>
-                      Your content calendar fills with studio-crafted posts — graphics, captions, hashtags. Preview
+                      Your content calendar fills with studio-crafted posts, graphics, captions, hashtags. Preview
                       exactly how they&apos;ll appear on each platform. Approve, edit, or request changes.
                     </p>
                   </div>

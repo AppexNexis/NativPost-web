@@ -15,7 +15,7 @@ const faqCategories = [
     questions: [
       {
         q: 'What exactly is NativPost?',
-        a: 'NativPost is a premium content creation and social media management platform. We produce studio-quality branded content — graphics, copy, and scheduling — that gets automatically published to your social channels. Think of us as your digital creative studio, not just another scheduling tool.',
+        a: 'NativPost is a premium content creation and social media management platform. We produce studio-quality branded content — graphics, copy, and scheduling, that gets automatically published to your social channels. Think of us as your digital creative studio, not just another scheduling tool.',
       },
       {
         q: 'How is NativPost different from tools like Buffer or Hootsuite?',
@@ -73,7 +73,7 @@ const faqCategories = [
       },
       {
         q: 'Why is there a setup fee?',
-        a: 'The setup fee covers your onboarding workshop and Brand Profile creation, which takes real effort and is the foundation of everything we do. It ensures client commitment, covers our time, and filters out tire-kickers. Clients who invest in setup take the product seriously — and get dramatically better results.',
+        a: 'The setup fee covers your onboarding workshop and Brand Profile creation, which takes real effort and is the foundation of everything we do. It ensures client commitment, covers our time, and filters out tire-kickers. Clients who invest in setup take the product seriously, and get dramatically better results.',
       },
       {
         q: 'Do you offer localized pricing for African markets?',
