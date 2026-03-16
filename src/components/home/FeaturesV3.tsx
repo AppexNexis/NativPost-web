@@ -31,21 +31,17 @@ const FeaturesV3 = () => {
               </RevealAnimation>
               <RevealAnimation delay={0.3} direction="right">
                 <figure className="absolute -top-12 -right-14 overflow-hidden rounded-2xl max-sm:w-[200px] sm:-top-[90px] sm:-right-[200px] md:-right-[150px] md:w-[250px] lg:-right-[150px] lg:w-[260px] xl:-right-[200px] xl:w-auto">
+                  <Image src={feat02} alt="Content analytics" className="block size-full object-cover dark:hidden" />
                   <Image
-                    src={feat02}
+                    src={feat02Dark}
                     alt="Content analytics"
-                    className="block size-full object-cover dark:hidden"
+                    className="hidden size-full object-cover dark:block"
                   />
-                  <Image src={feat02Dark} alt="Content analytics" className="hidden size-full object-cover dark:block" />
                 </figure>
               </RevealAnimation>
               <RevealAnimation delay={0.4} direction="right">
                 <figure className="absolute -right-14 bottom-12 -z-10 overflow-hidden rounded-2xl max-sm:w-[130px] sm:-right-[200px] sm:bottom-[85px] md:-right-[150px] lg:-right-[150px] xl:-right-[200px]">
-                  <Image
-                    src={feat03}
-                    alt="Scheduling queue"
-                    className="block size-full object-cover dark:hidden"
-                  />
+                  <Image src={feat03} alt="Scheduling queue" className="block size-full object-cover dark:hidden" />
                   <Image
                     src={feat04}
                     alt="Scheduling queue"
@@ -68,7 +64,7 @@ const FeaturesV3 = () => {
               </RevealAnimation>
               <RevealAnimation delay={0.3}>
                 <p className="mx-auto w-full max-w-[450px] lg:mx-0 lg:max-w-[592px]">
-                  NativPost publishes your studio-crafted content across Instagram, LinkedIn, X, Facebook, and TikTok —
+                  NativPost publishes your studio-crafted content across Instagram, LinkedIn, X, Facebook, and TikTok,
                   optimized for each platform, scheduled at the perfect time.
                 </p>
               </RevealAnimation>

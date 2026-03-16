@@ -22,12 +22,12 @@ const policySections: PolicySection[] = [
   {
     title: 'Return and refund guidelines',
     content:
-      'At NextSaaS, we are committed to providing you with the best possible service and experience. However, if for any reason our platform does not meet your expectations, we offer a simple and hassle-free refund policy.',
+      'At NativPost (a product of AppexNexis LTD), we are committed to providing you with the best possible service and experience. However, if for any reason our platform does not meet your expectations, we offer a simple and hassle-free refund policy.',
   },
   {
     title: '14-Day money-back guarantee',
     content:
-      'We are confident that you will love using NextSaaS. Still, if you are not fully satisfied, we offer a full refund within 14 days of your original purchase — no questions asked.',
+      'We are confident that you will love using NativPost. Still, if you are not fully satisfied, we offer a full refund on your subscription within 14 days of your original purchase, no questions asked.',
   },
 ];
 
@@ -35,47 +35,46 @@ const refundSteps: RefundStep[] = [
   {
     step: 1,
     color: 'bg-ns-yellow',
-    title: 'Submit a support ticket through our [Contact Page].',
+    title: 'Contact us via email at support@nativpost.com or through the in-app chat.',
     description:
-      "If you're experiencing any issues or need assistance, our support team is here to help. Simply visit our [Contact Page] and fill out the support ticket form with the relevant details.",
+      "If you're experiencing any issues or need assistance, our support team is here to help. Simply reach out via email or use the live chat widget inside your NativPost dashboard.",
   },
   {
     step: 2,
     color: 'bg-ns-green',
-    title: 'Share your order ID, email, and a quick description.',
+    title: 'Share your organization name, email, and a brief description of the issue.',
     description:
-      'Once we receive this information, our team will review it and get back to you as soon as possible. Thank you for your cooperation!',
+      'Once we receive this information, our team will review it and get back to you within 24 hours. We appreciate your cooperation in helping us resolve things quickly.',
   },
   {
     step: 3,
     color: 'bg-ns-cyan',
     title: 'Our team will review and process your refund request.',
     description:
-      "Thank you for reaching out. We've received your refund request and our team is currently reviewing the details.",
+      "We've received your refund request and our team is currently reviewing the details. You'll receive a confirmation email once the refund has been approved and initiated.",
   },
 ];
 
 const conditionsForRefund: ListSection = {
   title: 'Conditions for refund',
-  description: 'You are eligible for a full refund if',
+  description: 'You are eligible for a full subscription refund if',
   items: [
-    'You request a refund within 14 days from the date of purchase.',
-    'You can provide a valid reason if requested (optional but helps us improve).',
-    'You request a refund after the 14-day period.',
-    'You have violated our Terms and Conditions.',
-    'You simply decide not to use the product anymore without a valid issue.',
-    'You requested a refund for issues already resolved by our support team.',
+    'You request a refund within 14 days from the date of your subscription purchase.',
+    'You can provide a valid reason if requested (optional but helps us improve NativPost).',
+    'Your Brand Profile onboarding workshop has not yet been completed (setup fees are refundable before workshop completion).',
   ],
 };
 
 const nonRefundableSituations: ListSection = {
   title: 'Non-refundable situations',
-  description:
-    'NextSaaS reserves the right to suspend or terminate any user account without prior notice for reasons including but not limited to',
+  description: 'Refunds will not be issued in the following situations',
   items: [
-    'Purchases made through unauthorized sources.',
-    'Requests based on lack of features not available in the product description.',
-    'Downgrades from a higher-tier plan after extensive usage.',
+    'You request a refund after the 14-day period has elapsed.',
+    'Setup fees after the Brand Profile onboarding workshop has been completed, as this involves dedicated time from our team.',
+    'You have violated our Terms and Conditions, including misuse of the platform or content engine.',
+    'Requests based on lack of features not described in your plan tier at the time of purchase.',
+    'Downgrades from a higher-tier plan after extensive content generation and publishing.',
+    "Dissatisfaction with social media engagement results, as content performance depends on factors outside NativPost's control (platform algorithms, audience behavior, industry trends).",
   ],
 };
 
@@ -83,12 +82,12 @@ const additionalSections: PolicySection[] = [
   {
     title: 'Refund processing time',
     content:
-      'Once your refund is approved, it may take 5–10 business days for the amount to reflect in your bank statement, depending on your payment provider.',
+      'Once your refund is approved, it may take 5–10 business days for the amount to reflect in your bank statement, depending on your payment provider. Refunds processed via Stripe will return to the original card. Refunds for Paystack transactions will be processed to the original payment method (card, bank transfer, or mobile money).',
   },
   {
     title: 'We appreciate your feedback',
     content:
-      'If you choose to request a refund, we would be grateful if you could let us know why. Your feedback helps us improve NextSaaS for future users!',
+      "If you choose to request a refund, we would be grateful if you could let us know why. Your feedback helps us improve NativPost for businesses worldwide. Whether it's about content quality, the onboarding process, or feature request, we want to hear it.",
   },
 ];
 
@@ -148,7 +147,8 @@ const RefundPolicyContent = () => {
               <RevealAnimation delay={0.7}>
                 <p>
                   Refunds will be issued to the{' '}
-                  <span className="text-secondary dark:text-accent">original payment method</span> used at checkout.
+                  <span className="text-secondary dark:text-accent">original payment method</span> used at checkout
+                  (Stripe or Paystack).
                 </p>
               </RevealAnimation>
             </div>

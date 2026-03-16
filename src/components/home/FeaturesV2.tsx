@@ -18,7 +18,7 @@ const FeaturesV2 = () => {
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
               <p className="mx-auto max-w-[658px]">
-                NativPost helps businesses worldwide create consistent, on-brand content that drives engagement — without
+                NativPost helps businesses worldwide create consistent, on-brand content that drives engagement, without
                 the agency price tag or the DIY burnout.
               </p>
             </RevealAnimation>
@@ -107,8 +107,8 @@ const FeaturesV2 = () => {
                 </span>
                 <div className="text-center">
                   <h3 className="lg:text-heading-6 text-tagline-1 flex items-center justify-center font-normal text-white">
-                    <NumberAnimation number={5} speed={1000} interval={180} rooms={1} heightSpaceRatio={2.5} /> Platforms
-                    published simultaneously
+                    <NumberAnimation number={5} speed={1000} interval={180} rooms={1} heightSpaceRatio={2.5} />{' '}
+                    Platforms published simultaneously
                   </h3>
                 </div>
               </div>

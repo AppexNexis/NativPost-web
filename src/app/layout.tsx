@@ -2,7 +2,7 @@ import SmoothScrollProvider from '@/components/shared/SmoothScroll';
 import { ThemeProvider } from '@/components/shared/ThemeProvider';
 import Footer from '@/components/shared/footer/Footer';
 import Navbar from '@/components/shared/navbar/Navbar';
-import DemoShowcase from '@/components/shared/demo-showcase';
+// import DemoShowcase from '@/components/shared/demo-showcase';
 import { interTight } from '@/utils/font';
 import { generateMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
@@ -20,12 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${interTight.variable} antialiased`}>
+      <body className={`${interTight.variable} antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Suspense>
             <SmoothScrollProvider>
               <Navbar />
-                <DemoShowcase activeDemoId={30} />
+              {/* <DemoShowcase activeDemoId={30} /> */}
               {children}
               <Footer />
             </SmoothScrollProvider>

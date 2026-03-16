@@ -21,7 +21,7 @@ const Blog = () => {
           </RevealAnimation>
           <RevealAnimation delay={0.2}>
             <p className="mx-auto max-w-[492px]">
-              Tips on organic social media growth, anti-slop content strategy, and brand voice development — from the
+              Tips on organic social media growth, anti-slop content strategy, and brand voice development, from the
               NativPost team.
             </p>
           </RevealAnimation>

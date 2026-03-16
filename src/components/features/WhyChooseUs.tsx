@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
           <RevealAnimation delay={0.3}>
             <p className="lg:max-w-[536px]">
               In a world drowning in generic, robotic content, NativPost is the antidote. Every piece passes through our
-              anti-slop filter and human review — so your audience never sees anything that feels machine-generated.
+              anti-slop filter and human review, so your audience never sees anything that feels machine-generated.
             </p>
           </RevealAnimation>
           <ul className="mt-8 space-y-1 lg:mt-14">
@@ -67,14 +67,30 @@ const WhyChooseUs = () => {
         <div className="relative">
           <RevealAnimation delay={0.2} direction="up" offset={150}>
             <figure className="h-full w-full max-w-[735px] rounded-[20px] object-cover">
-              <Image src={transactionRing} alt="NativPost analytics" className="block size-full object-cover dark:hidden" />
-              <Image src={transactionRingDark} alt="NativPost analytics" className="hidden size-full object-cover dark:block" />
+              <Image
+                src={transactionRing}
+                alt="NativPost analytics"
+                className="block size-full object-cover dark:hidden"
+              />
+              <Image
+                src={transactionRingDark}
+                alt="NativPost analytics"
+                className="hidden size-full object-cover dark:block"
+              />
             </figure>
           </RevealAnimation>
           <RevealAnimation delay={0.5} direction="right" offset={100} useSpring={true} duration={2}>
             <figure className="absolute top-[15%] right-6 w-full max-w-[140px] overflow-hidden rounded-[20px] md:right-0 md:max-w-[253px] lg:max-w-[200px] xl:max-w-[253px]">
-              <Image src={transactionChart} alt="Engagement metrics" className="inline-block h-full w-full object-cover dark:hidden" />
-              <Image src={transactionChartDark} alt="Engagement metrics" className="hidden h-full w-full object-cover dark:block" />
+              <Image
+                src={transactionChart}
+                alt="Engagement metrics"
+                className="inline-block h-full w-full object-cover dark:hidden"
+              />
+              <Image
+                src={transactionChartDark}
+                alt="Engagement metrics"
+                className="hidden h-full w-full object-cover dark:block"
+              />
             </figure>
           </RevealAnimation>
           <RevealAnimation delay={1} direction="up" offset={100} useSpring={true} duration={1.5}>

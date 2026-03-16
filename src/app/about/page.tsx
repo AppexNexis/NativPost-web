@@ -115,14 +115,16 @@ const page = () => {
                 <p className="text-accent/60">Global social media management market</p>
               </div>
               <div className="border-b-accent/20 border-r-accent/20 flex-1 space-y-2 border-b py-6 text-center md:border-r md:border-b-0">
-                <h3 className="text-heading-4 font-normal text-white">
-                  <NumberAnimation number={90} speed={1000} interval={180} rooms={2} heightSpaceRatio={2.5} />%
+                <h3 className="text-heading-4 flex items-center justify-center gap-0 font-normal text-white">
+                  <NumberAnimation number={90} speed={1000} interval={180} rooms={2} heightSpaceRatio={2.5} />
+                  <span>%</span>
                 </h3>
                 <p className="text-accent/60">Of consumers prefer human-created content</p>
               </div>
               <div className="flex-1 space-y-2 py-6 text-center">
-                <h3 className="text-heading-4 font-normal text-white">
-                  <NumberAnimation number={47} speed={1000} interval={180} rooms={2} heightSpaceRatio={2.5} />%
+                <h3 className="text-heading-4 flex items-center justify-center gap-0 font-normal text-white">
+                  <NumberAnimation number={47} speed={1000} interval={180} rooms={2} heightSpaceRatio={2.5} />
+                  <span>%</span>
                 </h3>
                 <p className="text-accent/60">Of Gen Z actively dislikes AI-generated content</p>
               </div>

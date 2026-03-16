@@ -85,7 +85,7 @@ const ProcessOperation = () => {
                   </div>
                   <div className="space-y-1">
                     <h3 className="text-secondary dark:text-accent text-lg leading-[27px] font-medium">
-                      Sit back — we publish everywhere
+                      Sit back, we publish everywhere
                     </h3>
                     <p>
                       Approved content is automatically published across all your connected social platforms at optimal

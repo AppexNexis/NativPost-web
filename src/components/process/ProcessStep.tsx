@@ -177,8 +177,8 @@ const ProcessStep = () => {
                         Strategy, wireframes &amp; creative direction
                       </h3>
                       <p>
-                        We begin by understanding your vision and goals through a detailed discovery call to align on
-                        the project’s direction.
+                        Based on what we learn, we map out your content strategy, define your Brand Profile, and set the
+                        creative direction for every platform you're on.
                       </p>
                     </div>
                   </div>
@@ -230,8 +230,8 @@ const ProcessStep = () => {
                         Design &amp; development in sprints
                       </h3>
                       <p>
-                        We begin by understanding your vision and goals through a detailed discovery call to align on
-                        the project’s direction.
+                        Our studio crafts your first batch of content graphics, captions, and scheduling, in focused
+                        sprints with regular check-ins so nothing goes off-brand.
                       </p>
                     </div>
                   </div>
@@ -283,8 +283,8 @@ const ProcessStep = () => {
                         Feedback, refinement &amp; final delivery
                       </h3>
                       <p>
-                        We begin by understanding your vision and goals through a detailed discovery call to align on
-                        the project’s direction.
+                        You review everything in your approval dashboard. Edit, approve, or request changes, we refine
+                        until every piece feels authentically yours.
                       </p>
                     </div>
                   </div>
@@ -307,8 +307,8 @@ const ProcessStep = () => {
                         Post-launch support &amp; handoff
                       </h3>
                       <p>
-                        We begin by understanding your vision and goals through a detailed discovery call to align on
-                        the project’s direction.
+                        Once your content goes live, we monitor performance, optimize based on engagement data, and keep
+                        your content calendar running on autopilot.
                       </p>
                     </div>
                   </div>

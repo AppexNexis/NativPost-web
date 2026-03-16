@@ -1,5 +1,5 @@
 // ============================================================
-// FAQ PAGE — src/app/faq/page.tsx
+// FAQ PAGE, src/app/faq/page.tsx
 // ============================================================
 
 'use client';
@@ -15,15 +15,15 @@ const faqCategories = [
     questions: [
       {
         q: 'What exactly is NativPost?',
-        a: 'NativPost is a premium content creation and social media management platform. We produce studio-quality branded content — graphics, copy, and scheduling, that gets automatically published to your social channels. Think of us as your digital creative studio, not just another scheduling tool.',
+        a: 'NativPost is a premium content creation and social media management platform. We produce studio-quality branded content, graphics, copy, and scheduling, that gets automatically published to your social channels. Think of us as your digital creative studio, not just another scheduling tool.',
       },
       {
         q: 'How is NativPost different from tools like Buffer or Hootsuite?',
-        a: 'Buffer and Hootsuite only schedule and post content — you still have to create everything yourself. NativPost creates the content for you: on-brand graphics, platform-optimized captions, and smart hashtag strategies. We handle the entire pipeline from creation to publishing.',
+        a: 'Buffer and Hootsuite only schedule and post content, you still have to create everything yourself. NativPost creates the content for you: on-brand graphics, platform-optimized captions, and smart hashtag strategies. We handle the entire pipeline from creation to publishing.',
       },
       {
         q: 'How is NativPost different from hiring a social media agency?',
-        a: 'Agencies typically charge $500–$5,000+/month and deliver inconsistent results with slow turnaround. NativPost gives you the same quality of output — deeply brand-aligned content — at product pricing starting at $19/month. Plus, you have full control over approvals.',
+        a: 'Agencies typically charge $500–$5,000+/month and deliver inconsistent results with slow turnaround. NativPost gives you the same quality of output, deeply brand-aligned content, at product pricing starting at $19/month. Plus, you have full control over approvals.',
       },
       {
         q: 'Do you use AI to create content?',
@@ -56,7 +56,7 @@ const faqCategories = [
       },
       {
         q: 'What kind of graphics do you create?',
-        a: 'We create carousel posts, single image posts (quote cards, product features, tips, announcements), and story format templates — all using your brand colors, fonts, and visual style. Graphics are built from a template system refined specifically for your brand.',
+        a: 'We create carousel posts, single image posts (quote cards, product features, tips, announcements), and story format templates, all using your brand colors, fonts, and visual style. Graphics are built from a template system refined specifically for your brand.',
       },
     ],
   },
@@ -69,7 +69,7 @@ const faqCategories = [
       },
       {
         q: 'Is there a free trial?',
-        a: 'Yes — we offer a 7-day free trial on the Growth plan so you can experience the full NativPost workflow. No credit card required to start.',
+        a: 'Yes, we offer a 7-day free trial on the Growth plan so you can experience the full NativPost workflow. No credit card required to start.',
       },
       {
         q: 'Why is there a setup fee?',
@@ -102,7 +102,7 @@ const faqCategories = [
       },
       {
         q: 'Can I cancel anytime?',
-        a: 'Yes. All plans are month-to-month with no long-term contracts. Cancel anytime from your billing dashboard. We believe if you are staying, it should be because the product works — not because of a contract.',
+        a: 'Yes. All plans are month-to-month with no long-term contracts. Cancel anytime from your billing dashboard. We believe if you are staying, it should be because the product works, not because of a contract.',
       },
     ],
   },

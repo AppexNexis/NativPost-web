@@ -15,14 +15,14 @@ const servicesData: ServiceCard[] = [
     icon: 'ns-shape-9',
     title: 'Brand Profile system',
     description:
-      'We learn your voice, colors, style, and audience — then generate content that sounds and looks like your in-house creative team made it.',
+      'We learn your voice, colors, style, and audience, then generate content that sounds and looks like your in-house creative team made it.',
   },
   {
     id: 2,
     icon: 'ns-shape-3',
     title: 'Content creation engine',
     description:
-      'Studio-quality graphics, on-brand captions, and optimized hashtags — created for every platform and ready for your approval.',
+      'Studio-quality graphics, on-brand captions, and optimized hashtags, created for every platform and ready for your approval.',
   },
   {
     id: 3,
@@ -66,7 +66,8 @@ const Services = () => {
                   </div>
                   <div className="space-y-2">
                     <h3 className="xl:text-heading-5 text-heading-6">{service.title}</h3>
-                    <p className="line-clamp-2">{service.description}</p>
+                    {/* <p className="line-clamp-2">{service.description}</p> */}
+                    <p>{service.description}</p>
                   </div>
                   <div>
                     <LinkButton

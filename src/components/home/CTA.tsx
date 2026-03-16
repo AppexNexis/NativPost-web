@@ -6,7 +6,7 @@ const CTA = () => {
   return (
     <section className="dark:bg-background-6 bg-white py-[50px] md:py-20 lg:py-28" aria-label="cta section">
       <div className="main-container">
-        <div className="xl:gap-0 flex flex-col items-center justify-between gap-8 xl:flex-row">
+        <div className="flex flex-col items-center justify-between gap-8 xl:flex-row xl:gap-0">
           <div className="mx-3 max-w-[649px] space-y-3 text-center sm:mx-0 md:w-full xl:text-left">
             <RevealAnimation delay={0.3}>
               <span className="badge badge-green">Get started</span>
@@ -23,7 +23,8 @@ const CTA = () => {
               </RevealAnimation>
               <RevealAnimation delay={0.5}>
                 <p aria-label="cta-description">
-                  Start your free trial today. Studio-crafted content for your brand, published everywhere — in minutes, not hours.
+                  Start your free trial today. Studio-crafted content for your brand, published everywhere, in minutes,
+                  not hours.
                 </p>
               </RevealAnimation>
             </div>

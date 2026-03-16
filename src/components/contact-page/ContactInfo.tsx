@@ -50,9 +50,8 @@ const ContactInfo = () => {
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
               <p>
-                Whether you have a question about plans, need help with your Brand Profile, or want a personalized
-                demo — our team responds within 2 hours during business hours. We support clients across every
-                timezone.
+                Whether you have a question about plans, need help with your Brand Profile, or want a personalized demo,
+                our team responds within 2 hours during business hours. We support clients across every timezone.
               </p>
             </RevealAnimation>
           </div>
@@ -88,7 +87,9 @@ const ContactInfo = () => {
               <form action="#" method="POST" className="space-y-8">
                 <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
                   <div className="w-full space-y-2 lg:max-w-[364px]">
-                    <label htmlFor="fullname" className="text-tagline-2 text-secondary dark:text-accent block font-medium">
+                    <label
+                      htmlFor="fullname"
+                      className="text-tagline-2 text-secondary dark:text-accent block font-medium">
                       Your name
                     </label>
                     <input
@@ -102,7 +103,9 @@ const ContactInfo = () => {
                     />
                   </div>
                   <div className="w-full max-w-[364px] space-y-2">
-                    <label htmlFor="business" className="text-tagline-2 text-secondary dark:text-accent block font-medium">
+                    <label
+                      htmlFor="business"
+                      className="text-tagline-2 text-secondary dark:text-accent block font-medium">
                       Business name
                     </label>
                     <input
@@ -162,7 +165,9 @@ const ContactInfo = () => {
                     <span className="border-stroke-3 dark:border-stroke-7 after:bg-primary-500 peer-checked:border-primary-500 relative size-4 cursor-pointer rounded-full border after:absolute after:top-1/2 after:left-1/2 after:size-2.5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:opacity-0 peer-checked:after:opacity-100" />
                     <span className="sr-only">Agree to the terms and conditions</span>
                   </label>
-                  <label htmlFor="terms" className="text-tagline-3 text-secondary/60 dark:text-accent/60 cursor-pointer">
+                  <label
+                    htmlFor="terms"
+                    className="text-tagline-3 text-secondary/60 dark:text-accent/60 cursor-pointer">
                     I agree with the
                     <Link href="/terms-conditions" className="text-primary-500 text-tagline-3 underline">
                       {' '}

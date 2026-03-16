@@ -23,7 +23,7 @@ const Features = () => {
             <RevealAnimation delay={0.4}>
               <p className="mx-auto max-w-[734px]">
                 NativPost combines deep brand understanding with studio-quality production and intelligent scheduling.
-                From content creation to cross-platform publishing — one platform handles it all.
+                From content creation to cross-platform publishing, one platform handles it all.
               </p>
             </RevealAnimation>
           </div>
@@ -33,13 +33,26 @@ const Features = () => {
               <div className="space-y-3">
                 <div className="dark:bg-background-5 w-full max-w-[409px] rounded-[20px] bg-white p-2.5">
                   <figure className="bg-background-3 dark:bg-background-7 overflow-hidden rounded-2xl p-4">
-                    <Image src={cardOneImg} alt="Brand Profile Builder" className="h-full w-full object-cover dark:hidden" loading="lazy" />
-                    <Image src={cardOneImgDark} alt="Brand Profile Builder" className="hidden h-full w-full object-cover dark:block" loading="lazy" />
+                    <Image
+                      src={cardOneImg}
+                      alt="Brand Profile Builder"
+                      className="h-full w-full object-cover dark:hidden"
+                      loading="lazy"
+                    />
+                    <Image
+                      src={cardOneImgDark}
+                      alt="Brand Profile Builder"
+                      className="hidden h-full w-full object-cover dark:block"
+                      loading="lazy"
+                    />
                   </figure>
                 </div>
                 <div className="space-y-1">
                   <h3 className="text-heading-5">Brand Profile builder</h3>
-                  <p>Capture your voice, visuals, and audience in a deep creative profile that drives every piece of content.</p>
+                  <p>
+                    Capture your voice, visuals, and audience in a deep creative profile that drives every piece of
+                    content.
+                  </p>
                 </div>
               </div>
             </RevealAnimation>
@@ -47,8 +60,18 @@ const Features = () => {
               <div className="space-y-3">
                 <div className="dark:bg-background-5 w-full max-w-[409px] rounded-[20px] bg-white p-2.5">
                   <figure className="bg-background-3 dark:bg-background-7 overflow-hidden rounded-2xl p-4">
-                    <Image src={cardTwoImg} alt="Content Creation Engine" className="h-full w-full object-cover dark:hidden" loading="lazy" />
-                    <Image src={cardTwoImgDark} alt="Content Creation Engine" className="hidden h-full w-full object-cover dark:block" loading="lazy" />
+                    <Image
+                      src={cardTwoImg}
+                      alt="Content Creation Engine"
+                      className="h-full w-full object-cover dark:hidden"
+                      loading="lazy"
+                    />
+                    <Image
+                      src={cardTwoImgDark}
+                      alt="Content Creation Engine"
+                      className="hidden h-full w-full object-cover dark:block"
+                      loading="lazy"
+                    />
                   </figure>
                 </div>
                 <div className="space-y-1">
@@ -61,8 +84,18 @@ const Features = () => {
               <div className="space-y-3">
                 <div className="dark:bg-background-5 w-full max-w-[409px] rounded-[20px] bg-white p-2.5">
                   <figure className="bg-background-3 dark:bg-background-7 overflow-hidden rounded-2xl p-4">
-                    <Image src={cardThreeImg} alt="Anti-Slop Filter" className="h-full w-full object-cover dark:hidden" loading="lazy" />
-                    <Image src={cardThreeImgDark} alt="Anti-Slop Filter" className="hidden h-full w-full object-cover dark:block" loading="lazy" />
+                    <Image
+                      src={cardThreeImg}
+                      alt="Anti-Slop Filter"
+                      className="h-full w-full object-cover dark:hidden"
+                      loading="lazy"
+                    />
+                    <Image
+                      src={cardThreeImgDark}
+                      alt="Anti-Slop Filter"
+                      className="hidden h-full w-full object-cover dark:block"
+                      loading="lazy"
+                    />
                   </figure>
                 </div>
                 <div className="space-y-1">
@@ -78,13 +111,25 @@ const Features = () => {
               <div className="space-y-3">
                 <div className="dark:bg-background-5 w-full max-w-[409px] rounded-[20px] bg-white p-2.5">
                   <figure className="bg-background-3 dark:bg-background-7 overflow-hidden rounded-2xl p-4">
-                    <Image src={cardFourImg} alt="Approval Dashboard" className="h-full w-full object-cover dark:hidden" loading="lazy" />
-                    <Image src={cardFourImgDark} alt="Approval Dashboard" className="hidden h-full w-full object-cover dark:block" loading="lazy" />
+                    <Image
+                      src={cardFourImg}
+                      alt="Approval Dashboard"
+                      className="h-full w-full object-cover dark:hidden"
+                      loading="lazy"
+                    />
+                    <Image
+                      src={cardFourImgDark}
+                      alt="Approval Dashboard"
+                      className="hidden h-full w-full object-cover dark:block"
+                      loading="lazy"
+                    />
                   </figure>
                 </div>
                 <div className="space-y-1">
                   <h3 className="text-heading-5">Approval &amp; scheduling dashboard</h3>
-                  <p>Preview, approve, edit, or reject posts. Bulk approve for efficiency. Schedule across all platforms.</p>
+                  <p>
+                    Preview, approve, edit, or reject posts. Bulk approve for efficiency. Schedule across all platforms.
+                  </p>
                 </div>
               </div>
             </RevealAnimation>
@@ -92,13 +137,26 @@ const Features = () => {
               <div className="space-y-3">
                 <div className="dark:bg-background-5 w-full max-w-[409px] rounded-[20px] bg-white p-2.5">
                   <figure className="bg-background-3 dark:bg-background-7 overflow-hidden rounded-2xl p-4">
-                    <Image src={cardFiveImg} alt="Performance Analytics" className="h-full w-full object-cover dark:hidden" loading="lazy" />
-                    <Image src={cardFiveImgDark} alt="Performance Analytics" className="hidden h-full w-full object-cover dark:block" loading="lazy" />
+                    <Image
+                      src={cardFiveImg}
+                      alt="Performance Analytics"
+                      className="h-full w-full object-cover dark:hidden"
+                      loading="lazy"
+                    />
+                    <Image
+                      src={cardFiveImgDark}
+                      alt="Performance Analytics"
+                      className="hidden h-full w-full object-cover dark:block"
+                      loading="lazy"
+                    />
                   </figure>
                 </div>
                 <div className="space-y-1">
                   <h3 className="text-heading-5">Performance analytics</h3>
-                  <p>Track reach, engagement, and growth. See what content works best and let the system optimize future posts.</p>
+                  <p>
+                    Track reach, engagement, and growth. See what content works best and let the system optimize future
+                    posts.
+                  </p>
                 </div>
               </div>
             </RevealAnimation>
