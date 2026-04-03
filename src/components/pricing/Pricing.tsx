@@ -64,7 +64,7 @@ const Pricing = () => {
                       <p>+ $29 one-time setup fee</p>
                     </div>
                     <Link
-                      href="/signup"
+                      href="https://app.nativpost.com/sign-up"
                       className="btn btn-white hover:btn-primary dark:btn-white-dark btn-md w-full first-letter:uppercase before:content-none">
                       Start free trial
                     </Link>
@@ -107,7 +107,7 @@ const Pricing = () => {
                       <p className="text-accent/60">+ $79 one-time setup fee</p>
                     </div>
                     <Link
-                      href="/signup"
+                      href="https://app.nativpost.com/sign-up"
                       className="btn btn-primary btn-md hover:btn-white dark:hover:btn-accent relative z-10 w-full first-letter:uppercase before:content-none">
                       Start free trial
                     </Link>
@@ -147,7 +147,7 @@ const Pricing = () => {
                       <p>+ $149 one-time setup fee</p>
                     </div>
                     <Link
-                      href="/signup"
+                      href="https://app.nativpost.com/sign-up"
                       className="btn btn-white dark:btn-white-dark hover:btn-primary btn-md w-full first-letter:uppercase before:content-none">
                       Start free trial
                     </Link>

@@ -16,10 +16,13 @@ const Hero = () => {
           </RevealAnimation>
           <div className="space-y-3">
             <RevealAnimation delay={0.2}>
-              <h1 className="mx-auto max-w-[400px] leading-[1.3] sm:max-w-[600px] md:max-w-[900px] xl:max-w-[1110px]">
+              {/* <h1 className="mx-auto max-w-[400px] leading-[1.3] sm:max-w-[600px] md:max-w-[900px] xl:max-w-[1110px]">
                 <span className="hero-text-gradient hero-text-color-2 block">
                   Your brand deserves content that looks human-made. Because it is.
                 </span>
+              </h1> */}
+              <h1 className="mx-auto max-w-[400px] leading-[1.15] sm:max-w-[600px] md:max-w-[900px] xl:max-w-[1110px] text-4xl font-extrabold tracking-tight text-gray-950 sm:text-5xl md:text-6xl lg:text-7xl dark:text-white">
+                Your brand deserves content that looks human-made. Because it is.
               </h1>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>

@@ -61,7 +61,7 @@ const LoginHero = () => {
                 <div>
                   <p className="text-tagline-2 text-secondary dark:text-accent flex items-center justify-center gap-1 text-center font-normal">
                     Don&apos;t have an account?
-                    <Link href="/signup" className="text-tagline-1 footer-link-v2 font-medium">
+                    <Link href="https://app.nativpost.com/sign-up" className="text-tagline-1 footer-link-v2 font-medium">
                       Start your free trial
                     </Link>
                   </p>

@@ -3,7 +3,7 @@
     "name": "Starter",
     "price": "$19/mo",
     "description": "For solopreneurs and small businesses getting started",
-    "ctaHref": "/signup",
+    "ctaHref": "https://app.nativpost.com/sign-up",
     "ctaText": "Start free trial",
     "setupFee": "$29 one-time setup",
     "cells": [
@@ -18,7 +18,7 @@
     "name": "Growth",
     "price": "$49/mo",
     "description": "Most popular — for growing businesses",
-    "ctaHref": "/signup",
+    "ctaHref": "https://app.nativpost.com/sign-up",
     "ctaText": "Start free trial",
     "isSecondary": true,
     "withGradientImg": true,
@@ -35,7 +35,7 @@
     "name": "Pro",
     "price": "$99/mo",
     "description": "For brands that need premium quality and team review",
-    "ctaHref": "/signup",
+    "ctaHref": "https://app.nativpost.com/sign-up",
     "ctaText": "Start free trial",
     "setupFee": "$149 one-time setup",
     "cells": [

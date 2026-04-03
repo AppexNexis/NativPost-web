@@ -90,7 +90,7 @@ const SignupHero = () => {
                 <div className="mt-6 text-center">
                   <p className="text-tagline-2 text-secondary dark:text-accent font-normal">
                     Already have an account?{' '}
-                    <Link href="/login" className="text-tagline-1 footer-link-v2 font-medium">
+                    <Link href="https://app.nativpost.com/sign-in" className="text-tagline-1 footer-link-v2 font-medium">
                       Log in
                     </Link>
                   </p>

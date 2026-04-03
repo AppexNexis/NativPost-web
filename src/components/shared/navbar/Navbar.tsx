@@ -112,11 +112,11 @@ const Navbar = () => {
             {/* CTA Buttons */}
             <div className="hidden items-center justify-center gap-2 xl:flex">
               <Link
-                href="/login"
+                href="https://app.nativpost.com/sign-in"
                 className="text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent rounded-full px-4 py-2 font-normal transition-all duration-200">
                 Log in
               </Link>
-              <Link href="/signup" className="btn btn-md btn-primary hover:btn-white-dark dark:hover:btn-white">
+              <Link href="https://app.nativpost.com/sign-up" className="btn btn-md btn-primary hover:btn-white-dark dark:hover:btn-white">
                 <span>Start free trial</span>
               </Link>
             </div>

@@ -63,7 +63,7 @@ const page = () => {
             <RevealAnimation delay={0.4}>
               <div className="pt-4">
                 <LinkButton
-                  href="/login"
+                  href="https://app.nativpost.com/sign-in"
                   className="btn btn-secondary btn-xl hover:btn-white dark:btn-accent dark:hover:btn-white-dark">
                   Get your referral link
                 </LinkButton>
