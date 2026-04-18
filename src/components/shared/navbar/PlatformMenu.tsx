@@ -49,18 +49,18 @@ const platformLinks: PlatformLink[] = [
     href: '/use-case',
     icon: ReferralProgramIcon,
   },
-  {
-    title: 'Case Studies',
-    description: 'Real client results',
-    href: '/case-study',
-    icon: LoginIcon,
-  },
-  {
-    title: 'Testimonials',
-    description: 'What our clients say',
-    href: '/testimonial',
-    icon: SignUpIcon,
-  },
+  // {
+  //   title: 'Case Studies',
+  //   description: 'Real client results',
+  //   href: '/case-study',
+  //   icon: LoginIcon,
+  // },
+  // {
+  //   title: 'Testimonials',
+  //   description: 'What our clients say',
+  //   href: '/testimonial',
+  //   icon: SignUpIcon,
+  // },
 ];
 
 const PlatformMenu = ({

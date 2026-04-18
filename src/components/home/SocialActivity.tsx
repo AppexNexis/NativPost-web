@@ -1,10 +1,10 @@
 import { ArrowIcon } from '@/icons';
 import InstagramIcon from '@public/images/icons/snapchat.svg';
-import LinkedInIcon from '@public/images/icons/slack.svg';
-import XIcon from '@public/images/icons/figma.svg';
-import FacebookIcon from '@public/images/icons/shopify.svg';
+import LinkedInIcon from '@public/images/icons/linkedin.svg';
+import XIcon from '@public/images/icons/x.svg';
+import FacebookIcon from '@public/images/icons/facebook.svg';
 import TikTokIcon from '@public/images/icons/tiktok.svg';
-import WhatsAppIcon from '@public/images/icons/zapier.svg';
+import WhatsAppIcon from '@public/images/icons/youtube.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import RevealAnimation from '../animation/RevealAnimation';

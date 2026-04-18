@@ -50,8 +50,8 @@ const page = () => {
       <FeaturesV2 />
       <FeaturesV3 />
       <SocialActivity />
-      <Testimonial />
-      <Blog />
+      {/* <Testimonial /> */}
+      {/* <Blog /> */}
       <CTA />
     </main>
   );

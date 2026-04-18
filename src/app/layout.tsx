@@ -8,6 +8,7 @@ import { generateMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 import { ReactNode, Suspense } from 'react';
 import './globals.css';
+import ScrollToTop from '@/components/shared/scroll-to-top/ScrollToTop';
 
 export const metadata: Metadata = {
   ...generateMetadata(),
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${interTight.variable} antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <ScrollToTop />
           <Suspense>
             <SmoothScrollProvider>
               <Navbar />

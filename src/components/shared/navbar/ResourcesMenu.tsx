@@ -40,36 +40,36 @@ const resourceSections: ResourceSection[] = [
   {
     title: 'Help & Documentation',
     links: [
-      {
-        title: 'Documentation',
-        description: 'Detailed documentation of the product.',
-        href: '/documentation',
-        icon: DocsIcon,
-      },
-      {
-        title: 'Tutorials',
-        description: 'Step-by-step guides to help you get started.',
-        href: '/tutorial',
-        icon: TutorialIcon,
-      },
+      // {
+      //   title: 'Documentation',
+      //   description: 'Detailed documentation of the product.',
+      //   href: '/documentation',
+      //   icon: DocsIcon,
+      // },
+      // {
+      //   title: 'Tutorials',
+      //   description: 'Step-by-step guides to help you get started.',
+      //   href: '/tutorial',
+      //   icon: TutorialIcon,
+      // },
       {
         title: 'FAQ',
         description: 'Frequently asked questions and answers.',
         href: '/faq',
         icon: FaqIcon,
       },
-      {
-        title: 'Case Studies',
-        description: 'Real-world examples of how the product is used.',
-        href: '/case-study',
-        icon: CaseStudyICon,
-      },
-      {
-        title: 'Whitepapers',
-        description: 'Detailed whitepapers on the product.',
-        href: '/whitepaper',
-        icon: WhitePaperIcon,
-      },
+      // {
+      //   title: 'Case Studies',
+      //   description: 'Real-world examples of how the product is used.',
+      //   href: '/case-study',
+      //   icon: CaseStudyICon,
+      // },
+      // {
+      //   title: 'Whitepapers',
+      //   description: 'Detailed whitepapers on the product.',
+      //   href: '/whitepaper',
+      //   icon: WhitePaperIcon,
+      // },
       {
         title: 'Support',
         description: 'Get help and support from our team.',
@@ -87,30 +87,30 @@ const resourceSections: ResourceSection[] = [
         href: '/use-case',
         icon: UseCaseIcon,
       },
-      {
-        title: 'Success Stories',
-        description: 'Discover measurable outcomes achieved by clients.',
-        href: '/success-stories',
-        icon: SuccessIcon,
-      },
-      {
-        title: 'Analytics',
-        description: 'Dive into performance metrics and data insights.',
-        href: '/analytics',
-        icon: AnalyticsIcon,
-      },
-      {
-        title: 'Changelog',
-        description: 'Stay updated with the latest changes and improvements.',
-        href: '/changelog',
-        icon: ChangeLogIcon,
-      },
-      {
-        title: 'Glossary',
-        description: 'Terms and definitions.',
-        href: '/glossary',
-        icon: GlossaryIcon,
-      },
+      // {
+      //   title: 'Success Stories',
+      //   description: 'Discover measurable outcomes achieved by clients.',
+      //   href: '/success-stories',
+      //   icon: SuccessIcon,
+      // },
+      // {
+      //   title: 'Analytics',
+      //   description: 'Dive into performance metrics and data insights.',
+      //   href: '/analytics',
+      //   icon: AnalyticsIcon,
+      // },
+      // {
+      //   title: 'Changelog',
+      //   description: 'Stay updated with the latest changes and improvements.',
+      //   href: '/changelog',
+      //   icon: ChangeLogIcon,
+      // },
+      // {
+      //   title: 'Glossary',
+      //   description: 'Terms and definitions.',
+      //   href: '/glossary',
+      //   icon: GlossaryIcon,
+      // },
     ],
   },
   {
