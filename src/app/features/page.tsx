@@ -19,7 +19,7 @@ const page = () => {
       <Features />
       <Feature />
       <WhyChooseUs />
-      <Reviews />
+      {/* <Reviews /> */}
       <CTA
         className="dark:bg-background-6 bg-white"
         badgeClass="hidden"

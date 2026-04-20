@@ -1,0 +1,95 @@
+name: Deploy NativPost to IONOS VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛎️ Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: 📦 Install Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: 🏗️ Build Next.js (Standalone)
+        run: npm run build
+        env:
+          CI: false
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
+          NEXT_PUBLIC_CLARITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_CLARITY_PROJECT_ID }}
+          NEXT_PUBLIC_PROMO_API_URL: ${{ secrets.NEXT_PUBLIC_PROMO_API_URL }}
+          NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
+          NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}
+          NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT }}
+          NEXT_PUBLIC_CONTENTFUL_PREVIEW_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_PREVIEW_TOKEN }}
+          NEXT_PUBLIC_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_ANALYTICS_ID }}
+          NEXT_PUBLIC_DISCOUNT_API_URL: ${{ secrets.NEXT_PUBLIC_DISCOUNT_API_URL }}
+
+      - name: 📤 Deploy Standalone Server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          source: ".next/standalone/"
+          target: "/var/www/nativpost-app"
+          strip_components: 2
+          rm: true
+
+      - name: 📤 Deploy Static Assets
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          source: ".next/static/"
+          target: "/var/www/nativpost-app/.next/static"
+          strip_components: 2
+          rm: true
+
+      - name: 📤 Deploy Public Folder
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          source: "public/"
+          target: "/var/www/nativpost-app/public"
+          strip_components: 1
+          rm: true
+
+      - name: 🚀 Start / Reload via PM2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            cd /var/www/nativpost-app
+            if pm2 describe nativpost-web > /dev/null 2>&1; then
+              pm2 reload nativpost-web --update-env
+            else
+              pm2 start server.js --name nativpost-web -- --port 3000
+              pm2 save
+            fi
+
+      - name: ✅ Done
+        run: echo "🎉 https://nativpost.com deployed successfully"
