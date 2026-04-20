@@ -9,22 +9,50 @@ const PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? '';
 
 function resolvePageName(pathname: string): string {
     if (pathname === '/') return 'Home';
+
+    // Blog
     if (pathname.startsWith('/blog/') && pathname.length > 6) return 'Blog Post';
     if (pathname === '/blog' || pathname === '/blog/') return 'Blog';
-    if (pathname.startsWith('/game/palworld')) return 'Palworld Hosting';
-    if (pathname.startsWith('/game/minecraft-java')) return 'Minecraft Java Hosting';
-    if (pathname.startsWith('/game/minecraft-bedrock')) return 'Minecraft Bedrock Hosting';
-    if (pathname.startsWith('/game/minecraft')) return 'Minecraft Hosting';
-    if (pathname.startsWith('/game/vrising')) return 'V Rising Hosting';
-    if (pathname.startsWith('/game/enshrouded')) return 'Enshrouded Hosting';
-    if (pathname.startsWith('/game/hytale')) return 'Hytale Hosting';
-    if (pathname.startsWith('/game/')) return 'Game Hosting';
-    if (pathname === '/games') return 'Games';
-    if (pathname === '/about') return 'About';
-    if (pathname === '/terms') return 'Terms';
-    if (pathname === '/privacy') return 'Privacy';
-    if (pathname === '/affiliate') return 'Affiliate';
-    if (pathname === '/affiliate-apply') return 'Affiliate Apply';
+
+    // Product
+    if (pathname === '/features' || pathname.startsWith('/features/')) return 'Features';
+    if (pathname === '/pricing' || pathname.startsWith('/pricing/')) return 'Pricing';
+    if (pathname === '/changelog' || pathname.startsWith('/changelog/')) return 'Changelog';
+    if (pathname === '/download' || pathname.startsWith('/download/')) return 'Download';
+    if (pathname === '/integration' || pathname.startsWith('/integration/')) return 'Integrations';
+    if (pathname === '/brandkit' || pathname.startsWith('/brandkit/')) return 'Brand Kit';
+    if (pathname === '/analytics' || pathname.startsWith('/analytics/')) return 'Analytics';
+
+    // Use cases / customers
+    if (pathname === '/customer' || pathname.startsWith('/customer/')) return 'Customer';
+    if (pathname === '/case-study' || pathname.startsWith('/case-study/')) return 'Case Study';
+    if (pathname === '/process' || pathname.startsWith('/process/')) return 'Process';
+
+    // Company
+    if (pathname === '/about' || pathname.startsWith('/about/')) return 'About';
+    if (pathname === '/career' || pathname.startsWith('/career/')) return 'Careers';
+    if (pathname === '/press' || pathname.startsWith('/press/')) return 'Press';
+    if (pathname === '/our-manifesto' || pathname.startsWith('/our-manifesto/')) return 'Our Manifesto';
+    if (pathname === '/contact-us' || pathname.startsWith('/contact-us/')) return 'Contact Us';
+
+    // Resources
+    if (pathname === '/documentation' || pathname.startsWith('/documentation/')) return 'Documentation';
+    if (pathname === '/faq' || pathname.startsWith('/faq/')) return 'FAQ';
+    if (pathname === '/glossary' || pathname.startsWith('/glossary/')) return 'Glossary';
+
+    // Referral & Affiliates
+    if (pathname === '/affiliates' || pathname.startsWith('/affiliates/')) return 'Affiliates';
+    if (pathname === '/affiliate-policy' || pathname.startsWith('/affiliate-policy/')) return 'Affiliate Policy';
+    if (pathname === '/referral-program' || pathname.startsWith('/referral-program/')) return 'Referral Program';
+
+    // Legal & Compliance
+    if (pathname === '/privacy-policy' || pathname.startsWith('/privacy-policy/')) return 'Privacy Policy';
+    if (pathname === '/legal' || pathname.startsWith('/legal/')) return 'Legal';
+    if (pathname === '/gdpr' || pathname.startsWith('/gdpr/')) return 'GDPR';
+
+    // Auth
+    if (pathname === '/login' || pathname.startsWith('/login/')) return 'Login';
+
     return 'Unknown';
 }
 
@@ -32,7 +60,6 @@ export default function ClarityProvider() {
     const pathname = usePathname();
     const initialized = useRef(false);
 
-    // Initialize once on mount
     useEffect(() => {
         if (initialized.current) return;
         initialized.current = true;
@@ -41,7 +68,6 @@ export default function ClarityProvider() {
         if (anonId) identifyClarity(anonId);
     }, []);
 
-    // Track every page navigation
     useEffect(() => {
         if (!initialized.current) return;
         const pageName = resolvePageName(pathname);
