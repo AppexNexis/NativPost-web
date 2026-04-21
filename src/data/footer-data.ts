@@ -19,9 +19,9 @@ export const footerLinks: FooterData[] = [
     title: 'Company',
     links: [
       { label: 'About NativPost', href: '/about' },
-      { label: 'Our Team', href: '/team' },
+      // { label: 'Our Team', href: '/team' },
       { label: 'Blog', href: '/blog' },
-      { label: 'Case Studies', href: '/case-study' },
+      // { label: 'Case Studies', href: '/case-study' },
       { label: 'Contact Us', href: '/contact-us' },
     ],
   },

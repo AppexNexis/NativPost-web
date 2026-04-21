@@ -25,12 +25,12 @@ const companyLinks: CompanyLink[] = [
     href: '/about',
     icon: AboutIcon,
   },
-  {
-    title: 'Our Team',
-    description: 'Meet the people building NativPost',
-    href: '/team',
-    icon: ServiceIcon,
-  },
+  // {
+  //   title: 'Our Team',
+  //   description: 'Meet the people building NativPost',
+  //   href: '/team',
+  //   icon: ServiceIcon,
+  // },
   {
     title: 'Why Choose Us',
     description: 'How we compare to agencies and other tools',
