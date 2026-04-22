@@ -33,7 +33,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         badgeClass="!badge-yellow-v2"
         badgeText="Ready to transform your social media?"
         ctaHeading="Let NativPost handle your content creation"
-        description="Start your 7-day free trial. Studio-crafted content for your brand, published everywhere — no credit card required."
+        description="Start your 7-day free trial. Studio-crafted content for your brand, published everywhere — Credit card required."
         ctaBtnText="Start free trial"
       />
     </main>

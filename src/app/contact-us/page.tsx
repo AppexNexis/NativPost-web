@@ -26,7 +26,7 @@ const ContactUs = () => {
         badgeText="Ready to get started?"
         ctaBtnText="Start free trial"
         ctaHeading="See NativPost in action for your brand"
-        description="7-day free trial. No credit card required. Your first studio-crafted content batch in under 48 hours."
+        description="7-day free trial. Credit card required. Your first studio-crafted content batch in under 48 hours."
       />
     </main>
   );

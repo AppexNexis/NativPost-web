@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   ...defaultMetadata,
   title: 'Sign Up — NativPost | Start Your 7-Day Free Trial',
   description:
-    'Create your NativPost account. 7-day free trial, no credit card required. Studio-crafted social content for your brand in under 48 hours.',
+    'Create your NativPost account. 7-day free trial, Credit card required. Studio-crafted social content for your brand in under 48 hours.',
 };
 
 const page = () => {

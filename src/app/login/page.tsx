@@ -22,7 +22,7 @@ const page = () => {
         badgeClass="badge-yellow-v2"
         badgeText="New to NativPost?"
         ctaHeading="Start creating studio-crafted content for your brand"
-        description="Join thousands of businesses who trust NativPost to manage their social media. 7-day free trial, no credit card required."
+        description="Join thousands of businesses who trust NativPost to manage their social media. 7-day free trial, Credit card required."
         btnClass="hover:btn-secondary dark:hover:btn-accent"
         ctaBtnText="Start free trial"
       />

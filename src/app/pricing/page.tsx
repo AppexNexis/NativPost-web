@@ -29,7 +29,7 @@ const page = () => {
         badgeText="Get started"
         badgeClass="!badge-cyan"
         ctaHeading="Ready to stop struggling with social media?"
-        description="Start your 7-day free trial. No credit card required. Studio-crafted content for your brand, starting today."
+        description="Start your 7-day free trial. Credit card required. Studio-crafted content for your brand, starting today."
         ctaBtnText="Start free trial"
         btnClass="hover:btn-secondary dark:hover:btn-accent"
       />

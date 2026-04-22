@@ -69,7 +69,7 @@ const faqCategories = [
       },
       {
         q: 'Is there a free trial?',
-        a: 'Yes, we offer a 7-day free trial on the Growth plan so you can experience the full NativPost workflow. No credit card required to start.',
+        a: 'Yes, we offer a 7-day free trial on the Growth plan so you can experience the full NativPost workflow. Credit card required to start.',
       },
       {
         q: 'Why is there a setup fee?',
@@ -172,9 +172,8 @@ const page = () => {
                             </svg>
                           </button>
                           <div
-                            className={`overflow-hidden transition-all duration-300 ${
-                              isOpen ? 'max-h-[500px] pb-5' : 'max-h-0'
-                            }`}>
+                            className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[500px] pb-5' : 'max-h-0'
+                              }`}>
                             <p className="text-secondary/60 dark:text-accent/60 px-6">{faq.a}</p>
                           </div>
                         </div>

@@ -25,7 +25,7 @@ const page = () => {
         badgeClass="hidden"
         ctaHeading="Ready to see studio-crafted content for"
         spanText="your brand?"
-        description="Start your 7-day free trial. No credit card required. Your first content batch in under 48 hours."
+        description="Start your 7-day free trial. Credit card required. Your first content batch in under 48 hours."
         btnClass="hover:btn-secondary dark:hover:btn-accent"
         ctaBtnText="Start free trial"
       />

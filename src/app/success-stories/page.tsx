@@ -142,7 +142,7 @@ const page = () => {
         badgeText="Write your success story"
         badgeClass="!badge-green"
         ctaHeading="Join the brands growing with NativPost"
-        description="Start your 7-day free trial. No credit card required. Your first studio-crafted content in under 48 hours."
+        description="Start your 7-day free trial. Credit card required. Your first studio-crafted content in under 48 hours."
         ctaBtnText="Start free trial"
         btnClass="hover:btn-secondary dark:hover:btn-accent"
       />

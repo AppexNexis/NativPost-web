@@ -15,7 +15,7 @@ const SignupHero = () => {
                 <div className="mb-6">
                   <h2 className="text-heading-5 text-secondary dark:text-accent mb-2">Create your account</h2>
                   <p className="text-secondary/60 dark:text-accent/60">
-                    7-day free trial. No credit card required.
+                    7-day free trial. Credit card required.
                   </p>
                 </div>
                 <form>

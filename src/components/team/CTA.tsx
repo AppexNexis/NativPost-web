@@ -44,7 +44,7 @@ const CTA = () => {
                   <span className="bg-secondary dark:bg-accent flex size-[18px] items-center justify-center rounded-full">
                     <CheckIcon />
                   </span>
-                  <p className="text-tagline-2">No credit card required</p>
+                  <p className="text-tagline-2">Credit card required</p>
                 </li>
               </RevealAnimation>
               <RevealAnimation delay={0.3}>

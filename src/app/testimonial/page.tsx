@@ -77,7 +77,7 @@ const page = () => {
         badgeText="Join them"
         badgeClass="!badge-green"
         ctaHeading="Ready to become our next success story?"
-        description="Start your 7-day free trial. No credit card required. Studio-crafted content for your brand in under 48 hours."
+        description="Start your 7-day free trial. Credit card required. Studio-crafted content for your brand in under 48 hours."
         ctaBtnText="Start free trial"
         btnClass="hover:btn-secondary dark:hover:btn-accent"
       />
