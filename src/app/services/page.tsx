@@ -17,7 +17,7 @@ const page = () => {
       <Services />
       <Features />
       <Solutions />
-      <Pricing />
+      {/* <Pricing /> */}
       <CTA
         className="dark:bg-background-6 bg-white"
         badgeClass="hidden"

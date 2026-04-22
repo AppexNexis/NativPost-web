@@ -75,7 +75,7 @@ const CTA = ({
                 },
                 {
                   id: '2',
-                  text: '14-Day free trial',
+                  text: '7-Day free trial',
                 },
               ]}
               listTextClass={listTextClass}

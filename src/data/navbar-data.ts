@@ -23,7 +23,7 @@ export const mobileMenuData: MobileMenuGroup[] = [
     title: 'Company',
     submenu: [
       { id: 'about', label: 'About NativPost', href: './about' },
-      { id: 'team', label: 'Our Team', href: './team' },
+      // { id: 'team', label: 'Our Team', href: './team' },
       { id: 'why-choose-us', label: 'Why Choose Us', href: './why-choose-us' },
       { id: 'blog', label: 'Blog', href: './blog' },
       { id: 'contact-us', label: 'Contact Us', href: './contact-us' },
@@ -33,19 +33,19 @@ export const mobileMenuData: MobileMenuGroup[] = [
     id: 'resources',
     title: 'Resources',
     submenu: [
-      { id: 'case-studies', label: 'Case Studies', href: './case-study' },
-      { id: 'success-stories', label: 'Success Stories', href: './success-stories' },
-      { id: 'testimonials', label: 'Testimonials', href: './testimonial' },
+      // { id: 'case-studies', label: 'Case Studies', href: './case-study' },
+      // { id: 'success-stories', label: 'Success Stories', href: './success-stories' },
+      // { id: 'testimonials', label: 'Testimonials', href: './testimonial' },
       { id: 'faq', label: 'FAQ', href: './faq' },
-      { id: 'referral-program', label: 'Referral Program', href: './referral-program' },
+      // { id: 'referral-program', label: 'Referral Program', href: './referral-program' },
     ],
   },
   {
     id: 'account',
     title: 'Account',
     submenu: [
-      { id: 'login', label: 'Log In', href: './login' },
-      { id: 'signup', label: 'Start Free Trial', href: './signup' },
+      { id: 'login', label: 'Log In', href: 'https://app.nativpost.com/sign-in' },
+      { id: 'signup', label: 'Start Free Trial', href: 'https://app.nativpost.com/sign-up' },
     ],
   },
   {
@@ -75,7 +75,7 @@ export const footerData: FooterOneData[] = [
     title: 'Company',
     links: [
       { label: 'About NativPost', href: '/about' },
-      { label: 'Our Team', href: '/team' },
+      // { label: 'Our Team', href: '/team' },
       { label: 'Blog', href: '/blog' },
       { label: 'Contact Us', href: '/contact-us' },
       { label: 'Why Choose Us', href: '/why-choose-us' },
@@ -84,11 +84,11 @@ export const footerData: FooterOneData[] = [
   {
     title: 'Resources',
     links: [
-      { label: 'Case Studies', href: '/case-study' },
-      { label: 'Testimonials', href: '/testimonial' },
+      // { label: 'Case Studies', href: '/case-study' },
+      // { label: 'Testimonials', href: '/testimonial' },
       { label: 'FAQ', href: '/faq' },
-      { label: 'Referral Program', href: '/referral-program' },
-      { label: 'Success Stories', href: '/success-stories' },
+      // { label: 'Referral Program', href: '/referral-program' },
+      // { label: 'Success Stories', href: '/success-stories' },
     ],
   },
 ];

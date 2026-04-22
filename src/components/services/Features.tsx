@@ -1,30 +1,105 @@
-import { cn } from '@/utils/cn';
-import authorAvatarBg from '@public/images/ns-author-avatar-bg.png';
-import avatar1 from '@public/images/ns-avatar-1.png';
-import avatar2 from '@public/images/ns-avatar-2.png';
-import avatar3 from '@public/images/ns-avatar-3.png';
-import avatar7 from '@public/images/ns-avatar-7.png';
-import gradient7 from '@public/images/ns-img-499.png';
-import Image from 'next/image';
+
+
+'use client';
+
+import React from 'react';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
+// ═════════════════════════════════════════════════════════════════════════════
+// 2. FEATURES  (service-page feature highlight — left copy, right coded visual)
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Live content generation preview — shows a post being built step-by-step
+const ContentBuildVisual = () => {
+  const steps = [
+    { label: 'Brand profile loaded', done: true },
+    { label: 'Caption drafted', done: true },
+    { label: 'Anti-slop check passed', done: true },
+    { label: 'Visual generated', done: false, active: true },
+    { label: 'Scheduled for 9:00 AM', done: false },
+  ];
+
+  return (
+    <div className="w-full space-y-4 select-none">
+      {/* Post being built */}
+      <div className="border-stroke-1 dark:border-stroke-5 bg-background-1 dark:bg-background-9 overflow-hidden rounded-2xl border shadow-2">
+        {/* Platform tabs */}
+        <div className="border-stroke-4 dark:border-stroke-8 flex items-center gap-2 border-b px-4 py-3">
+          {['IG', 'LI', 'X', 'FB'].map((p, i) => (
+            <div key={p} className={`flex h-7 w-7 items-center justify-center rounded-lg text-[10px] font-semibold transition-colors ${i === 0 ? 'bg-secondary dark:bg-accent text-accent dark:text-secondary' : 'bg-background-3 dark:bg-background-8 text-secondary/50 dark:text-accent/50'}`}>
+              {p}
+            </div>
+          ))}
+          <div className="ml-auto flex items-center gap-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="bg-primary-500 absolute inline-flex h-full w-full animate-ping rounded-full opacity-60" />
+              <span className="bg-primary-500 relative inline-flex h-2 w-2 rounded-full" />
+            </span>
+            <span className="text-secondary/40 dark:text-accent/40 text-[10px]">Generating…</span>
+          </div>
+        </div>
+
+        {/* Simulated post body */}
+        <div className="p-4 space-y-3">
+          <div className="bg-background-3 dark:bg-background-8 h-24 w-full rounded-xl flex items-center justify-center">
+            <div className="space-y-1.5 w-3/4">
+              <div className="bg-background-1 dark:bg-background-9 h-2 rounded-full w-full" />
+              <div className="bg-background-1 dark:bg-background-9 h-2 rounded-full w-4/5" />
+              <div className="bg-primary-100 dark:bg-primary-900/30 h-2 rounded-full w-2/3 animate-pulse" />
+            </div>
+          </div>
+          <p className="text-secondary dark:text-accent text-[12px] leading-relaxed">
+            Behind every great product is a story worth telling. Here's ours — and why we built it for you.
+          </p>
+          <div className="flex flex-wrap gap-1">
+            {['#BrandStory', '#ContentMarketing', '#StartupLife'].map((tag) => (
+              <span key={tag} className="text-primary-500 text-[10px]">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Pipeline steps */}
+      <div className="border-stroke-1 dark:border-stroke-5 bg-background-1 dark:bg-background-9 overflow-hidden rounded-2xl border shadow-2 px-4 py-3 space-y-2">
+        <p className="text-secondary/40 dark:text-accent/40 text-[10px] font-medium uppercase tracking-wide mb-2">Content pipeline</p>
+        {steps.map((step) => (
+          <div key={step.label} className="flex items-center gap-2.5">
+            {step.done
+              ? <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0 text-ns-green"><circle cx="7" cy="7" r="7" fill="currentColor" fillOpacity="0.15" /><path d="M4.5 7l2 2 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              : step.active
+                ? <div className="shrink-0 h-3.5 w-3.5 rounded-full border-2 border-primary-500 border-t-transparent animate-spin" />
+                : <div className="shrink-0 h-3.5 w-3.5 rounded-full border border-stroke-3 dark:border-stroke-7" />
+            }
+            <span className={`text-[11px] ${step.done ? 'text-secondary dark:text-accent' : step.active ? 'text-primary-500 font-medium' : 'text-secondary/30 dark:text-accent/30'}`}>
+              {step.label}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Quality score chip */}
+      <div className="border-stroke-1 dark:border-stroke-5 bg-background-1 dark:bg-background-9 ml-4 inline-flex items-center gap-3 rounded-xl border px-4 py-2.5 shadow-2">
+        <div className="bg-ns-green-light dark:bg-ns-green/10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+        <div>
+          <p className="text-secondary dark:text-accent text-[11px] font-medium leading-tight">Quality score: 94 / 100</p>
+          <p className="text-secondary/40 dark:text-accent/40 text-[10px]">Ready to send for approval</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const featuresListData = [
-  {
-    id: 'feature-1',
-    text: 'Add a feature section about the product.',
-  },
-  {
-    id: 'feature-2',
-    text: 'Add a feature section about the product.',
-  },
-  {
-    id: 'feature-3',
-    text: 'Single upfront payment.',
-  },
+  { id: 'f1', text: 'Deep brand-voice matching on every single post' },
+  { id: 'f2', text: 'Anti-slop filter catches robotic patterns automatically' },
+  { id: 'f3', text: 'Human review layer before anything goes live' },
 ];
 
-const Features = ({
+export const Features = ({
   className,
   badgeClassName,
   btnClassName,
@@ -32,187 +107,57 @@ const Features = ({
   className?: string;
   badgeClassName?: string;
   btnClassName?: string;
-}) => {
-  return (
-    <section
-      className={cn(
-        'relative overflow-hidden pt-14 pb-24 md:pt-16 md:pb-36 lg:pt-[88px] lg:pb-40 xl:pt-[100px] xl:pb-[200px]',
-        className,
-      )}>
-      <div className="main-container">
-        <div className="flex flex-wrap items-center gap-y-8 lg:flex-nowrap lg:gap-4 xl:gap-8">
-          <div className="w-full lg:w-1/2">
-            <div className="text-center lg:text-left">
-              <RevealAnimation delay={0.1}>
-                <span className={cn('badge badge-yellow-v2 mb-5', badgeClassName)}>Feature</span>
-              </RevealAnimation>
-              <RevealAnimation delay={0.2}>
-                <h2 className="mx-auto mb-8 max-w-[520px] lg:mx-0">Streamline your business operations.</h2>
-              </RevealAnimation>
-              <ul className="mb-14 space-y-4">
-                {featuresListData.map((feature, index) => (
-                  <RevealAnimation key={feature.id} delay={0.3 + index * 0.1}>
-                    <li className="flex items-center justify-center gap-2 lg:justify-start">
-                      <svg
-                        width={18}
-                        height={18}
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        focusable="false"
-                        className="shrink-0">
-                        <rect width={18} height={18} rx={9} fill="" className="fill-secondary/10 dark:fill-accent/10" />
-                        <path
-                          d="M8.31661 12.7561L13.7491 7.42144C14.0836 7.0959 14.0836 6.5697 13.7491 6.24416C13.4145 5.91861 12.8736 5.91861 12.539 6.24416L7.7116 10.9901L5.46096 8.78807C5.12636 8.46253 4.58554 8.46253 4.25095 8.78807C3.91635 9.11362 3.91635 9.63982 4.25095 9.96536L7.1066 12.7561C7.27347 12.9184 7.49253 13 7.7116 13C7.93067 13 8.14974 12.9184 8.31661 12.7561Z"
-                          fill=""
-                          className="fill-secondary/80 dark:fill-accent/80"
-                        />
-                      </svg>
-                      <span className="text-secondary/40 dark:text-accent/60">{feature.text}</span>
-                    </li>
-                  </RevealAnimation>
-                ))}
-              </ul>
-              <RevealAnimation delay={0.6}>
-                <div>
-                  <LinkButton
-                    href="/features"
-                    className={cn('btn btn-xl dark:btn-transparent hover:btn-primary btn-secondary', btnClassName)}>
-                    Get started
-                  </LinkButton>
-                </div>
-              </RevealAnimation>
+}) => (
+  <section className={`relative overflow-hidden pt-14 pb-24 md:pt-16 md:pb-36 lg:pt-[88px] lg:pb-40 xl:pt-[100px] xl:pb-[200px] ${className ?? ''}`}>
+    <div className="main-container">
+      <div className="flex flex-wrap items-center gap-y-8 lg:flex-nowrap lg:gap-4 xl:gap-8">
+
+        {/* Left — copy */}
+        <div className="w-full lg:w-1/2">
+          <div className="text-center lg:text-left">
+            <RevealAnimation delay={0.1}>
+              <span className={`badge badge-yellow-v2 mb-5 ${badgeClassName ?? ''}`}>How it works</span>
+            </RevealAnimation>
+            <RevealAnimation delay={0.2}>
+              <h2 className="mx-auto mb-8 max-w-[520px] lg:mx-0">
+                Your brand's content, on autopilot — without sacrificing quality.
+              </h2>
+            </RevealAnimation>
+            <ul className="mb-14 space-y-4">
+              {featuresListData.map((feature, index) => (
+                <RevealAnimation key={feature.id} delay={0.3 + index * 0.1}>
+                  <li className="flex items-center justify-center gap-2 lg:justify-start">
+                    <svg width={18} height={18} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className="shrink-0">
+                      <rect width={18} height={18} rx={9} fill="" className="fill-secondary/10 dark:fill-accent/10" />
+                      <path d="M8.31661 12.7561L13.7491 7.42144C14.0836 7.0959 14.0836 6.5697 13.7491 6.24416C13.4145 5.91861 12.8736 5.91861 12.539 6.24416L7.7116 10.9901L5.46096 8.78807C5.12636 8.46253 4.58554 8.46253 4.25095 8.78807C3.91635 9.11362 3.91635 9.63982 4.25095 9.96536L7.1066 12.7561C7.27347 12.9184 7.49253 13 7.7116 13C7.93067 13 8.14974 12.9184 8.31661 12.7561Z" fill="" className="fill-secondary/80 dark:fill-accent/80" />
+                    </svg>
+                    <span className="text-secondary/60 dark:text-accent/60">{feature.text}</span>
+                  </li>
+                </RevealAnimation>
+              ))}
+            </ul>
+            <RevealAnimation delay={0.6}>
+              <div>
+                <LinkButton href="/features" className={`btn btn-xl dark:btn-transparent hover:btn-primary btn-secondary ${btnClassName ?? ''}`}>
+                  See all features
+                </LinkButton>
+              </div>
+            </RevealAnimation>
+          </div>
+        </div>
+
+        {/* Right — coded visual */}
+        <RevealAnimation delay={0.3}>
+          <div className="mx-auto w-full max-w-max lg:mx-0 lg:w-1/2">
+            <div className="bg-background-3 dark:bg-background-5 relative overflow-hidden rounded-[20px] p-5 lg:p-8">
+              <ContentBuildVisual />
             </div>
           </div>
-          <RevealAnimation delay={0.3}>
-            <div className="mx-auto w-full max-w-max lg:mx-0 lg:w-1/2">
-              <div className="bg-background-3 dark:bg-background-5 relative overflow-hidden rounded-[20px] p-5 lg:p-8">
-                <RevealAnimation delay={0.4} offset={100} direction="right">
-                  <figure className="pointer-events-none absolute right-[-271px] bottom-[-325px] z-0 h-full w-full -rotate-[77deg] select-none">
-                    <Image src={gradient7} alt="cta-bg" />
-                  </figure>
-                </RevealAnimation>
+        </RevealAnimation>
 
-                <div className="flex flex-wrap gap-4 sm:flex-nowrap sm:gap-2.5">
-                  <div className="dark:bg-background-8 w-full rounded-2xl bg-white p-6 sm:w-[55%]">
-                    <h5 className="mb-4">
-                      Task <br className="hidden lg:block" />
-                      management
-                    </h5>
-                    <div className="mb-7 flex items-center gap-4">
-                      <figure className="relative inline-block size-14 overflow-hidden rounded-full bg-linear-[135deg,#ffffff_0%,#a585ff_100%] ring-4 ring-white">
-                        <Image src={avatar7} alt="avatar" className="max-w-full" />
-                        <Image src={authorAvatarBg} alt="avatar" className="absolute top-0 left-0 -z-10" />
-                      </figure>
-                      <div>
-                        <h5 className="text-secondary dark:text-accent">Curious george</h5>
-                        <p className="text-secondary/60 dark:text-accent/60">UI UX designer</p>
-                      </div>
-                    </div>
-                    <div className="bg-secondary/10 dark:bg-accent/10 mb-7 h-[1px] w-full" />
-                    <div className="flex items-center justify-between">
-                      <p className="text-secondary/60 dark:text-accent/60 text-tagline-2 font-medium">1 days Ago</p>
-                      <svg width={18} height={16} viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.34462 13.401L13.2849 15.8974C13.7886 16.2165 14.4139 15.7419 14.2644 15.154L13.126 10.6756C13.0939 10.5509 13.0977 10.4197 13.137 10.297C13.1762 10.1743 13.2492 10.0652 13.3477 9.98222L16.8811 7.04132C17.3453 6.6549 17.1057 5.88439 16.5092 5.84567L11.8949 5.5462C11.7706 5.53732 11.6514 5.49332 11.5511 5.41931C11.4509 5.34531 11.3737 5.24435 11.3286 5.12819L9.60765 0.794357C9.56087 0.671064 9.47769 0.564919 9.36915 0.490017C9.26062 0.415115 9.13187 0.375 9 0.375C8.86813 0.375 8.73938 0.415115 8.63085 0.490017C8.52232 0.564919 8.43914 0.671064 8.39236 0.794357L6.6714 5.12819C6.6263 5.24435 6.54914 5.34531 6.4489 5.41931C6.34865 5.49332 6.22944 5.53732 6.10515 5.5462L1.49078 5.84567C0.894294 5.88439 0.654664 6.6549 1.11894 7.04132L4.65232 9.98222C4.75079 10.0652 4.82383 10.1743 4.86305 10.297C4.90226 10.4197 4.90606 10.5509 4.874 10.6756L3.81824 14.8288C3.63889 15.5343 4.38929 16.1038 4.99369 15.7209L8.65539 13.401C8.75837 13.3354 8.87792 13.3006 9 13.3006C9.12208 13.3006 9.24163 13.3354 9.34462 13.401Z"
-                          fill=""
-                          className="fill-secondary dark:fill-accent"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="dark:bg-background-8 w-full rounded-2xl bg-white p-6 sm:w-[45%]">
-                    <h5 className="mb-4">Progress Tracking</h5>
-                    <div className="relative flex w-fit items-center justify-center">
-                      <svg
-                        className="animate-pulse"
-                        width={176}
-                        height={176}
-                        viewBox="0 0 176 176"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M15.4106 38.2529C5.02285 53.4103 -0.359462 71.4393 0.0186306 89.8107C0.396723 108.182 6.51625 125.974 17.5188 140.692C28.5213 155.409 43.8549 166.313 61.3685 171.874C78.8822 177.434 97.6973 177.373 115.175 171.699C132.652 166.025 147.914 155.022 158.821 140.234C169.728 125.445 175.732 107.614 175.991 89.2404C176.25 70.8669 170.751 52.8732 160.265 37.7834C149.78 22.6937 134.833 11.2648 117.523 5.10011L116.189 8.84623C132.717 14.7324 146.988 25.6448 157 40.0526C167.012 54.4605 172.262 71.6411 172.015 89.1843C171.768 106.728 166.035 123.753 155.621 137.873C145.207 151.993 130.634 162.499 113.947 167.917C97.2591 173.335 79.2942 173.393 62.572 168.083C45.8497 162.774 31.2091 152.363 20.7037 138.31C10.1984 124.258 4.35538 107.27 3.99437 89.7289C3.63337 72.1876 8.77246 54.9734 18.6908 40.5009L15.4106 38.2529Z"
-                          fill="url(#paint0_linear_3092_23898)"
-                        />
-                        <path
-                          d="M20 88C20 102.069 24.3636 115.791 32.4893 127.275C40.615 138.76 52.1028 147.442 65.3695 152.124C78.6361 156.806 93.0283 157.258 106.563 153.417C120.097 149.577 132.107 141.633 140.937 130.681C149.767 119.729 154.983 106.307 155.866 92.2666C156.749 78.2257 153.255 64.2567 145.866 52.2849C138.476 40.313 127.556 30.9277 114.609 25.4225C101.663 19.9173 87.3271 18.5632 73.5785 21.5468L74.4337 25.4873C87.367 22.6805 100.852 23.9543 113.031 29.1331C125.21 34.3119 135.483 43.1407 142.434 54.4027C149.385 65.6646 152.672 78.8053 151.842 92.0136C151.011 105.222 146.105 117.847 137.798 128.15C129.491 138.453 118.194 145.926 105.462 149.538C92.7302 153.151 79.1913 152.726 66.7114 148.321C54.2314 143.917 43.4248 135.75 35.7809 124.947C28.137 114.143 24.0322 101.234 24.0322 88H20Z"
-                          fill="url(#paint1_linear_3092_23898)"
-                        />
-                        <path
-                          d="M115.552 48.6952C110.391 45.077 104.567 42.5109 98.4138 41.1433C92.2605 39.7757 85.8981 39.6335 79.6899 40.7248C73.4816 41.8161 67.5491 44.1196 62.231 47.5036C56.9129 50.8876 52.3135 55.286 48.6952 60.4476C45.077 65.6091 42.5109 71.4328 41.1433 77.5861C39.7757 83.7395 39.6335 90.1019 40.7248 96.3101C41.8161 102.518 44.1196 108.451 47.5036 113.769C50.8876 119.087 55.286 123.687 60.4476 127.305L62.756 124.012C58.0268 120.697 53.997 116.483 50.8965 111.61C47.7959 106.738 45.6855 101.302 44.6856 95.6139C43.6858 89.9258 43.816 84.0964 45.069 78.4586C46.322 72.8209 48.6732 67.4851 51.9883 62.756C55.3034 58.0268 59.5175 53.997 64.39 50.8965C69.2625 47.7959 74.698 45.6855 80.3861 44.6856C86.0742 43.6858 91.9036 43.816 97.5414 45.069C103.179 46.322 108.515 48.6732 113.244 51.9883L115.552 48.6952Z"
-                          fill="url(#paint2_linear_3092_23898)"
-                        />
-                        <defs>
-                          <linearGradient
-                            id="paint0_linear_3092_23898"
-                            x1="166.222"
-                            y1="87.9976"
-                            x2="2.31009e-06"
-                            y2="87.9976"
-                            gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#864FFE" />
-                            <stop offset={1} stopColor="#864FFE" stopOpacity="0.28" />
-                          </linearGradient>
-                          <linearGradient
-                            id="paint1_linear_3092_23898"
-                            x1="148.444"
-                            y1="87.9982"
-                            x2={20}
-                            y2="87.9982"
-                            gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#864FFE" />
-                            <stop offset={1} stopColor="#864FFE" stopOpacity="0.28" />
-                          </linearGradient>
-                          <linearGradient
-                            id="paint2_linear_3092_23898"
-                            x1="130.667"
-                            y1="87.9987"
-                            x2={40}
-                            y2="87.9987"
-                            gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#864FFE" />
-                            <stop offset={1} stopColor="#864FFE" stopOpacity="0.28" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <figure className="absolute top-1/2 left-1/2 inline-block size-14 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-linear-[135deg,#ffffff_0%,#a585ff_100%] ring-4 ring-white">
-                        <Image src={avatar2} alt="avatar" className="max-w-full" />
-                      </figure>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-secondary dark:bg-background-6 relative z-10 mt-2.5 flex max-w-[370px] flex-col justify-start gap-5 rounded-2xl p-6 sm:flex-row sm:items-center">
-                  <div className="flex cursor-pointer -space-x-3.5">
-                    <Image
-                      className="ring-ns-yellow inline-block size-14 rounded-full bg-linear-[156deg,_#FFF_32.92%,_#A585FF_91%] ring-4"
-                      src={avatar1}
-                      alt="Avatar 1"
-                    />
-                    <Image
-                      className="ring-ns-yellow inline-block size-14 rounded-full bg-linear-[156deg,_#FFF_32.92%,_#A585FF_91%] ring-4"
-                      src={avatar2}
-                      alt="Avatar 2"
-                    />
-                    <Image
-                      className="ring-ns-yellow inline-block size-14 rounded-full bg-linear-[156deg,_#FFF_32.92%,_#A585FF_91%] ring-4"
-                      src={avatar3}
-                      alt="Avatar 3"
-                    />
-                  </div>
-                  <div>
-                    <h5 className="text-accent mb-1">Mischievous</h5>
-                    <p className="text-accent/60">UI UX designer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </RevealAnimation>
-        </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Features;
