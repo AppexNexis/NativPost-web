@@ -12,6 +12,7 @@ import {
   SignUpIcon,
   DownloadIcon,
   AffiliateIcon,
+  ServiceIcon
 } from '@/icons/menu-icon';
 import { cn } from '@/utils/cn';
 import type { ComponentType } from 'react';
@@ -42,6 +43,12 @@ const platformLinks: PlatformLink[] = [
     description: 'Connected platforms',
     href: '/integration',
     icon: IntegrationIcon,
+  },
+  {
+    title: 'Services',
+    description: 'Solutions by industry',
+    href: '/services',
+    icon: ServiceIcon
   },
   {
     title: 'Use Cases',

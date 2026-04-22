@@ -23,6 +23,7 @@ export const mobileMenuData: MobileMenuGroup[] = [
     title: 'Company',
     submenu: [
       { id: 'about', label: 'About NativPost', href: './about' },
+      { id: "services", label: 'Services', href: './services' },
       // { id: 'team', label: 'Our Team', href: './team' },
       { id: 'why-choose-us', label: 'Why Choose Us', href: './why-choose-us' },
       { id: 'blog', label: 'Blog', href: './blog' },

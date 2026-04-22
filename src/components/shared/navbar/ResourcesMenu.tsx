@@ -70,12 +70,12 @@ const resourceSections: ResourceSection[] = [
       //   href: '/whitepaper',
       //   icon: WhitePaperIcon,
       // },
-      {
-        title: 'Support',
-        description: 'Get help and support from our team.',
-        href: '/support',
-        icon: SupportIcon,
-      },
+      // {
+      //   title: 'Support',
+      //   description: 'Get help and support from our team.',
+      //   href: '/support',
+      //   icon: SupportIcon,
+      // },
     ],
   },
   {
