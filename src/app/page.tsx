@@ -1,4 +1,5 @@
 import Blog from '@/components/home/Blog';
+import BlogPreviewSection from '@/components/home/BlogPreviewSection';
 import CTA from '@/components/home/CTA';
 import Features from '@/components/home/Features';
 import FeaturesV2 from '@/components/home/FeaturesV2';
@@ -52,6 +53,7 @@ const page = () => {
       <SocialActivity />
       {/* <Testimonial /> */}
       {/* <Blog /> */}
+      <BlogPreviewSection />
       <CTA />
     </main>
   );

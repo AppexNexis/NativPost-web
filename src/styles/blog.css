@@ -1,0 +1,349 @@
+/* ==========================================================
+   BLOG ARTICLE STYLES — src/styles/blog.css
+   
+   Styles for the blog detail page body content.
+   Uses NativPost design tokens from variables.css.
+   ========================================================== */
+
+/* ── Article body wrapper ─────────────────────────────────── */
+.blog-article-body {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgb(26 26 28 / 0.72);
+}
+
+.dark .blog-article-body {
+  color: rgb(252 252 252 / 0.70);
+}
+
+/* ── Headings inside article ──────────────────────────────── */
+.blog-article-body h1,
+.blog-article-body h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-secondary);
+  margin-top: 2.75rem;
+  margin-bottom: 0.85rem;
+  scroll-margin-top: 96px;
+}
+
+.dark .blog-article-body h1,
+.dark .blog-article-body h2 {
+  color: var(--color-accent);
+}
+
+.blog-article-body h3 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-secondary);
+  margin-top: 2rem;
+  margin-bottom: 0.65rem;
+  scroll-margin-top: 96px;
+}
+
+.dark .blog-article-body h3 {
+  color: var(--color-accent);
+}
+
+.blog-article-body h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  scroll-margin-top: 96px;
+}
+
+.dark .blog-article-body h4 {
+  color: var(--color-accent);
+}
+
+/* ── Paragraphs ───────────────────────────────────────────── */
+.blog-article-body p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgb(26 26 28 / 0.72);
+  margin-bottom: 1.35rem;
+}
+
+.dark .blog-article-body p {
+  color: rgb(252 252 252 / 0.70);
+}
+
+/* ── Unordered lists ──────────────────────────────────────── */
+/* 
+  Tailwind's preflight resets list-style-type, so we set it explicitly
+  and use padding-left to create space for the custom bullet.
+*/
+.blog-article-body .blog-ul,
+.blog-markdown-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-article-body .blog-ul .blog-li,
+.blog-markdown-body ul li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgb(26 26 28 / 0.72);
+}
+
+.dark .blog-article-body .blog-ul .blog-li,
+.dark .blog-markdown-body ul li {
+  color: rgb(252 252 252 / 0.70);
+}
+
+/* Bullet dot */
+.blog-article-body .blog-ul .blog-li::before,
+.blog-markdown-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0.35rem;
+  top: 0.65em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-500);
+  flex-shrink: 0;
+}
+
+/* Nested ul */
+.blog-article-body .blog-ul .blog-ul,
+.blog-markdown-body ul ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-article-body .blog-ul .blog-ul .blog-li::before,
+.blog-markdown-body ul ul li::before {
+  background-color: transparent;
+  border: 1.5px solid var(--color-primary-500);
+}
+
+/* ── Ordered lists ────────────────────────────────────────── */
+.blog-article-body .blog-ol,
+.blog-markdown-body ol {
+  padding-left: 1.6rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  list-style: decimal;
+}
+
+.blog-article-body .blog-ol .blog-li,
+.blog-markdown-body ol li {
+  display: list-item;
+  padding-left: 0.35rem;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgb(26 26 28 / 0.72);
+}
+
+.dark .blog-article-body .blog-ol .blog-li,
+.dark .blog-markdown-body ol li {
+  color: rgb(252 252 252 / 0.70);
+}
+
+/* Ordered list marker color */
+.blog-article-body .blog-ol,
+.blog-markdown-body ol {
+  counter-reset: list-counter;
+}
+
+.blog-article-body .blog-ol .blog-li::marker,
+.blog-markdown-body ol li::marker {
+  color: var(--color-primary-500);
+  font-weight: 600;
+}
+
+/* ── Bold & italic inside lists ───────────────────────────── */
+.blog-article-body .blog-li strong,
+.blog-markdown-body li strong {
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.dark .blog-article-body .blog-li strong,
+.dark .blog-markdown-body li strong {
+  color: var(--color-accent);
+}
+
+/* ── Links ────────────────────────────────────────────────── */
+.blog-article-body a,
+.blog-markdown-body a {
+  color: var(--color-primary-500);
+  text-decoration: underline;
+  text-decoration-color: rgb(134 79 254 / 0.3);
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.blog-article-body a:hover,
+.blog-markdown-body a:hover {
+  color: var(--color-primary-600);
+  text-decoration-color: var(--color-primary-500);
+}
+
+/* ── Inline code ──────────────────────────────────────────── */
+.blog-article-body code:not(pre code),
+.blog-markdown-body code:not(pre code) {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.875em;
+  background: var(--color-background-3);
+  border: 1px solid var(--color-stroke-2);
+  color: var(--color-primary-600);
+  border-radius: 6px;
+  padding: 0.1em 0.45em;
+}
+
+.dark .blog-article-body code:not(pre code),
+.dark .blog-markdown-body code:not(pre code) {
+  background: var(--color-background-9);
+  border-color: var(--color-stroke-7);
+  color: var(--color-primary-300);
+}
+
+/* ── Code blocks (markdown) ───────────────────────────────── */
+.blog-markdown-body pre {
+  background: var(--color-background-8);
+  border: 1px solid var(--color-stroke-5);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.blog-markdown-body pre code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-ns-green-light);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* ── Blockquote (markdown) ────────────────────────────────── */
+.blog-markdown-body blockquote {
+  border-left: 4px solid var(--color-primary-500);
+  background: var(--color-primary-50);
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: rgb(26 26 28 / 0.70);
+}
+
+.dark .blog-markdown-body blockquote {
+  background: rgb(134 79 254 / 0.08);
+  color: rgb(252 252 252 / 0.65);
+}
+
+/* ── Images (markdown) ────────────────────────────────────── */
+.blog-markdown-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--color-stroke-2);
+  margin: 2rem 0;
+}
+
+.dark .blog-markdown-body img {
+  border-color: var(--color-stroke-7);
+}
+
+/* ── HR (markdown) ────────────────────────────────────────── */
+.blog-markdown-body hr {
+  border: none;
+  height: 1px;
+  background: var(--color-stroke-2);
+  margin: 2.5rem 0;
+}
+
+.dark .blog-markdown-body hr {
+  background: var(--color-stroke-7);
+}
+
+/* ── Headings (markdown body) ─────────────────────────────── */
+.blog-markdown-body h1,
+.blog-markdown-body h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-secondary);
+  margin-top: 2.75rem;
+  margin-bottom: 0.85rem;
+  scroll-margin-top: 96px;
+}
+
+.dark .blog-markdown-body h1,
+.dark .blog-markdown-body h2 {
+  color: var(--color-accent);
+}
+
+.blog-markdown-body h3 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-secondary);
+  margin-top: 2rem;
+  margin-bottom: 0.65rem;
+  scroll-margin-top: 96px;
+}
+
+.dark .blog-markdown-body h3 {
+  color: var(--color-accent);
+}
+
+.blog-markdown-body p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgb(26 26 28 / 0.72);
+  margin-bottom: 1.35rem;
+}
+
+.dark .blog-markdown-body p {
+  color: rgb(252 252 252 / 0.70);
+}
+
+/* ── Tables (markdown) ────────────────────────────────────── */
+.blog-markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-stroke-2);
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+.blog-markdown-body th {
+  background: var(--color-background-4);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-stroke-2);
+}
+
+.blog-markdown-body td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-stroke-2);
+  color: rgb(26 26 28 / 0.70);
+}
+
+.blog-markdown-body tr:last-child td {
+  border-bottom: none;
+}

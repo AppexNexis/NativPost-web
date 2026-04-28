@@ -178,3 +178,55 @@ export interface IWhitePaper {
   slug: string;
   content: string;
 }
+
+// ── Extended blog interface for Contentful fields ─────────────────────────────
+
+/**
+ * Augmented IBlogPost with additional Contentful-aligned fields.
+ * The base IBlogPost (from markdown) remains unchanged.
+ * These fields are used when the Contentful CMS is connected.
+ */
+export interface IBlogPostExtended extends IBlogPost {
+  /** Short description shown in cards and meta */
+  shortDescription?: string;
+  /** Contentful Rich Text document (replaces markdown `content`) */
+  richContent?: unknown;
+  /** Related post slugs for cross-linking */
+  relatedPostSlugs?: string[];
+  /** SEO: page title override */
+  seoTitle?: string;
+  /** SEO: meta description override */
+  seoDescription?: string;
+  /** SEO: canonical URL */
+  canonicalUrl?: string;
+  /** Author Contentful entry reference */
+  authorRef?: {
+    name: string;
+    bio?: string;
+    avatarUrl?: string;
+  };
+}
+
+/**
+ * Content model IDs for Contentful.
+ * Reference these when creating entries in Contentful.
+ *
+ * EXISTING (from IGH reference config):
+ *   - pageBlogPost    → main blog post type (10 fields)
+ *   - componentAuthor → author component (3 fields: name, avatar, bio)
+ *   - componentSeo    → SEO fields (7 fields)
+ *   - componentRichImage → image with caption (4 fields)
+ *
+ * NEW (recommended additions for NativPost):
+ *   - componentVideoEmbed → videoUrl (Short text), title, autoplay, muted
+ *   - componentCtaBlock   → heading, body, buttonText, buttonUrl
+ *   - componentRelatedPost → reference link between posts
+ */
+export const CONTENTFUL_CONTENT_TYPES = {
+  BLOG_POST: 'pageBlogPost',
+  AUTHOR: 'componentAuthor',
+  SEO: 'componentSeo',
+  RICH_IMAGE: 'componentRichImage',
+  VIDEO_EMBED: 'componentVideoEmbed',
+  CTA_BLOCK: 'componentCtaBlock',
+} as const;

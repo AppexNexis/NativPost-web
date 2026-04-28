@@ -19,8 +19,7 @@ import {
 import type { ContentfulBlogPost } from '@/services/contentful';
 import ContentfulRichText from '@/components/blog/ContentfulRichText';
 import { extractHeadings } from '@/utils/richTextUtils';
-import TableOfContents from '@/components/blog/TableOfContents';
-import LenisStop from '@/components/blog/LenisStop';
+import StickyTableOfContents from '@/components/blog/StickyTableOfContents';
 import getMarkDownContent from '@/utils/getMarkDownContent';
 import getMarkDownData from '@/utils/getMarkDownData';
 import type { IBlogPost } from '@/interface';
@@ -198,8 +197,7 @@ export default async function BlogDetailPage({
   };
 
   return (
-    <main data-lenis-prevent="true" className="bg-background-1 dark:bg-background-7 min-h-screen">
-      <LenisStop />
+    <main className="bg-background-1 dark:bg-background-7 min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ── HERO IMAGE (full width, behind navbar) ── */}
@@ -354,9 +352,9 @@ export default async function BlogDetailPage({
           <aside className="hidden lg:block self-start">
             <div className="sticky top-[104px] flex flex-col gap-4">
 
-              {/* Table of Contents */}
+              {/* Table of Contents — fixed panel, Lenis-proof */}
               {headings.length > 0 && (
-                <TableOfContents headings={headings} title={title} />
+                <StickyTableOfContents headings={headings} title={title} />
               )}
 
               {/* Written by card */}
