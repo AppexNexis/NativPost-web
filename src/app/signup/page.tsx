@@ -8,6 +8,7 @@ import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   ...defaultMetadata,
   title: 'Sign Up — NativPost | Start Your 7-Day Free Trial',
   description:

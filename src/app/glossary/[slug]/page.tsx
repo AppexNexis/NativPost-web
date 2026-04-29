@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Glossary Details - Social Media Marketing || NextSaaS',
+  title: 'Glossary — NativPost | Social Media Marketing Terms',
 };
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -28,3 +28,11 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 };
 
 export default page;
+
+export async function generateStaticParams() {
+  const { default: glossaryData } = await import('@/data/json/glossary/glossary.json');
+  return (glossaryData as { letter: string; items: { slug: string }[] }[])
+    .flatMap((section) => section.items)
+    .filter((item) => item.slug)
+    .map((item) => ({ slug: item.slug }));
+}

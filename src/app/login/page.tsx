@@ -8,6 +8,7 @@ import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   ...defaultMetadata,
   title: 'Log In — NativPost',
   description: 'Log in to your NativPost dashboard. Manage your brand content, review posts, and track performance.',

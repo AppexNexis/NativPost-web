@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Team Details - Social Media Marketing || NextSaaS',
+  title: 'Team Details - Social Media Marketing || NativPost',
 };
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -33,3 +33,9 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 };
 
 export default page;
+
+export async function generateStaticParams() {
+  const getMarkDownData = (await import('@/utils/getMarkDownData')).default;
+  const teamMembers = getMarkDownData('src/data/team');
+  return teamMembers.map((m) => ({ slug: m.slug }));
+}
