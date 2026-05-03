@@ -18,6 +18,7 @@ import { useState } from 'react';
 import MobileMenu from '../mobile-menu/MobileMenu';
 import MobileMenuButton from '../mobile-menu/MobileMenuButton';
 import CompanyMenu from './CompanyMenu';
+import type { LatestNavPost } from './NavbarServer';
 import PlatformMenu from './PlatformMenu';
 import ResourcesMenu from './ResourcesMenu';
 
@@ -27,7 +28,7 @@ const dropdownNavItems = [
   { label: 'Resources', dataMenu: 'resources-mega-menu', MenuComponent: ResourcesMenu },
 ];
 
-const Navbar = () => {
+const Navbar = ({ latestPost = null }: { latestPost?: LatestNavPost | null }) => {
   const [menuDropdownId, setMenuDropdownId] = useState<string | null>(null);
 
   const { isScrolled } = useNavbarScroll(150);
@@ -88,7 +89,7 @@ const Navbar = () => {
                         </svg>
                       </span>
                     </button>
-                    <MenuComponent menuDropdownId={menuDropdownId} setMenuDropdownId={setMenuDropdownId} />
+                    <MenuComponent menuDropdownId={menuDropdownId} setMenuDropdownId={setMenuDropdownId} {...(dataMenu === 'company-mega-menu' ? { latestPost } : {})} />
                   </li>
                 ))}
                 {/* Direct links (no dropdown) */}

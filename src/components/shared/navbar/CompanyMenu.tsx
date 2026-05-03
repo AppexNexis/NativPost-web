@@ -3,12 +3,12 @@
 // ============================================================
 
 'use client';
-import { AboutIcon, BlogIcon, FeatureIcon, ServiceIcon } from '@/icons/menu-icon';
+import { AboutIcon, BlogIcon, FeatureIcon } from '@/icons/menu-icon';
 import { cn } from '@/utils/cn';
-import nsImg419 from '@public/images/ns-img-419.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ComponentType } from 'react';
+import type { LatestNavPost } from './NavbarServer';
 import CompanyMenuLink from './CompanyMenuLink';
 
 type CompanyLink = {
@@ -25,12 +25,6 @@ const companyLinks: CompanyLink[] = [
     href: '/about',
     icon: AboutIcon,
   },
-  // {
-  //   title: 'Our Team',
-  //   description: 'Meet the people building NativPost',
-  //   href: '/team',
-  //   icon: ServiceIcon,
-  // },
   {
     title: 'Why Choose Us',
     description: 'How we compare to agencies and other tools',
@@ -45,14 +39,26 @@ const companyLinks: CompanyLink[] = [
   },
 ];
 
+// Static fallback shown when no Contentful post is available
+const FALLBACK = {
+  title: 'The Anti-Slop Manifesto',
+  slug: 'blog',
+  shortDescription: 'Why 2026 is the year of human-quality content — and how NativPost leads the way.',
+  imageUrl: '',
+};
+
 const CompanyMenu = ({
   menuDropdownId,
   setMenuDropdownId,
+  latestPost = null,
 }: {
   menuDropdownId: string | null;
   setMenuDropdownId: (id: string | null) => void;
+  latestPost?: LatestNavPost | null;
 }) => {
   const handleClose = () => setMenuDropdownId(null);
+  const post = latestPost || FALLBACK;
+  const postHref = post.slug.startsWith('/') ? post.slug : `/blog/${post.slug}`;
 
   return (
     <div>
@@ -75,19 +81,36 @@ const CompanyMenu = ({
             <CompanyMenuLink key={link.title} {...link} onClose={handleClose} />
           ))}
         </ul>
+
+        {/* ── Latest blog post card ── */}
         <figure className="flex-1 space-y-3">
-          <p className="text-tagline-2 text-secondary/60 dark:text-accent/60 font-medium">Latest from the blog</p>
-          <Link href="/blog" className="block">
-            <figure className="group relative min-h-[272px] w-full max-w-full overflow-hidden rounded-[14px]">
-              <Image
-                src={nsImg419}
-                alt="NativPost Blog"
-                className="h-full w-full rounded-[14px] object-cover transition-all duration-500 ease-in-out group-hover:scale-105"
-              />
-              <div className="absolute top-4 left-4 size-full space-y-1 transition-all duration-500 ease-in-out group-hover:top-5 group-hover:left-5">
-                <p className="text-tagline-1 font-medium text-white">The Anti-Slop Manifesto</p>
-                <p className="text-tagline-3 w-full max-w-[212px] font-normal text-white/60">
-                  Why 2026 is the year of human-quality content — and how NativPost leads the way.
+          <p className="text-tagline-2 text-secondary/60 dark:text-accent/60 font-medium">
+            Latest from the blog
+          </p>
+          <Link href={postHref} onClick={handleClose} className="block">
+            <figure className="group relative min-h-[272px] w-full max-w-full overflow-hidden rounded-[14px] bg-background-4 dark:bg-background-9">
+              {post.imageUrl ? (
+                <Image
+                  src={post.imageUrl}
+                  alt={post.title}
+                  fill
+                  className="object-cover rounded-[14px] transition-all duration-500 ease-in-out group-hover:scale-105"
+                  sizes="320px"
+                  unoptimized={post.imageUrl.includes('ctfassets.net')}
+                />
+              ) : (
+                // Gradient placeholder when no image is available
+                <div className="absolute inset-0 rounded-[14px] bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400 transition-all duration-500 group-hover:scale-105" />
+              )}
+              {/* Dark overlay for text legibility */}
+              <div className="absolute inset-0 rounded-[14px] bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              {/* Text overlay */}
+              <div className="absolute bottom-4 left-4 right-4 space-y-1 transition-all duration-500 ease-in-out group-hover:bottom-5">
+                <p className="text-tagline-1 font-medium text-white line-clamp-2 leading-snug">
+                  {post.title}
+                </p>
+                <p className="text-tagline-3 font-normal text-white/70 line-clamp-2">
+                  {post.shortDescription}
                 </p>
               </div>
             </figure>
