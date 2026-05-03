@@ -173,7 +173,7 @@ export const isVimeoUrl = (url: string): boolean =>
 /** Convert a YouTube watch / short URL to an embed URL */
 export const youTubeEmbedUrl = (url: string): string => {
   const match =
-    url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/);
+    url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/) ;
   if (!match) return url;
   const params = new URL(url.startsWith('http') ? url : `https:${url}`);
   const start = params.searchParams.get('t') || params.searchParams.get('start');
@@ -197,61 +197,11 @@ const getEnv = () => ({
   preview: process.env.NEXT_PUBLIC_CONTENTFUL_PREVIEW === 'true',
 });
 
-// ── Link Resolver ────────────────────────────────────────────────────────────
-// The raw Contentful REST API returns linked assets/entries as Link stubs:
-//   { sys: { type: 'Link', linkType: 'Asset', id: '...' } }
-// The actual asset data lives in response.includes.Asset[].
-// This resolver walks every entry field and replaces Link stubs with the
-// full asset/entry object so that fields like featuredImage.fields.file.url work.
-
-type RawContentfulResponse = {
-  items: unknown[];
-  includes?: {
-    Asset?: Array<{ sys: { id: string }; fields: unknown }>;
-    Entry?: Array<{ sys: { id: string }; fields: unknown }>;
-  };
+const buildUrl = (spaceId: string, path: string, params: Record<string, string> = {}) => {
+  const base = `https://cdn.contentful.com/spaces/${spaceId}/environments/master${path}`;
+  const query = new URLSearchParams(params).toString();
+  return query ? `${base}?${query}` : base;
 };
-
-function resolveLinks(data: RawContentfulResponse): RawContentfulResponse {
-  const assetMap = new Map<string, unknown>();
-  const entryMap = new Map<string, unknown>();
-
-  for (const asset of data.includes?.Asset || []) {
-    assetMap.set(asset.sys.id, asset);
-  }
-  for (const entry of data.includes?.Entry || []) {
-    entryMap.set(entry.sys.id, entry);
-  }
-
-  function resolve(value: unknown, depth = 0): unknown {
-    if (depth > 6 || value === null || typeof value !== 'object') return value;
-    const v = value as Record<string, unknown>;
-
-    // It's a Link stub — swap it with the real object
-    if (v.sys && (v.sys as Record<string, unknown>).type === 'Link') {
-      const sys = v.sys as Record<string, unknown>;
-      const id = sys.id as string;
-      if (sys.linkType === 'Asset' && assetMap.has(id)) return resolve(assetMap.get(id), depth + 1);
-      if (sys.linkType === 'Entry' && entryMap.has(id)) return resolve(entryMap.get(id), depth + 1);
-      return value; // linked object not included — leave as-is
-    }
-
-    // Recurse into arrays
-    if (Array.isArray(v)) return (v as unknown[]).map((item) => resolve(item, depth + 1));
-
-    // Recurse into plain objects
-    const resolved: Record<string, unknown> = {};
-    for (const [key, val] of Object.entries(v)) {
-      resolved[key] = resolve(val, depth + 1);
-    }
-    return resolved;
-  }
-
-  return {
-    ...data,
-    items: (data.items as unknown[]).map((item) => resolve(item)) as unknown[],
-  };
-}
 
 async function contentfulFetch<T>(path: string, params: Record<string, string> = {}): Promise<T | null> {
   const { spaceId, accessToken, preview } = getEnv();
@@ -267,9 +217,7 @@ async function contentfulFetch<T>(path: string, params: Record<string, string> =
   try {
     const res = await fetch(`${base}?${query}`, { next: { revalidate: 300 } }); // 5-min cache
     if (!res.ok) throw new Error(`Contentful fetch error: ${res.status}`);
-    const raw = await res.json() as RawContentfulResponse;
-    // Resolve linked assets/entries so fields like featuredImage.fields.file.url are populated
-    return resolveLinks(raw) as T;
+    return res.json() as Promise<T>;
   } catch (err) {
     console.error('[Contentful]', err);
     return null;
