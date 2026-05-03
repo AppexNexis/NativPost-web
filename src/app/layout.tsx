@@ -1,7 +1,7 @@
 import SmoothScrollProvider from '@/components/shared/SmoothScroll';
 import { ThemeProvider } from '@/components/shared/ThemeProvider';
 import Footer from '@/components/shared/footer/Footer';
-import Navbar from '@/components/shared/navbar/Navbar';
+import NavbarServer from '@/components/shared/navbar/NavbarServer';
 import { interTight } from '@/utils/font';
 import { generateMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
@@ -29,7 +29,7 @@ export default function RootLayout({
             <ScrollToTop />
             <Suspense>
               <SmoothScrollProvider>
-                <Navbar />
+                <NavbarServer />
                 {children}
                 <Footer />
               </SmoothScrollProvider>
