@@ -1,4 +1,3 @@
-//   Affiliate Process section
 import RevealAnimation from '../animation/RevealAnimation';
 import AffiliatesList from './AffiliatesList';
 import AffiliatesStep from './AffiliatesStep';
@@ -10,13 +9,13 @@ const AffiliateProcess = () => {
         <div className="space-y-10 md:space-y-[70px]">
           <div className="text-center max-w-[602px] space-y-3 mx-auto">
             <RevealAnimation delay={0.1}>
-              <span className="badge badge-green mb-5">process</span>
+              <span className="badge badge-green mb-5">How it works</span>
             </RevealAnimation>
             <RevealAnimation delay={0.2}>
-              <h2>How it works</h2>
+              <h2>Start earning in three steps</h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
-              <p>Becoming a NextSaaS affiliate and earning money is simple</p>
+              <p>No approval queue. No complicated setup. Sign up, share your link, and earn.</p>
             </RevealAnimation>
           </div>
           <AffiliatesStep />

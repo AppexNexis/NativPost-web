@@ -6,7 +6,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Affiliates - Social Media Marketing || NextSaaS',
+  title: 'Affiliate Program — NativPost | Earn 30% Recurring Commission',
+  description:
+    'Join the NativPost affiliate program and earn 30% recurring commission on every referral. No cap, 90-day cookie, real-time tracking.',
 };
 
 const page = () => {
@@ -16,12 +18,12 @@ const page = () => {
       <AffiliateProcess />
       <CTA
         className="dark:bg-background-5 bg-white"
-        badgeClass="!badge-yellow-v2"
-        badgeText="Get Started"
-        ctaHeading="Ready to start earning with NextSaaS?"
-        description="If you have any questions, feel free to reach out to our team."
+        badgeClass="!badge-primary"
+        badgeText="Join now"
+        ctaHeading="Ready to start earning with NativPost?"
+        description="Sign up at nativpost.affonso.io, grab your link, and start sharing. Your first commission could come from the very next person you tell about NativPost."
         btnClass="hover:btn-secondary dark:hover:btn-accent"
-        ctaBtnText="Get started"
+        ctaBtnText="Join the affiliate program"
       />
     </main>
   );

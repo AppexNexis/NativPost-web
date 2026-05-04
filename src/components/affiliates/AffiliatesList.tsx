@@ -12,40 +12,41 @@ const affiliateSectionsData: AffiliateSection[] = [
     id: '1',
     title: 'Affiliate benefits',
     description:
-      "Joining our affiliate program comes with a host of valuable perks designed to reward your efforts and grow with your success. As an affiliate, you'll earn competitive commissions for every sale you refer, with no caps on your potential earnings.",
+      'The NativPost affiliate program is built to reward consistent promotion with compounding income. Because commissions are recurring, a single converted referral continues paying you for as long as that customer stays subscribed.',
     items: [
-      'Earn up to $200 from a single sale',
-      'Ready-to-use creatives (banners, social media kits, templates)',
-      'Mentorship from affiliate marketing experts',
-      'Weekly tips and updates via email',
-      'Exclusive offers and promotional campaigns',
-      'Real-time sales tracking dashboard',
-      'Dedicated support for affiliates',
+      '30% recurring commission on every payment, not just the first',
+      'Creatives library with banners, copy templates, and social media assets',
+      '90-day attribution window so long-consideration leads still count',
+      'Real-time dashboard showing clicks, conversions, and earnings',
+      'No minimum referral count before your commissions start',
+      'Dedicated affiliate support for questions on payouts or strategy',
+      'Access to NativPost product updates to keep your content current',
     ],
   },
   {
     id: '2',
-    title: 'What you can do',
+    title: 'How to promote NativPost effectively',
     description:
-      'No matter where you are or what your background is, there are meaningful ways to make a difference. Start by educating yourself on the issues that matter to you. Stay informed, and speak up, and make others aware.',
+      'NativPost resonates most with business owners, marketing agencies, content creators, and social media managers who are tired of AI tools that produce generic, interchangeable content. Lead with the anti-slop angle.',
     items: [
-      'Engage with business and tech communities and recommend valuable solutions',
-      'Share blogs, tutorials, or product reviews (social/podcast)',
-      'Share product comparisons, demos, and videos',
-      'Your guide to community and use cases on your channels',
+      'Write honest comparisons against tools like Buffer, Ocoya, Later, and Hootsuite',
+      'Create tutorials showing how NativPost builds brand voice from scratch',
+      'Share the anti-slop filter in action — it is a genuinely unique feature',
+      'Recommend NativPost in relevant communities and forums where the audience manages social content for clients',
+      'Include your link in newsletters, resource lists, and tool roundups',
     ],
   },
   {
     id: '3',
-    title: 'What you cannot do',
+    title: 'Program rules',
     description:
-      "While we offer flexibility in how we can be promoted, it's just as important to recognize our limitations. Understanding what you can't do isn't a sign of weakness—it's a step toward growth, responsibility and clarity.",
+      'We ask all affiliates to promote NativPost honestly and in relevant contexts. Violations may result in commission reversal or removal from the program.',
     items: [
-      'Spam links in irrelevant discussions',
-      'Use incorrect URLs or expired promotional methods',
-      'Spread false or exaggerated information about NextSaaS',
-      'Promote NextSaaS alongside direct competitors',
-      'List our deals on coupon/discount-only websites',
+      'Do not use paid ads that bid on NativPost branded keywords',
+      'Do not post affiliate links in irrelevant or off-topic discussions',
+      'Do not make false claims about pricing, features, or guarantees',
+      'Do not list NativPost deals on coupon-only or cashback websites',
+      'Do not promote NativPost alongside direct competitors in the same piece of content',
     ],
   },
 ];
@@ -62,9 +63,8 @@ const AffiliatesList = () => {
               {section.items.map((item, itemIndex) => (
                 <li
                   key={itemIndex}
-                  className={`text-tagline-1 text-secondary/60 dark:text-accent/60 before:relative before:left-0 before:mr-3 before:h-5 before:w-5 before:content-[url('/images/icons/checkmark-white.svg')] before:max-md:top-0 dark:before:content-[url('/images/icons/checkmark-white.svg')] before:md:top-1${
-                    itemIndex === 0 ? 'before:inline-block' : ''
-                  }`}>
+                  className="text-tagline-1 text-secondary/60 dark:text-accent/60 flex items-start gap-3">
+                  <span className="mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-secondary dark:bg-accent" />
                   {item}
                 </li>
               ))}

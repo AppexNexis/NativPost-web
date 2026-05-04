@@ -13,25 +13,25 @@ const affiliateStepsData: AffiliateStep[] = [
     id: '1',
     stepNumber: 'Step 1',
     icon: 'ns-shape-35',
-    title: 'Register as an affiliate',
+    title: 'Create your affiliate account',
     description:
-      "Join our affiliate program and start earning today! As an affiliate, you'll have the opportunity to promote our products or services",
+      'Sign up at nativpost.affonso.io using your email. Your account is approved instantly — no application review, no waiting period.',
   },
   {
     id: '2',
     stepNumber: 'Step 2',
     icon: 'ns-shape-12',
-    title: 'Get to know our products',
+    title: 'Share your unique referral link',
     description:
-      'Learn about our products and services to effectively promote them to your audience. We provide comprehensive resources and training materials.',
+      'Copy your personal referral link from the dashboard and share it with your audience — through content, communities, newsletters, or direct recommendations.',
   },
   {
     id: '3',
     stepNumber: 'Step 3',
     icon: 'ns-shape-3',
-    title: 'Earn commissions on every sale',
+    title: 'Earn recurring commissions',
     description:
-      'Start earning generous commissions for every successful referral. Track your performance and earnings through our affiliate dashboard.',
+      'When someone subscribes through your link, you earn 30% on their first payment and on every renewal. Track everything in real time from your affiliate dashboard.',
   },
 ];
 
