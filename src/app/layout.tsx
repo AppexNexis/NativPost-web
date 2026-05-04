@@ -10,6 +10,9 @@ import './globals.css';
 import ScrollToTop from '@/components/shared/scroll-to-top/ScrollToTop';
 import PostHogProvider from '@/components/shared/PostHogProvider';
 import ClarityProvider from '@/components/shared/ClarityProvider';
+import { CookieConsentBanner } from '@/components/shared/cookie-consent';
+import GoogleAnalyticsProvider from '@/components/shared/cookie-consent/GoogleAnalyticsProvider';
+
 
 export const metadata: Metadata = {
   ...generateMetadata(),
@@ -27,6 +30,8 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
             <ClarityProvider />
             <ScrollToTop />
+            <GoogleAnalyticsProvider />
+            <CookieConsentBanner />
             <Suspense>
               <SmoothScrollProvider>
                 <NavbarServer />

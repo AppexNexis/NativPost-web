@@ -38,6 +38,7 @@ jobs:
           NEXT_PUBLIC_CONTENTFUL_PREVIEW_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_PREVIEW_TOKEN }}
           NEXT_PUBLIC_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_ANALYTICS_ID }}
         #   NEXT_PUBLIC_DISCOUNT_API_URL: ${{ secrets.NEXT_PUBLIC_DISCOUNT_API_URL }}
+          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
 
       - name: 📤 Deploy Standalone Server
         uses: appleboy/scp-action@v0.1.7
