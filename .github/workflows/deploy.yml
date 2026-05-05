@@ -39,6 +39,11 @@ jobs:
           NEXT_PUBLIC_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_ANALYTICS_ID }}
         #   NEXT_PUBLIC_DISCOUNT_API_URL: ${{ secrets.NEXT_PUBLIC_DISCOUNT_API_URL }}
           NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          AFFILIATE_ADMIN_SECRET: ${{ secrets.AFFILIATE_ADMIN_SECRET }}
+          AFFILIATE_NOTIFY_EMAIL_1: ${{ secrets.AFFILIATE_NOTIFY_EMAIL_1 }}
+          AFFILIATE_NOTIFY_EMAIL_2: ${{ secrets.AFFILIATE_NOTIFY_EMAIL_2 }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
       - name: 📤 Deploy Standalone Server
         uses: appleboy/scp-action@v0.1.7
