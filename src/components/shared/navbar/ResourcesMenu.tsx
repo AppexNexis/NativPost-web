@@ -142,11 +142,11 @@ const resourceSections: ResourceSection[] = [
         href: '/press',
         icon: PressIcon,
       },
-      // {
-      //   title: 'Affiliate Policy',
-      //   href: '/affiliate-policy',
-      //   icon: AffiliatePolicyIcon,
-      // },
+      {
+        title: 'Affiliate Policy',
+        href: '/affiliate-policy',
+        icon: AffiliatePolicyIcon,
+      },
       {
         title: 'Legal',
         href: '/legal',

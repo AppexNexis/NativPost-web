@@ -23,7 +23,7 @@ const page = () => {
         ctaHeading="Ready to start earning with NativPost?"
         description="Sign up at nativpost.affonso.io, grab your link, and start sharing. Your first commission could come from the very next person you tell about NativPost."
         btnClass="hover:btn-secondary dark:hover:btn-accent"
-        ctaBtnText="Join the affiliate program"
+        ctaBtnText="Join our program"
       />
     </main>
   );

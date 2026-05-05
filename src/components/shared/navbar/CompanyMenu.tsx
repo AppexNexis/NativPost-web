@@ -3,7 +3,7 @@
 // ============================================================
 
 'use client';
-import { AboutIcon, BlogIcon, FeatureIcon } from '@/icons/menu-icon';
+import { AboutIcon, BlogIcon, FeatureIcon, AffiliateIcon } from '@/icons/menu-icon';
 import { cn } from '@/utils/cn';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -30,6 +30,12 @@ const companyLinks: CompanyLink[] = [
     description: 'How we compare to agencies and other tools',
     href: '/why-choose-us',
     icon: FeatureIcon,
+  },
+  {
+    title: 'Affiliates',
+    description: 'Earn commissions by referring clients to NativPost',
+    href: '/affiliates',
+    icon: AffiliateIcon,
   },
   {
     title: 'Contact Us',
