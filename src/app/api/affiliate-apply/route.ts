@@ -7,7 +7,8 @@ import { rateLimit } from '@/lib/rateLimit';
 
 const resend = new Resend(process.env.RESEND_API_KEY || '');
 const FROM_EMAIL = process.env.FROM_EMAIL || 'NativPost Affiliates <info@nativpost.com>';
-const STORE_PATH = path.join(process.cwd(), 'data', 'affiliate-applications.json');
+// const STORE_PATH = path.join(process.cwd(), 'data', 'affiliate-applications.json');
+const STORE_PATH = '/var/data/nativpost-affiliate/affiliate-applications.json';
 
 // ---------- store helpers ----------
 
