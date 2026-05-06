@@ -106,7 +106,7 @@ export default function AffiliateAdminPage() {
     // Auth gate
     if (!authed) {
         return (
-            <div className="min-h-screen bg-background-3 dark:bg-background-7 flex items-center justify-center px-5">
+            <div className="min-h-screen bg-background-3 dark:bg-background-7 pt-[100px] md:pt-[120px] flex items-center justify-center px-5">
                 <div className="w-full max-w-[400px]">
                     <div className="mb-8 text-center space-y-2">
                         <div className="mx-auto h-12 w-12 rounded-2xl bg-primary-100 dark:bg-primary-500/20 flex items-center justify-center mb-4">
@@ -144,7 +144,7 @@ export default function AffiliateAdminPage() {
                 </div>
             )}
 
-            <div className="main-container py-10">
+            <div className="main-container pb-10">
                 {/* Header */}
                 <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
                     <div>
@@ -163,8 +163,8 @@ export default function AffiliateAdminPage() {
                             key={f}
                             onClick={() => setFilter(f)}
                             className={`flex items-center gap-2 rounded-full px-4 py-2 text-tagline-3 font-medium transition-all duration-200 ${filter === f
-                                    ? 'bg-secondary dark:bg-accent text-white dark:text-secondary'
-                                    : 'bg-white dark:bg-background-6 border border-stroke-2 dark:border-stroke-7 text-secondary/60 dark:text-accent/60 hover:text-secondary dark:hover:text-accent'
+                                ? 'bg-secondary dark:bg-accent text-white dark:text-secondary'
+                                : 'bg-white dark:bg-background-6 border border-stroke-2 dark:border-stroke-7 text-secondary/60 dark:text-accent/60 hover:text-secondary dark:hover:text-accent'
                                 }`}
                         >
                             <span className="first-letter:uppercase">{f}</span>
@@ -188,8 +188,8 @@ export default function AffiliateAdminPage() {
                                 key={app.id}
                                 onClick={() => setSelected(selected?.id === app.id ? null : app)}
                                 className={`rounded-[16px] border bg-white dark:bg-background-6 p-5 cursor-pointer transition-all duration-200 ${selected?.id === app.id
-                                        ? 'border-primary-400 dark:border-primary-500 shadow-2'
-                                        : 'border-stroke-2 dark:border-stroke-7 hover:border-stroke-3 dark:hover:border-stroke-6'
+                                    ? 'border-primary-400 dark:border-primary-500 shadow-2'
+                                    : 'border-stroke-2 dark:border-stroke-7 hover:border-stroke-3 dark:hover:border-stroke-6'
                                     }`}
                             >
                                 <div className="flex flex-wrap items-start justify-between gap-3">
