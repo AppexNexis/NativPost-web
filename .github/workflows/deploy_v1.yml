@@ -85,31 +85,23 @@ jobs:
       # ── Write runtime .env so PM2 has all secrets at runtime ──
       - name: 🔐 Write runtime .env to VPS
         uses: appleboy/ssh-action@v1.0.3
-        env:
-          AFFILIATE_ADMIN_SECRET: ${{ secrets.AFFILIATE_ADMIN_SECRET }}
-          AFFILIATE_NOTIFY_EMAIL_1: ${{ secrets.AFFILIATE_NOTIFY_EMAIL_1 }}
-          AFFILIATE_NOTIFY_EMAIL_2: ${{ secrets.AFFILIATE_NOTIFY_EMAIL_2 }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-          WHATSAPP_NOTIFY_NUMBER: ${{ secrets.WHATSAPP_NOTIFY_NUMBER }}
-          CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
-          envs: AFFILIATE_ADMIN_SECRET,AFFILIATE_NOTIFY_EMAIL_1,AFFILIATE_NOTIFY_EMAIL_2,RESEND_API_KEY,FROM_EMAIL,WHATSAPP_NOTIFY_NUMBER,CALLMEBOT_API_KEY,NEXT_PUBLIC_SITE_URL
+          envs: AFFILIATE_ADMIN_SECRET,AFFILIATE_NOTIFY_EMAIL_1,AFFILIATE_NOTIFY_EMAIL_2,RESEND_API_KEY,WHATSAPP_NOTIFY_NUMBER,CALLMEBOT_API_KEY,NEXT_PUBLIC_SITE_URL,FROM_EMAIL
           script: |
-            printf 'AFFILIATE_ADMIN_SECRET=%s\n' "$AFFILIATE_ADMIN_SECRET" > /var/www/nativpost-app/.env.production
-            printf 'AFFILIATE_NOTIFY_EMAIL_1=%s\n' "$AFFILIATE_NOTIFY_EMAIL_1" >> /var/www/nativpost-app/.env.production
-            printf 'AFFILIATE_NOTIFY_EMAIL_2=%s\n' "$AFFILIATE_NOTIFY_EMAIL_2" >> /var/www/nativpost-app/.env.production
-            printf 'RESEND_API_KEY=%s\n' "$RESEND_API_KEY" >> /var/www/nativpost-app/.env.production
-            printf 'FROM_EMAIL=%s\n' "$FROM_EMAIL" >> /var/www/nativpost-app/.env.production
-            printf 'WHATSAPP_NOTIFY_NUMBER=%s\n' "$WHATSAPP_NOTIFY_NUMBER" >> /var/www/nativpost-app/.env.production
-            printf 'CALLMEBOT_API_KEY=%s\n' "$CALLMEBOT_API_KEY" >> /var/www/nativpost-app/.env.production
-            printf 'NEXT_PUBLIC_SITE_URL=%s\n' "$NEXT_PUBLIC_SITE_URL" >> /var/www/nativpost-app/.env.production
-            printf 'NODE_ENV=production\n' >> /var/www/nativpost-app/.env.production
+            cat > /var/www/nativpost-app/.env.production << 'ENVEOF'
+            AFFILIATE_ADMIN_SECRET=$AFFILIATE_ADMIN_SECRET
+            AFFILIATE_NOTIFY_EMAIL_1=$AFFILIATE_NOTIFY_EMAIL_1
+            AFFILIATE_NOTIFY_EMAIL_2=$AFFILIATE_NOTIFY_EMAIL_2
+            RESEND_API_KEY=$RESEND_API_KEY
+            FROM_EMAIL=$FROM_EMAIL
+            WHATSAPP_NOTIFY_NUMBER=$WHATSAPP_NOTIFY_NUMBER
+            CALLMEBOT_API_KEY=$CALLMEBOT_API_KEY
+            NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+            ENVEOF
             chmod 600 /var/www/nativpost-app/.env.production
 
       - name: 🚀 Start / Reload via PM2
