@@ -106,7 +106,7 @@ export default function AffiliateAdminPage() {
     // Auth gate
     if (!authed) {
         return (
-            <div className="min-h-screen bg-background-3 dark:bg-background-7 pt-[100px] md:pt-[120px] flex items-center justify-center px-5">
+            <div className="min-h-screen bg-background-3 dark:bg-background-7 flex items-center justify-center px-5">
                 <div className="w-full max-w-[400px]">
                     <div className="mb-8 text-center space-y-2">
                         <div className="mx-auto h-12 w-12 rounded-2xl bg-primary-100 dark:bg-primary-500/20 flex items-center justify-center mb-4">
@@ -136,7 +136,7 @@ export default function AffiliateAdminPage() {
     }
 
     return (
-        <div className="min-h-screen bg-background-3 dark:bg-background-7">
+        <div className="min-h-screen bg-background-3 dark:bg-background-7 pt-[100px] md:pt-[120px]">
             {/* Toast */}
             {toast && (
                 <div className="fixed top-5 right-5 z-50 rounded-[12px] border border-stroke-2 dark:border-stroke-7 bg-white dark:bg-background-6 shadow-3 px-5 py-3">
@@ -144,7 +144,7 @@ export default function AffiliateAdminPage() {
                 </div>
             )}
 
-            <div className="main-container pb-10">
+            <div className="main-container py-10">
                 {/* Header */}
                 <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
                     <div>
