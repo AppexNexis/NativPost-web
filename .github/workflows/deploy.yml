@@ -44,6 +44,8 @@ jobs:
           AFFILIATE_NOTIFY_EMAIL_2: ${{ secrets.AFFILIATE_NOTIFY_EMAIL_2 }}
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          WHATSAPP_NOTIFY_NUMBER: ${{ secrets.WHATSAPP_NOTIFY_NUMBER }}
+          CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
 
       - name: 📤 Deploy Standalone Server
         uses: appleboy/scp-action@v0.1.7

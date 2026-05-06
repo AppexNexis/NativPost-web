@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AffiliateApplyPage() {
     return (
-        <main className="min-h-screen bg-background-3 dark:bg-background-7 py-[60px] md:py-[80px]">
+        <main className="min-h-screen bg-background-3 dark:bg-background-7 pt-[100px] pb-[60px] md:pt-[120px] md:pb-[80px]">
             <div className="main-container max-w-[860px]">
 
                 {/* Back link */}
