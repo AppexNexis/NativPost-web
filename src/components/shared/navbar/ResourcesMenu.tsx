@@ -137,11 +137,11 @@ const resourceSections: ResourceSection[] = [
         href: '/terms-conditions',
         icon: RefundPolicyIcon,
       },
-      {
-        title: 'Press Coverage',
-        href: '/press',
-        icon: PressIcon,
-      },
+      // {
+      //   title: 'Press Coverage',
+      //   href: '/press',
+      //   icon: PressIcon,
+      // },
       {
         title: 'Affiliate Policy',
         href: '/affiliate-policy',
