@@ -132,50 +132,6 @@ const sharingInfoSection: ListSection = {
   ],
 };
 
-// ─── NEW: Data protection section (required by Google OAuth verification) ───
-const dataProtectionItems: ListItem[] = [
-  {
-    title: 'Encryption in transit',
-    content:
-      'All data transmitted between your browser and NativPost is encrypted using TLS (Transport Layer Security / HTTPS). This applies to all platform pages, API calls, and OAuth flows.',
-  },
-  {
-    title: 'Encryption at rest',
-    content:
-      'Sensitive data stored in our database — including social media access tokens, refresh tokens, and Brand Profile data — is encrypted at rest using AES-256 encryption via Supabase.',
-  },
-  {
-    title: 'OAuth token security',
-    content:
-      'Access tokens and refresh tokens obtained from Google, Meta, LinkedIn, X, TikTok, and other platforms are stored in encrypted form. They are never exposed in client-side code, logs, or analytics systems. Tokens are scoped to the minimum permissions required for each platform.',
-  },
-  {
-    title: 'Access controls',
-    content:
-      'Platform data is isolated per organization. Users can only access data belonging to their own organization. Authentication is managed by Clerk with support for multi-factor authentication (MFA). Administrative access to production systems is restricted to authorized personnel only.',
-  },
-  {
-    title: 'Payment data security',
-    content:
-      'NativPost never stores credit card numbers, CVV codes, or full payment credentials. All payment data is handled exclusively by Stripe (PCI-DSS Level 1 certified) or Paystack. NativPost stores only non-sensitive billing metadata (plan type, subscription status, last 4 digits of card for display purposes).',
-  },
-  {
-    title: 'Third-party data processors',
-    content:
-      'All third-party service providers we use (Clerk, Supabase, Stripe, Paystack, Anthropic, Resend, PostHog, Sentry) are contractually required to maintain appropriate security measures. We do not sell your data to advertisers or data brokers.',
-  },
-  {
-    title: 'Breach notification',
-    content:
-      'In the event of a data breach that affects your personal information, we will notify affected users within 72 hours of becoming aware of the breach, in accordance with applicable data protection laws.',
-  },
-  {
-    title: 'Google user data',
-    content:
-      'Data obtained through Google OAuth (including YouTube channel information and Google user profile data) is used solely to provide the NativPost publishing service you have authorized. This data is not used for advertising, is not shared with third parties beyond what is required to operate the service, and is not used to train AI or ML models. You may revoke Google access at any time from your NativPost Connections page or from your Google Account security settings at <a href="https://myaccount.google.com/permissions" class="text-secondary dark:text-accent">myaccount.google.com/permissions</a>.',
-  },
-];
-
 const rightsSection: ListSection = {
   title: 'Your rights',
   description: 'If you are a resident of the European Economic Area (EEA), or anywhere NativPost operates:',
@@ -373,29 +329,6 @@ const PrivacyContent = () => {
               <ul className="text-tagline-1 text-secondary/60 dark:text-accent/60 list-inside space-y-3 font-normal">
                 {sharingInfoSection.items.map((item, index) => (
                   <li key={index + 1} dangerouslySetInnerHTML={{ __html: item.content }} />
-                ))}
-              </ul>
-            </div>
-          </RevealAnimation>
-
-          {/* ─── DATA PROTECTION & SECURITY (new section — Google requirement) ─── */}
-          <RevealAnimation delay={0.65}>
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <h4>How we protect your data</h4>
-                <p>
-                  NativPost takes the security of your data seriously. We implement industry-standard technical and
-                  organisational measures to protect your personal information and any data obtained through third-party
-                  platform integrations (including Google, Meta, LinkedIn, and others) against unauthorised access,
-                  alteration, disclosure, or destruction.
-                </p>
-              </div>
-              <ul className="text-tagline-1 text-secondary/60 dark:text-accent/60 list-inside space-y-3 font-normal">
-                {dataProtectionItems.map((item, index) => (
-                  <li key={index + 1}>
-                    <strong className="text-secondary dark:text-accent font-normal">{item.title} – </strong>
-                    <span dangerouslySetInnerHTML={{ __html: item.content }} />
-                  </li>
                 ))}
               </ul>
             </div>
