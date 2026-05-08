@@ -26,12 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${interTight.variable} antialiased`} suppressHydrationWarning>
-        {/* Affonso affiliate tracking — lazyOnload defers until browser is idle */}
+        {/* Affonso affiliate tracking pixel */}
         <Script
           src="https://cdn.affonso.io/js/pixel.min.js"
           data-affonso="cmoqxj2n2000811cyjyliusjy"
           data-cookie_duration="30"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
         <PostHogProvider>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
@@ -39,8 +39,7 @@ export default function RootLayout({
             <ScrollToTop />
             <GoogleAnalyticsProvider />
             <CookieConsentBanner />
-            {/* Suspense fallback prevents React holding the full subtree in memory while suspended */}
-            <Suspense fallback={<div style={{ visibility: 'hidden' }} />}>
+            <Suspense>
               <SmoothScrollProvider>
                 <NavbarServer />
                 {children}

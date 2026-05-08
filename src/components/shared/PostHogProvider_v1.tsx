@@ -24,14 +24,13 @@ export default function PostHogProvider({ children }: { children: ReactNode }) {
     useEffect(() => {
         const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
         const host = process.env.NEXT_PUBLIC_POSTHOG_HOST;
-        // Guard against re-initialisation on remount (HMR, Suspense replay, etc.)
-        if (!key || posthog.__loaded) return;
+        if (!key) return;
         posthog.init(key, {
             api_host: host,
             defaults: '2025-05-24',
             capture_exceptions: true,
-            capture_pageview: false,
             debug: process.env.NODE_ENV === 'development',
+            capture_pageview: false, // we handle this manually above
         });
     }, []);
 

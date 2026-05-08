@@ -60,7 +60,6 @@ export default function ClarityProvider() {
     const pathname = usePathname();
     const initialized = useRef(false);
 
-    // Init once only
     useEffect(() => {
         if (initialized.current) return;
         initialized.current = true;
@@ -69,7 +68,6 @@ export default function ClarityProvider() {
         if (anonId) identifyClarity(anonId);
     }, []);
 
-    // Track page changes — runs after init since initialized.current is true by then
     useEffect(() => {
         if (!initialized.current) return;
         const pageName = resolvePageName(pathname);
