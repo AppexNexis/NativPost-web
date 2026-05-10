@@ -281,7 +281,7 @@ const PrivacyContent = () => {
           {/* Subscription Information with Form */}
           <div>
             <div className="grid grid-cols-12 gap-y-[100px] lg:gap-[100px]">
-              <div className="col-span-12 lg:col-span-6">
+              {/* <div className="col-span-12 lg:col-span-6">
                 <RevealAnimation delay={0.6}>
                   <div className="mb-[70px] text-left">
                     <p className="max-w-[550px]">{orderInfoText}</p>
@@ -291,6 +291,55 @@ const PrivacyContent = () => {
                   <figure className="w-full max-w-[595px] self-end overflow-hidden rounded-[20px]">
                     <Image src={privacy} className="size-full object-cover" alt="NativPost data protection" />
                   </figure>
+                </RevealAnimation>
+              </div> */}
+              <div className="col-span-12 lg:col-span-6">
+                <RevealAnimation delay={0.6}>
+                  <div className="mb-[70px] text-left">
+                    <p className="max-w-[550px]">{orderInfoText}</p>
+                  </div>
+                </RevealAnimation>
+                <RevealAnimation delay={0.7}>
+                  <div className="w-full max-w-[595px] rounded-[20px] border border-stroke-2 dark:border-stroke-7 bg-white dark:bg-background-6 overflow-hidden shadow-2">
+                    {/* Header bar */}
+                    <div className="flex items-center justify-between border-b border-stroke-2 dark:border-stroke-7 bg-background-1 dark:bg-background-7 px-5 py-3.5">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2.5 w-2.5 rounded-full bg-ns-red/60" />
+                        <div className="h-2.5 w-2.5 rounded-full bg-ns-yellow/60" />
+                        <div className="h-2.5 w-2.5 rounded-full bg-ns-green/60" />
+                      </div>
+                      <span className="text-tagline-3 text-secondary/40 dark:text-accent/40 font-mono">Subscription data</span>
+                      <div className="w-10" />
+                    </div>
+                    <div className="p-6 space-y-4">
+                      {/* Collected fields visual */}
+                      {[
+                        { label: 'Name', value: 'Wilson Ibekason', secure: false },
+                        { label: 'Email address', value: 'wilson@example.com', secure: false },
+                        { label: 'Organization', value: 'AppexNexis LTD', secure: false },
+                        { label: 'Card number', value: 'Handled by Stripe or Paystack', secure: true },
+                        { label: 'Billing address', value: 'Lagos, Nigeria', secure: false },
+                      ].map((row) => (
+                        <div key={row.label} className="flex items-center justify-between gap-4 rounded-[10px] border border-stroke-2 dark:border-stroke-7 bg-background-2 dark:bg-background-8 px-4 py-3">
+                          <div className="flex-1 min-w-0">
+                            <p className="text-tagline-3 text-secondary/45 dark:text-accent/45 mb-0.5">{row.label}</p>
+                            <p className="text-tagline-2 text-secondary dark:text-accent truncate">{row.value}</p>
+                          </div>
+                          {row.secure && (
+                            <div className="flex items-center gap-1.5 shrink-0 rounded-full bg-ns-green-light dark:bg-ns-green/20 px-2.5 py-1">
+                              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="text-secondary dark:text-ns-green">
+                                <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              </svg>
+                              <span className="text-tagline-3 text-secondary dark:text-ns-green font-medium">Encrypted</span>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                      <p className="text-tagline-3 text-secondary/40 dark:text-accent/40 text-center pt-1">
+                        NativPost never stores your full card number
+                      </p>
+                    </div>
+                  </div>
                 </RevealAnimation>
               </div>
               <RevealAnimation delay={0.8}>
