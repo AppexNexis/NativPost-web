@@ -23,7 +23,7 @@ const page = () => {
         ctaHeading="Ready to start earning with NativPost?"
         description="Apply to join the affiliate program. Applications are reviewed within 3 to 5 business days."
         btnClass="hover:btn-secondary dark:hover:btn-accent"
-        ctaBtnText="Submit your application"
+        ctaBtnText="Submit application"
       />
     </main>
   );
