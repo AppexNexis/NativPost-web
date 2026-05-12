@@ -170,7 +170,7 @@ const Hero = () => {
             <RevealAnimation delay={0.1}>
               <span className="mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-black/10 bg-[#f5f5f5] px-4 py-2 text-xs text-[#292929] shadow-sm lg:mx-0">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-gray-400" />
-                Social media manager, built for real brands
+                Social media manager, built for brands
               </span>
             </RevealAnimation>
 
@@ -179,7 +179,7 @@ const Hero = () => {
               <h1 className="text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-gray-950 dark:text-white sm:text-[50px] lg:text-[56px] xl:text-[62px]">
                 Your brand voice, everywhere,{' '}
                 <span className="text-primary-500">
-                  managed from WhatsApp.
+                  managed from any Platform.
                 </span>
               </h1>
             </RevealAnimation>
