@@ -176,7 +176,7 @@ const Hero = () => {
 
             {/* Headline */}
             <RevealAnimation delay={0.2}>
-              <h1 className="max-w-[11ch] text-[40px] font-extrabold leading-[0.98] tracking-[-0.05em] text-gray-950 dark:text-white sm:text-[50px] lg:text-[54px] xl:text-[60px] 2xl:text-[66px]">
+              <h1 className="text-[40px] font-bold leading-[1.05] tracking-[-0.04em] text-gray-950 dark:text-white sm:text-[50px] lg:text-[56px] xl:text-[62px]">
                 Your brand voice, everywhere,{' '}
                 <span className="text-primary-500">
                   managed from WhatsApp.
@@ -186,11 +186,10 @@ const Hero = () => {
 
             {/* Description */}
             <RevealAnimation delay={0.3}>
-              <p className="mx-auto max-w-[500px] text-[15px] leading-[1.75] text-gray-500 dark:text-gray-400 sm:text-[16px] lg:mx-0">
-                NativPost learns how you speak, generates posts,
-                graphics, and videos, and publishes them to every
-                platform automatically. Manage it all from WhatsApp,
-                Telegram, or Discord.
+              <p className="mx-auto max-w-[480px] text-[15px] leading-[1.7] text-gray-500 dark:text-gray-400 sm:text-base lg:mx-0">
+                NativPost learns how you speak, generates posts, graphics, and
+                videos, and publishes them to every platform automatically.
+                Manage it all from WhatsApp, Telegram, or Discord.
               </p>
             </RevealAnimation>
 
