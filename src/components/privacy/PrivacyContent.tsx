@@ -1,4 +1,3 @@
-import privacy from '@public/images/ns-img-391.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import RevealAnimation from '../animation/RevealAnimation';
@@ -127,12 +126,12 @@ const sharingInfoSection: ListSection = {
       content:
         'Meta, LinkedIn, X, TikTok APIs — for publishing content and pulling engagement analytics from your connected accounts',
     },
+    { content: 'Google APIs (YouTube Data API, YouTube Analytics API, Search Console API) — for publishing video content and syncing analytics from your connected YouTube and Google accounts' },
     { content: 'PostHog — for anonymized product analytics' },
     { content: 'Sentry — for error monitoring' },
   ],
 };
 
-// ─── NEW: Data protection section (required by Google OAuth verification) ───
 const dataProtectionItems: ListItem[] = [
   {
     title: 'Encryption in transit',
@@ -169,10 +168,39 @@ const dataProtectionItems: ListItem[] = [
     content:
       'In the event of a data breach that affects your personal information, we will notify affected users within 72 hours of becoming aware of the breach, in accordance with applicable data protection laws.',
   },
+];
+
+// ─── GOOGLE / YOUTUBE DATA — standalone section (required by Google OAuth verification) ───
+const googleDataItems: ListItem[] = [
   {
-    title: 'Google user data',
+    title: 'What data we access',
     content:
-      'Data obtained through Google OAuth (including YouTube channel information and Google user profile data) is used solely to provide the NativPost publishing service you have authorized. This data is not used for advertising, is not shared with third parties beyond what is required to operate the service, and is not used to train AI or ML models. You may revoke Google access at any time from your NativPost Connections page or from your Google Account security settings at <a href="https://myaccount.google.com/permissions" class="text-secondary dark:text-accent">myaccount.google.com/permissions</a>.',
+      'When you connect your Google or YouTube account, NativPost requests access to the following scopes: <code class="text-secondary dark:text-accent text-sm">youtube.upload</code> (to publish approved videos to your channel), <code class="text-secondary dark:text-accent text-sm">youtube.readonly</code> (to read your channel ID and name for account association), and <code class="text-secondary dark:text-accent text-sm">yt-analytics.readonly</code> (to pull engagement data such as views, likes, and comments into your NativPost analytics dashboard). We also access basic Google profile information (name and email) to identify your account.',
+  },
+  {
+    title: 'How we use it',
+    content:
+      'YouTube and Google data is used exclusively to deliver the NativPost publishing and analytics features you have enabled. Specifically: video content you approve in NativPost is uploaded to your YouTube channel via the YouTube Data API; channel metadata is used to confirm the correct account is connected; and YouTube Analytics data is displayed inside the NativPost dashboard so you can track performance across all your platforms in one place. This data is never used for advertising, profiling, or any purpose unrelated to these core features.',
+  },
+  {
+    title: 'Data we do not use',
+    content:
+      'NativPost does not use Google or YouTube user data to train, fine-tune, or improve any AI or machine learning model — including the content generation engine. We do not sell, rent, or share Google user data with any third party beyond the service providers listed in this policy that are strictly necessary to operate the platform.',
+  },
+  {
+    title: 'Data retention',
+    content:
+      'Google OAuth access tokens and refresh tokens are stored in encrypted form only for as long as your account remains active and the connection is authorised. If you disconnect your Google or YouTube account from NativPost, all associated tokens are immediately revoked and deleted from our systems.',
+  },
+  {
+    title: 'Revoking access',
+    content:
+      'You can disconnect your Google or YouTube account at any time from the Connections page inside the NativPost dashboard. You can also revoke access directly from your Google Account security settings at <a href="https://myaccount.google.com/permissions" class="text-secondary dark:text-accent">myaccount.google.com/permissions</a>. Revoking access immediately stops all publishing and analytics syncing for that account.',
+  },
+  {
+    title: 'Limited Use compliance',
+    content:
+      'NativPost\'s use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-secondary dark:text-accent" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements. This means we only use Google user data to provide or improve the user-facing features that are visible and relevant to the user — nothing else.',
   },
 ];
 
@@ -224,6 +252,7 @@ const PrivacyContent = () => {
     <section className="pt-32 pb-[100px] sm:pt-36 md:pt-42 xl:pt-[180px]">
       <div className="main-container">
         <div className="privacy-policy space-y-[75px]">
+
           {/* Header */}
           <div className="space-y-2">
             <RevealAnimation delay={0.1}>
@@ -281,18 +310,6 @@ const PrivacyContent = () => {
           {/* Subscription Information with Form */}
           <div>
             <div className="grid grid-cols-12 gap-y-[100px] lg:gap-[100px]">
-              {/* <div className="col-span-12 lg:col-span-6">
-                <RevealAnimation delay={0.6}>
-                  <div className="mb-[70px] text-left">
-                    <p className="max-w-[550px]">{orderInfoText}</p>
-                  </div>
-                </RevealAnimation>
-                <RevealAnimation delay={0.7}>
-                  <figure className="w-full max-w-[595px] self-end overflow-hidden rounded-[20px]">
-                    <Image src={privacy} className="size-full object-cover" alt="NativPost data protection" />
-                  </figure>
-                </RevealAnimation>
-              </div> */}
               <div className="col-span-12 lg:col-span-6">
                 <RevealAnimation delay={0.6}>
                   <div className="mb-[70px] text-left">
@@ -312,7 +329,6 @@ const PrivacyContent = () => {
                       <div className="w-10" />
                     </div>
                     <div className="p-6 space-y-4">
-                      {/* Collected fields visual */}
                       {[
                         { label: 'Name', value: 'Wilson Ibekason', secure: false },
                         { label: 'Email address', value: 'wilson@example.com', secure: false },
@@ -427,7 +443,7 @@ const PrivacyContent = () => {
             </div>
           </RevealAnimation>
 
-          {/* ─── DATA PROTECTION & SECURITY (new section — Google requirement) ─── */}
+          {/* ─── HOW WE PROTECT YOUR DATA ─── */}
           <RevealAnimation delay={0.65}>
             <div className="space-y-6">
               <div className="space-y-2">
@@ -441,6 +457,46 @@ const PrivacyContent = () => {
               </div>
               <ul className="text-tagline-1 text-secondary/60 dark:text-accent/60 list-inside space-y-3 font-normal">
                 {dataProtectionItems.map((item, index) => (
+                  <li key={index + 1}>
+                    <strong className="text-secondary dark:text-accent font-normal">{item.title} – </strong>
+                    <span dangerouslySetInnerHTML={{ __html: item.content }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </RevealAnimation>
+
+          {/* ─── GOOGLE & YOUTUBE DATA — standalone section ─── */}
+          <RevealAnimation delay={0.7}>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <h4>How we handle Google and YouTube data</h4>
+                <p>
+                  NativPost integrates with Google APIs — including the YouTube Data API and YouTube Analytics API — to
+                  allow users to publish video content and track performance directly from the NativPost dashboard. This
+                  section explains specifically how Google and YouTube user data is accessed, used, stored, and
+                  protected.
+                </p>
+                {/* ── Limited Use compliance callout ── */}
+                <div className="mt-4 rounded-[14px] border border-stroke-2 dark:border-stroke-7 bg-background-1 dark:bg-background-7 px-5 py-4">
+                  <p className="text-tagline-1 text-secondary/80 dark:text-accent/80">
+                    NativPost&apos;s use of information received from Google APIs adheres to the{' '}
+                    <a
+                      href="https://developers.google.com/terms/api-services-user-data-policy"
+                      className="text-secondary dark:text-accent underline"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Google API Services User Data Policy
+                    </a>
+                    , including the{' '}
+                    <strong className="text-secondary dark:text-accent font-medium">Limited Use requirements</strong>.
+                    This means Google user data is used only to provide or improve the user-facing features that are
+                    visible and directly relevant to the user — nothing else.
+                  </p>
+                </div>
+              </div>
+              <ul className="text-tagline-1 text-secondary/60 dark:text-accent/60 list-inside space-y-3 font-normal">
+                {googleDataItems.map((item, index) => (
                   <li key={index + 1}>
                     <strong className="text-secondary dark:text-accent font-normal">{item.title} – </strong>
                     <span dangerouslySetInnerHTML={{ __html: item.content }} />
@@ -476,6 +532,7 @@ const PrivacyContent = () => {
               </div>
             </RevealAnimation>
           ))}
+
         </div>
       </div>
     </section>
