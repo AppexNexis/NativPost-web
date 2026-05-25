@@ -127,6 +127,8 @@ const sharingInfoSection: ListSection = {
         'Meta, LinkedIn, X, TikTok APIs — for publishing content and pulling engagement analytics from your connected accounts',
     },
     { content: 'Google APIs (YouTube Data API, YouTube Analytics API, Search Console API) — for publishing video content and syncing analytics from your connected YouTube and Google accounts' },
+    // ← add this
+    { content: 'Snapchat (Snap Kit Login API) — for authenticating your Snapchat account. NativPost only accesses your Snapchat display name to identify the connected account. No Snapchat content, messages, or Stories are stored on NativPost servers.' },
     { content: 'PostHog — for anonymized product analytics' },
     { content: 'Sentry — for error monitoring' },
   ],
@@ -167,6 +169,11 @@ const dataProtectionItems: ListItem[] = [
     title: 'Breach notification',
     content:
       'In the event of a data breach that affects your personal information, we will notify affected users within 72 hours of becoming aware of the breach, in accordance with applicable data protection laws.',
+  },
+  {
+    title: 'Snapchat data',
+    content:
+      'When you connect your Snapchat account via Snap Kit Login, NativPost only stores your Snapchat display name to label the connected account in your dashboard. No Snapchat Stories, messages, contacts, or content are stored on NativPost servers. Content shared to Snapchat via Creative Kit is handled entirely client-side — NativPost servers never receive or store the shared content. You can disconnect your Snapchat account at any time from the Connections page.',
   },
 ];
 

@@ -38,7 +38,7 @@ const Footer = ({ className }: { className?: string }) => {
                   A product of AppexNexis LTD.
                 </p>
                 <div className="flex items-center gap-3">
-                  <Link target="_blank" href="https://www.instagram.com/nativpost" aria-label="NativPost Instagram">
+                  <Link target="_blank" href="https://www.instagram.com/nativpost.hq" aria-label="NativPost Instagram">
                     <span className="sr-only">Instagram</span>
                     <Image className="size-6" src={instagram} alt="Instagram" />
                   </Link>
@@ -48,14 +48,14 @@ const Footer = ({ className }: { className?: string }) => {
                     <Image className="size-6" src={linkedin} alt="LinkedIn" />
                   </Link>
                   <div className="bg-stroke-1/20 h-6 w-px" />
-                  <Link target="_blank" href="https://x.com/nativpost" aria-label="NativPost on X">
+                  <Link target="_blank" href="https://x.com/nativposthq" aria-label="NativPost on X">
                     <span className="sr-only">X / Twitter</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" className="fill-accent/60 hover:fill-accent transition-colors">
                       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                     </svg>
                   </Link>
                   <div className="bg-stroke-1/20 h-6 w-px" />
-                  <Link target="_blank" href="https://www.facebook.com/nativpost" aria-label="NativPost Facebook">
+                  <Link target="_blank" href="https://web.facebook.com/profile.php?id=61581586486436" aria-label="NativPost Facebook">
                     <span className="sr-only">Facebook</span>
                     <Image className="size-6" src={facebook} alt="Facebook" />
                   </Link>
