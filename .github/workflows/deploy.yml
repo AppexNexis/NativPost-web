@@ -18,8 +18,8 @@ jobs:
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
+          node-version: '20'
+          cache: 'npm'
 
       - name: 📦 Install Dependencies
         run: npm install --legacy-peer-deps
@@ -53,8 +53,8 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
-          source: ".next/standalone/"
-          target: "/var/www/nativpost-app"
+          source: '.next/standalone/'
+          target: '/var/www/nativpost-app'
           strip_components: 2
           rm: true
 
@@ -65,8 +65,8 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
-          source: ".next/static/"
-          target: "/var/www/nativpost-app/.next/static"
+          source: '.next/static/'
+          target: '/var/www/nativpost-app/.next/static'
           strip_components: 2
           rm: true
 
@@ -77,8 +77,8 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
-          source: "public/"
-          target: "/var/www/nativpost-app/public"
+          source: 'public/'
+          target: '/var/www/nativpost-app/public'
           strip_components: 1
           rm: true
 
