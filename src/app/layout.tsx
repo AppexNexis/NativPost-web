@@ -14,8 +14,14 @@ import ClarityProvider from '@/components/shared/ClarityProvider';
 import { CookieConsentBanner } from '@/components/shared/cookie-consent';
 import GoogleAnalyticsProvider from '@/components/shared/GoogleAnalyticsProvider';
 
+// Updated metadata configuration to include Pinterest verification
 export const metadata: Metadata = {
   ...generateMetadata(),
+  verification: {
+    other: {
+      'p:domain_verify': 'b46904e36db98e9146459b25853b95db',
+    },
+  },
 };
 
 export default function RootLayout({
