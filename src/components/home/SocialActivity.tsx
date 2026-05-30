@@ -1,21 +1,30 @@
+// social-activity.jsx (or equivalent file)
+
 import { ArrowIcon } from '@/icons';
-import InstagramIcon from '@public/images/icons/snapchat.svg';
-import LinkedInIcon from '@public/images/icons/linkedin.svg';
+// Corrected and updated imports
+import InstagramIcon from '@public/images/icons/instagram2.svg'; // Fixed path
+import LinkedInIcon from '@public/images/icons/linkedIn2.svg';
 import XIcon from '@public/images/icons/x.svg';
-import FacebookIcon from '@public/images/icons/facebook.svg';
+import FacebookIcon from '@public/images/icons/facebook2.svg';
 import TikTokIcon from '@public/images/icons/tiktok.svg';
-import WhatsAppIcon from '@public/images/icons/youtube.svg';
+import WhatsAppIcon from '@public/images/icons/whatsapp.svg'; // Fixed path
 import Image from 'next/image';
 import Link from 'next/link';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 
+// *** NEW IMPORTS FOR SNAPCHAT AND YOUTUBE ***
+// Place the actual SVG code provided above in the specified file paths.
+import SnapchatIcon from '@public/images/icons/snapchat.svg';
+import YouTubeIcon from '@public/images/icons/youtube2.svg';
+
 const integrations = [
+  // Original 6, with corrected icon mappings
   {
     id: 1,
     name: 'Instagram',
     description: 'Posts, Stories, Reels, Carousels',
-    icon: InstagramIcon,
+    icon: InstagramIcon, // Points to the true Instagram SVG
   },
   {
     id: 2,
@@ -45,7 +54,20 @@ const integrations = [
     id: 6,
     name: 'WhatsApp Status',
     description: 'Business status updates',
-    icon: WhatsAppIcon,
+    icon: WhatsAppIcon, // Points to the true WhatsApp SVG
+  },
+  // *** NEW INTEGRATIONS ADDED HERE ***
+  {
+    id: 7,
+    name: 'Snapchat',
+    description: 'Snap Stories, Spotlights, and lenses',
+    icon: SnapchatIcon, // Path to the yellow ghost SVG (existing)
+  },
+  {
+    id: 8,
+    name: 'YouTube',
+    description: 'Long-form videos and YouTube Shorts',
+    icon: YouTubeIcon, // Path to the new red play button SVG
   },
 ];
 
@@ -72,6 +94,8 @@ const SocialActivity = () => {
               </RevealAnimation>
             </div>
           </div>
+          {/* The grid generates dynamically from the 'integrations' array. The layout classes 
+              below (e.g., lg:col-span-6) ensure the added cards flow into the existing grid structure. */}
           <div className="mx-auto mb-14 grid grid-cols-12 gap-y-6 px-3 min-[445px]:max-w-[500px] sm:px-0 lg:max-w-[852px] lg:gap-8">
             {integrations.map((integration, index) => (
               <RevealAnimation delay={0.4 + index * 0.1} key={integration.id}>
