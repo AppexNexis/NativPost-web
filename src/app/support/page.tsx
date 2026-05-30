@@ -7,7 +7,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Support - Social Media Marketing || NextSaaS',
+  title: 'Support Center — NativPost Help & Documentation',
+  description: 'Get support for your NativPost account. Submit a technical ticket, manage your platform connections, tune your brand profile, or configure Paystack/Stripe billing.',
 };
 
 const Support = () => {
@@ -17,13 +18,13 @@ const Support = () => {
       <Services />
       <Contact />
       <CTA
-        className="dark:bg-background-5 bg-white"
-        badgeClass="badge-green"
-        badgeText="Get Started"
-        ctaHeading="Ready to start earning with NextSaaS?"
-        description="If you have any questions, feel free to reach out to our team."
+        className="dark:bg-background-6 bg-white"
+        badgeClass="hidden"
+        ctaHeading="Ready to see studio-crafted content for"
+        spanText="your brand?"
+        description="Start your 7-day free trial. No credit card required. Experience agency-quality publishing in minutes."
         btnClass="hover:btn-secondary dark:hover:btn-accent"
-        ctaBtnText="Get started"
+        ctaBtnText="Start free trial"
       />
     </main>
   );

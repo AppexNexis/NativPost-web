@@ -1,116 +1,81 @@
-import gradient16 from '@public/images/ns-img-495.png';
-import gradient3 from '@public/images/ns-img-508.png';
-import gradient27 from '@public/images/ns-img-515.png';
-import Image from 'next/image';
+'use client';
+
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 
+const SUPPORT_CATEGORIES = [
+  {
+    shapeClass: 'ns-shape-9',
+    title: 'Brand Profile Engine',
+    desc: 'Configure settings for multi-platform tones, platform vocabularies, content styles, and custom parameters.',
+    actionText: 'Tune voice settings',
+    href: 'https://app.nativpost.com/dashboard/support',
+  },
+  {
+    shapeClass: 'ns-shape-3',
+    title: 'Publishing Pipelines',
+    desc: 'Troubleshoot API disconnects across Instagram, LinkedIn, Facebook, TikTok, X (Twitter), YouTube, Threads, or Pinterest.',
+    actionText: 'Check network logs',
+    href: 'https://app.nativpost.com/dashboard/support',
+  },
+  {
+    shapeClass: 'ns-shape-12',
+    title: 'Billing & Invoicing',
+    desc: 'Manage global subscriptions via Stripe, or domestic localized parameters via Paystack (including native NGN processing).',
+    actionText: 'View plan status',
+    href: 'https://app.nativpost.com/dashboard/support',
+  },
+];
+
 const Services = () => {
   return (
-    <section className="py-[100px]">
+    <section className="py-[80px] bg-background-2/30 dark:bg-background-8/10">
       <div className="main-container">
-        <div className="mb-[70px] space-y-5 text-center">
+        <div className="mb-[60px] space-y-4 text-center">
           <RevealAnimation delay={0.1}>
-            <span className="badge badge-green">Our services</span>
+            <span className="badge badge-green">Operational Pillars</span>
           </RevealAnimation>
-          <div className="space-y-3">
+          <div className="space-y-2">
             <RevealAnimation delay={0.2}>
-              <h2 className="mx-auto max-w-[810px]">Leading companies around the globe rely on NextSaaS.</h2>
+              <h2 className="mx-auto max-w-[810px] text-heading-3 font-bold text-secondary dark:text-accent">
+                De-risk your publishing pipeline with dedicated infrastructure
+              </h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
-              <p className="mx-auto max-w-[542px]">
-                Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It&apos;s not
-                Latin, though it looks like it
+              <p className="mx-auto max-w-[580px] text-secondary/60 dark:text-accent/60">
+                NativPost pairs deep technical optimization layers with immediate human engineering oversight, filtering mechanical failures before execution blocks trigger.
               </p>
             </RevealAnimation>
           </div>
         </div>
-        <div className="grid grid-cols-12 max-md:gap-y-8 md:gap-8">
-          <RevealAnimation delay={0.4}>
-            <div className="col-span-12 md:col-span-4">
-              <div className="bg-background-2 dark:bg-background-6 relative z-10 space-y-6 overflow-hidden rounded-[20px] px-6 py-8">
-                {/* bg gradient */}
-                <figure className="pointer-events-none absolute -top-[66%] -left-[60%] -z-10 size-[410px] rotate-[304deg] select-none">
-                  <Image src={gradient3} className="size-full object-contain" alt="gradient-16" />
-                </figure>
-                <div>
-                  <div className="flex items-center justify-center">
-                    <span className="ns-shape-9 text-secondary dark:text-accent text-[52px]"> </span>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {SUPPORT_CATEGORIES.map((cat, i) => (
+            <RevealAnimation delay={0.4 + i * 0.1} key={cat.title}>
+              <div className="bg-background-1 dark:bg-background-9 relative z-10 flex flex-col justify-between h-full border border-stroke-2 dark:border-stroke-8 rounded-[20px] p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-background-2 dark:bg-background-8">
+                    <span className={`${cat.shapeClass} text-secondary dark:text-accent text-[32px]`} />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-heading-6 font-semibold text-secondary dark:text-accent">{cat.title}</h3>
+                    <p className="text-secondary/70 dark:text-accent/70 text-[13px] leading-relaxed">
+                      {cat.desc}
+                    </p>
                   </div>
                 </div>
-                <div className="space-y-2 text-center">
-                  <h3 className="text-heading-5">Live chat</h3>
-                  <p className="line-clamp-2">
-                    Instant help for pre-sales queries reach us through our live chat for any pre-sale or general
-                    inquiries.
-                  </p>
-                </div>
-                <div className="text-center">
+                <div className="pt-6 mt-auto">
                   <LinkButton
-                    href="/services"
-                    className="btn btn-white hover:btn-secondary dark:btn-transparent dark:hover:btn-accent btn-md">
-                    Check bottom-right
+                    href={cat.href}
+                    target="_blank"
+                    className="btn btn-white dark:btn-transparent border border-stroke-3 dark:border-stroke-7 hover:btn-secondary dark:hover:btn-accent btn-sm w-full text-center flex justify-center"
+                  >
+                    {cat.actionText}
                   </LinkButton>
                 </div>
               </div>
-            </div>
-          </RevealAnimation>
-          <RevealAnimation delay={0.5}>
-            <div className="col-span-12 md:col-span-4">
-              <div className="bg-background-2 dark:bg-background-6 relative z-10 space-y-6 overflow-hidden rounded-[20px] px-6 py-8">
-                <figure className="pointer-events-none absolute -top-[74%] -right-[70%] -z-10 size-[410px] rotate-[175deg] select-none">
-                  <Image src={gradient27} className="size-full object-contain" alt="gradient-16" />
-                </figure>
-                <div>
-                  <div className="flex items-center justify-center">
-                    <span className="ns-shape-3 text-secondary dark:text-accent text-[52px]"> </span>
-                  </div>
-                </div>
-                <div className="space-y-2 text-center">
-                  <h3 className="text-heading-5">Support ticket</h3>
-                  <p className="line-clamp-2">
-                    In-depth technical assistance submit a ticket for a personalized and detailed solution to your
-                    issue.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <LinkButton
-                    href="/services"
-                    className="btn btn-white hover:btn-secondary dark:btn-transparent dark:hover:btn-accent btn-md">
-                    Submit a ticket
-                  </LinkButton>
-                </div>
-              </div>
-            </div>
-          </RevealAnimation>
-          <RevealAnimation delay={0.6}>
-            <div className="col-span-12 md:col-span-4">
-              <div className="bg-background-2 dark:bg-background-6 relative z-10 space-y-6 overflow-hidden rounded-[20px] px-6 py-8">
-                <figure className="pointer-events-none absolute -top-[74%] -right-[35%] -z-10 size-[410px] rotate-[175deg] select-none">
-                  <Image src={gradient16} className="size-full object-contain" alt="gradient-16" />
-                </figure>
-                <div>
-                  <div className="flex items-center justify-center">
-                    <span className="ns-shape-12 text-secondary dark:text-accent text-[52px]"> </span>
-                  </div>
-                </div>
-                <div className="space-y-2 text-center">
-                  <h3 className="text-heading-5">Knowledge base</h3>
-                  <p className="line-clamp-2">
-                    Comprehensive guides and documentation find step-by-step instructions and solutions for the most
-                    common topics.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <LinkButton
-                    href="/services"
-                    className="btn btn-white hover:btn-secondary dark:btn-transparent dark:hover:btn-accent btn-md">
-                    Visit knowledge base
-                  </LinkButton>
-                </div>
-              </div>
-            </div>
-          </RevealAnimation>
+            </RevealAnimation>
+          ))}
         </div>
       </div>
     </section>
