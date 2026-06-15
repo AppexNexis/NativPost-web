@@ -134,8 +134,9 @@ const Hero = () => {
           {/* Description */}
           <RevealAnimation delay={0.3}>
             <p className="max-w-[600px] text-[14px] leading-[1.65] text-gray-500 dark:text-gray-400 sm:text-[15px]">
-              NativPost learns how you speak, generates posts, graphics, and videos,
-              and publishes them to every platform automatically, via WhatsApp, Telegram, or Discord.
+              {/* NativPost learns how you speak, generates posts, graphics, and videos,
+              and publishes them to every platform automatically, manage via WhatsApp, Telegram, or Discord. */}
+              NativPost learns how you speak, generates posts, graphics, and videos, and automatically publishes them across every platform. Manage everything via WhatsApp, Telegram, or Discord.
             </p>
           </RevealAnimation>
 
