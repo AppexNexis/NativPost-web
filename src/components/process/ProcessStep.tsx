@@ -67,12 +67,12 @@ const ProcessStep = () => {
           </RevealAnimation>
           <div className="space-y-3">
             <RevealAnimation delay={0.2}>
-              <h2>How we’ll work together</h2>
+              <h2>From onboarding to published in a week.</h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
               <p className="mx-auto max-w-[610px]">
-                I follow a process that’s transparent, collaborative, and results-driven—built around clear
-                communication and creative problem-solving.
+                A transparent, five-step flow that turns your brand into a working content engine.
+                No agency retainer, no long back-and-forth, no generic AI slop.
               </p>
             </RevealAnimation>
           </div>
@@ -122,10 +122,10 @@ const ProcessStep = () => {
                   <div className="card-item dark:bg-background-6 max-sm:bg-background-4 absolute top-1/2 left-1/2 w-full max-w-[370px] -translate-x-1/2 -translate-y-1/2 space-y-3 rounded-[20px] p-6 lg:top-0 lg:left-0 lg:translate-x-0 lg:translate-y-0 lg:rounded-none lg:bg-none lg:p-0 lg:dark:bg-transparent">
                     <p className="text-tagline-2 text-primary-500">STEP 1</p>
                     <div className="space-y-2">
-                      <h3 className="text-heading-6 lg:text-heading-5">Kickoff call &amp; brand discovery</h3>
+                      <h3 className="text-heading-6 lg:text-heading-5">Kickoff and Brand Profile</h3>
                       <p>
-                        We begin by understanding your vision and goals through a detailed discovery call to align on
-                        the project’s direction.
+                        Fifteen minutes to capture your voice, audience, and niche. We build your Brand Profile
+                        so every generated post sounds like you, not like a generic AI.
                       </p>
                     </div>
                   </div>
@@ -174,11 +174,11 @@ const ProcessStep = () => {
                     <p className="text-tagline-2 text-primary-500">STEP 2</p>
                     <div className="space-y-2">
                       <h3 className="text-heading-6 lg:text-heading-5 max-w-[293px]">
-                        Strategy, wireframes &amp; creative direction
+                        Connect your platforms and calendar
                       </h3>
                       <p>
-                        Based on what we learn, we map out your content strategy, define your Brand Profile, and set the
-                        creative direction for every platform you're on.
+                        Link Instagram, TikTok, YouTube, LinkedIn, X, Facebook, Threads, and Pinterest in one
+                        pass. Pick your posting cadence per channel and NativPost handles the queue.
                       </p>
                     </div>
                   </div>
@@ -227,11 +227,11 @@ const ProcessStep = () => {
                     <p className="text-tagline-2 text-primary-500">STEP 3</p>
                     <div className="space-y-2">
                       <h3 className="text-heading-6 lg:text-heading-5 max-w-[236px]">
-                        Design &amp; development in sprints
+                        AI Studio drafts your first batch
                       </h3>
                       <p>
-                        Our studio crafts your first batch of content graphics, captions, and scheduling, in focused
-                        sprints with regular check-ins so nothing goes off-brand.
+                        Ten AI models generate images, carousels, and videos on-brand. Long-form video, UGC
+                        ads, talking-head clips, and slideshow reels all built from your Brand Profile.
                       </p>
                     </div>
                   </div>
@@ -280,11 +280,11 @@ const ProcessStep = () => {
                     <p className="text-tagline-2 text-primary-500">STEP 4</p>
                     <div className="space-y-2">
                       <h3 className="text-heading-6 lg:text-heading-5 max-w-[236px]">
-                        Feedback, refinement &amp; final delivery
+                        Approve with a swipe in Blitz
                       </h3>
                       <p>
-                        You review everything in your approval dashboard. Edit, approve, or request changes, we refine
-                        until every piece feels authentically yours.
+                        Review the daily queue Tinder-style. Swipe right to approve, left to skip, tap to edit
+                        inline. On Pro and up, a NativPost editor reviews before anything goes live.
                       </p>
                     </div>
                   </div>
@@ -304,11 +304,11 @@ const ProcessStep = () => {
                     <p className="text-tagline-2 text-primary-500">STEP 5</p>
                     <div className="space-y-2">
                       <h3 className="text-heading-6 lg:text-heading-5 max-w-[203px]">
-                        Post-launch support &amp; handoff
+                        Publish, measure, learn
                       </h3>
                       <p>
-                        Once your content goes live, we monitor performance, optimize based on engagement data, and keep
-                        your content calendar running on autopilot.
+                        Auto-publish across every connected platform. Analytics sync back into the app so the
+                        AI Studio learns what actually works for your audience and doubles down on it.
                       </p>
                     </div>
                   </div>

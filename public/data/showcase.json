@@ -1,0 +1,115 @@
+{
+  "$schema": "./showcase.schema.json",
+  "generatedAt": null,
+  "note": "Placeholder shipped so landing renders on fresh checkout. Regenerate against prod DB via `node scripts/build-showcase.mjs` to replace with real published content_items.",
+  "items": [
+    {
+      "id": "placeholder-1",
+      "videoUrl": "/videos/image-hero-loop-1_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "16:9",
+      "contentType": "video_hook",
+      "platform": "tiktok",
+      "creatorHandle": "@nativpost",
+      "caption": "Ship a month of content in one afternoon.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-2",
+      "videoUrl": "/videos/image-hero-loop-2_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "16:9",
+      "contentType": "slideshow",
+      "platform": "instagram",
+      "creatorHandle": "@nativpost",
+      "caption": "Trending content, on-brand, in seconds.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-3",
+      "videoUrl": "/videos/image-hero-loop-3_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "9:16",
+      "contentType": "talking_head",
+      "platform": "tiktok",
+      "creatorHandle": "@nativpost",
+      "caption": "Your AI influencer, always on.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-4",
+      "videoUrl": "/videos/image-hero-loop-10_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "9:16",
+      "contentType": "ugc",
+      "platform": "instagram",
+      "creatorHandle": "@nativpost",
+      "caption": "Remix trending videos for your brand.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-5",
+      "videoUrl": "/videos/image-hero-loop-5_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "9:16",
+      "contentType": "green_screen",
+      "platform": "youtube",
+      "creatorHandle": "@nativpost",
+      "caption": "Publish everywhere from one calendar.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-6",
+      "videoUrl": "/videos/image-hero-loop-6_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "9:16",
+      "contentType": "video_hook",
+      "platform": "tiktok",
+      "creatorHandle": "@nativpost",
+      "caption": "Approve or reject with a swipe.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-7",
+      "videoUrl": "/videos/image-hero-loop-7_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "9:16",
+      "contentType": "slideshow",
+      "platform": "tiktok",
+      "creatorHandle": "@nativpost",
+      "caption": "Trending slideshows, remixed on-brand.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-8",
+      "videoUrl": "/videos/image-hero-loop-8_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "9:16",
+      "contentType": "ugc",
+      "platform": "instagram",
+      "creatorHandle": "@nativpost",
+      "caption": "Ten publishers, one workflow.",
+      "viewCount": null,
+      "publishedAt": null
+    },
+    {
+      "id": "placeholder-9",
+      "videoUrl": "/videos/image-hero-loop-9_mp4.mp4",
+      "posterUrl": null,
+      "aspectRatio": "9:16",
+      "contentType": "talking_head",
+      "platform": "youtube",
+      "creatorHandle": "@nativpost",
+      "caption": "Long-form video, storyboard to render.",
+      "viewCount": null,
+      "publishedAt": null
+    }
+  ]
+}

@@ -48,7 +48,7 @@ const StepOneMini = () => (
         Audience
       </p>
       <p className="text-secondary dark:text-accent text-[12px]">
-        Small business owners, 25–45, interested in growth and brand building
+        Small business owners, 25 to 45, focused on growth and brand building
       </p>
     </div>
 

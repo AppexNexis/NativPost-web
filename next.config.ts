@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'image.nativpost.com' },
       // Common placeholder/unsplash fallbacks
       { protocol: 'https', hostname: 'images.unsplash.com' },
+      // Cloudinary — showcase videos + rendered content_item media
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+      // NativPost app CDN (for showcase thumbnails / edge caches)
+      { protocol: 'https', hostname: 'app.nativpost.com' },
     ],
   },
 };
