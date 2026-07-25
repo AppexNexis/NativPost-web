@@ -61,7 +61,7 @@ const conditionsForRefund: ListSection = {
   items: [
     'You request a refund within 14 days from the date of your subscription purchase.',
     'You can provide a valid reason if requested (optional but helps us improve NativPost).',
-    'Your Brand Profile onboarding workshop has not yet been completed (setup fees are refundable before workshop completion).',
+    'You are on a paid plan. The Free plan carries no charge, so there is nothing to refund.',
   ],
 };
 
@@ -70,7 +70,6 @@ const nonRefundableSituations: ListSection = {
   description: 'Refunds will not be issued in the following situations',
   items: [
     'You request a refund after the 14-day period has elapsed.',
-    'Setup fees after the Brand Profile onboarding workshop has been completed, as this involves dedicated time from our team.',
     'You have violated our Terms and Conditions, including misuse of the platform or content engine.',
     'Requests based on lack of features not described in your plan tier at the time of purchase.',
     'Downgrades from a higher-tier plan after extensive content generation and publishing.',

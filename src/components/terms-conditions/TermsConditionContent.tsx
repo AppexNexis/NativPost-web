@@ -104,8 +104,8 @@ const TermsConditionContent = () => {
               <p>
                 We believe you&apos;ll love NativPost! Still, if you&apos;re not satisfied, we offer a 14-day
                 no-questions-asked refund policy. Simply contact our support team within 14 days of your original
-                purchase, and we&apos;ll issue a full refund. Setup fees are non-refundable after the Brand Profile
-                onboarding workshop has been completed.
+                purchase, and we&apos;ll issue a full refund. There are no setup or onboarding fees, and the Free
+                plan is never charged.
               </p>
             </div>
           </RevealAnimation>

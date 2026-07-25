@@ -1,13 +1,26 @@
 [
   {
+    "name": "Free",
+    "price": "$0",
+    "description": "7 days, no credit card — everyone starts here",
+    "ctaHref": "https://app.nativpost.com/sign-up",
+    "ctaText": "Start free",
+    "cells": [
+      { "type": "text", "value": "3 posts" },
+      { "type": "text", "value": "2 platforms" },
+      { "type": "text", "value": "None" },
+      { "type": "text", "value": "Templates" },
+      { "type": "text", "value": "Self-approve" }
+    ]
+  },
+  {
     "name": "Starter",
     "price": "$19/mo",
     "description": "For solopreneurs and small businesses getting started",
-    "ctaHref": "https://app.nativpost.com/sign-up",
-    "ctaText": "Start free trial",
-    "setupFee": "$29 one-time setup",
+    "ctaHref": "https://app.nativpost.com/sign-up?plan=starter",
+    "ctaText": "Get started",
     "cells": [
-      { "type": "text", "value": "20 posts" },
+      { "type": "text", "value": "15 posts" },
       { "type": "text", "value": "3 platforms" },
       { "type": "text", "value": "Basic" },
       { "type": "text", "value": "Templates" },
@@ -16,16 +29,15 @@
   },
   {
     "name": "Growth",
-    "price": "$49/mo",
+    "price": "$39/mo",
     "description": "Most popular — for growing businesses",
-    "ctaHref": "https://app.nativpost.com/sign-up",
-    "ctaText": "Start free trial",
+    "ctaHref": "https://app.nativpost.com/sign-up?plan=growth",
+    "ctaText": "Get started",
     "isSecondary": true,
     "withGradientImg": true,
-    "setupFee": "$79 one-time setup",
     "cells": [
       { "type": "text", "value": "40 posts" },
-      { "type": "text", "value": "5 platforms" },
+      { "type": "text", "value": "6 platforms" },
       { "type": "text", "value": "Detailed" },
       { "type": "text", "value": "Custom" },
       { "type": "text", "value": "Self-approve" }
@@ -33,11 +45,10 @@
   },
   {
     "name": "Pro",
-    "price": "$99/mo",
+    "price": "$79/mo",
     "description": "For brands that need premium quality and team review",
-    "ctaHref": "https://app.nativpost.com/sign-up",
-    "ctaText": "Start free trial",
-    "setupFee": "$149 one-time setup",
+    "ctaHref": "https://app.nativpost.com/sign-up?plan=pro",
+    "ctaText": "Get started",
     "cells": [
       { "type": "text", "value": "80 posts" },
       { "type": "text", "value": "All platforms" },
@@ -52,7 +63,6 @@
     "description": "For agencies and enterprise clients",
     "ctaHref": "/contact-us",
     "ctaText": "Contact us",
-    "setupFee": "Custom onboarding",
     "cells": [
       { "type": "text", "value": "Unlimited" },
       { "type": "text", "value": "All + white-label" },

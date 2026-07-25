@@ -4,23 +4,28 @@
  * Authoritative pricing surface for /pricing. Sources tiers, prices, and the
  * feature matrix from src/data/plans.ts (marketing mirror of NativPost-app).
  *
+ * - Free row on top: the $0 entry point everyone lands on at signup
  * - Monthly/Annual toggle (annual = -20%, priced from annualPriceUsd/12)
  * - 4 tier cards (Starter / Growth / Pro / Agency) with Growth = popular
  * - Enterprise strip below (contact-only)
- * - Full comparison table driven by FEATURE_MATRIX
+ * - Full comparison table driven by FEATURE_MATRIX, Free included as a column
+ *
+ * There is no setup fee and no per-plan trial: signing up starts the free
+ * window, and upgrading happens inside the app.
  */
 
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import RevealAnimation from '../animation/RevealAnimation';
 import {
   ANNUAL_SAVE_PCT,
   FEATURE_MATRIX,
+  FREE_PLAN,
+  FREE_TRIAL_DAYS,
   MARKETING_PLANS,
   monthlyEquivalent,
-  SETUP_FEE_USD,
   type MarketingPlan,
 } from '@/data/plans';
 
@@ -59,8 +64,11 @@ function planPrice(plan: MarketingPlan, billing: Billing): string {
   return `$${plan.priceUsd}`;
 }
 
-const CARD_TIERS = MARKETING_PLANS.filter(p => p.id !== 'enterprise');
+// Free is deliberately not a card — it renders as the row above the grid.
+const CARD_TIERS = MARKETING_PLANS.filter(p => p.id !== 'enterprise' && !p.isFree);
 const ENTERPRISE = MARKETING_PLANS.find(p => p.id === 'enterprise');
+// The comparison table does show Free, so visitors can see exactly where it stops.
+const TABLE_TIERS = [FREE_PLAN, ...CARD_TIERS];
 
 const Pricing = () => {
   const [billing, setBilling] = useState<Billing>('monthly');
@@ -91,8 +99,8 @@ const Pricing = () => {
             </RevealAnimation>
             <RevealAnimation delay={0.35}>
               <p className="mx-auto max-w-[600px]">
-                Every plan includes your Brand Profile, AI Studio credits, and cross-platform
-                publishing. A one-time ${SETUP_FEE_USD} setup covers your onboarding.
+                Start free for {FREE_TRIAL_DAYS} days — no credit card, no setup fee. Every plan
+                includes your Brand Profile, AI Studio credits, and cross-platform publishing.
               </p>
             </RevealAnimation>
           </div>
@@ -134,6 +142,51 @@ const Pricing = () => {
                     -{ANNUAL_SAVE_PCT}%
                   </span>
                 </button>
+              </div>
+            </div>
+          </RevealAnimation>
+
+          {/* Free tier — a row, not a card: it is where every signup starts,
+              not an option competing with the paid tiers. Sits above the grid
+              at the same rhythm the Enterprise strip sits below it. */}
+          <RevealAnimation delay={0.39}>
+            <div className="overflow-hidden rounded-2xl border border-stroke-3 bg-background-1 dark:border-stroke-8 dark:bg-background-9">
+              <div className="flex flex-col gap-6 p-6 lg:flex-row lg:items-center lg:gap-10">
+                <div className="lg:w-72 lg:shrink-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-sm font-semibold">{FREE_PLAN.name}</p>
+                    <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
+                      Everyone starts here
+                    </span>
+                  </div>
+                  <div className="mt-2 flex items-baseline gap-1">
+                    <span className="text-4xl font-bold tracking-tight">$0</span>
+                    <span className="text-sm text-secondary dark:text-accent/70">
+                      for {FREE_TRIAL_DAYS} days
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-secondary dark:text-accent/70">
+                    {FREE_PLAN.tagline}
+                  </p>
+                </div>
+
+                <ul className="grid flex-1 gap-x-6 gap-y-2.5 text-[13px] text-secondary sm:grid-cols-2 xl:grid-cols-3 dark:text-accent/80">
+                  {FREE_PLAN.highlights.map(h => (
+                    <li key={h} className="flex items-start gap-2">
+                      <svg className="mt-0.5 size-3.5 shrink-0 text-emerald-500" fill="none" viewBox="0 0 16 16" aria-hidden>
+                        <path d="M4 8.5l2.5 2.5L12 5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href={FREE_PLAN.ctaHref}
+                  className="flex shrink-0 items-center justify-center rounded-xl border border-stroke-3 bg-background px-6 py-2.5 text-sm font-semibold text-foreground transition-all hover:bg-background-2 active:scale-[0.98] lg:w-auto dark:border-stroke-8 dark:bg-background-9 dark:text-accent"
+                >
+                  {FREE_PLAN.ctaLabel}
+                </Link>
               </div>
             </div>
           </RevealAnimation>
@@ -181,8 +234,8 @@ const Pricing = () => {
                         {plan.contactOnly
                           ? 'Custom limits and SLA'
                           : billing === 'annual'
-                            ? `Billed $${plan.annualPriceUsd}/yr + $${SETUP_FEE_USD} setup`
-                            : `+ $${SETUP_FEE_USD} one-time setup`}
+                            ? `Billed $${plan.annualPriceUsd}/yr · cancel anytime`
+                            : 'No setup fee · cancel anytime'}
                       </p>
                     </div>
 
@@ -249,22 +302,24 @@ const Pricing = () => {
               </div>
 
               <div className="overflow-x-auto rounded-2xl border border-stroke-3 dark:border-stroke-8">
-                <table className="w-full min-w-[720px] border-collapse text-sm">
+                <table className="w-full min-w-[820px] border-collapse text-sm">
                   <thead>
                     <tr className="bg-background-2 dark:bg-background-8">
-                      <th className="w-[32%] py-4 pl-5 pr-3 text-left text-xs font-medium uppercase tracking-wider text-secondary dark:text-accent/70">
+                      <th className="w-[28%] py-4 pl-5 pr-3 text-left text-xs font-medium uppercase tracking-wider text-secondary dark:text-accent/70">
                         Features
                       </th>
-                      {CARD_TIERS.map(plan => (
+                      {TABLE_TIERS.map(plan => (
                         <th
                           key={plan.id}
-                          className={`w-[17%] px-3 py-4 text-center text-xs font-semibold ${
+                          className={`w-[14.4%] px-3 py-4 text-center text-xs font-semibold ${
                             plan.popular ? 'text-primary-500 dark:text-accent' : 'text-foreground'
                           }`}
                         >
                           {plan.name}
                           <span className="block text-[11px] font-normal text-secondary dark:text-accent/60">
-                            {planPrice(plan, billing)}/mo
+                            {plan.isFree
+                              ? `$0 · ${FREE_TRIAL_DAYS} days`
+                              : `${planPrice(plan, billing)}/mo`}
                           </span>
                         </th>
                       ))}
@@ -273,9 +328,9 @@ const Pricing = () => {
 
                   <tbody className="divide-y divide-stroke-3 dark:divide-stroke-8">
                     {sections.map(([section, rows]) => (
-                      <>
-                        <tr key={`sec-${section}`} className="bg-background-1/60 dark:bg-background-9/60">
-                          <td colSpan={CARD_TIERS.length + 1} className="py-3 pl-5 pr-3">
+                      <Fragment key={section}>
+                        <tr className="bg-background-1/60 dark:bg-background-9/60">
+                          <td colSpan={TABLE_TIERS.length + 1} className="py-3 pl-5 pr-3">
                             <p className="text-[13px] font-semibold text-foreground">{section}</p>
                           </td>
                         </tr>
@@ -287,7 +342,7 @@ const Pricing = () => {
                             <td className="py-3 pl-5 pr-3 text-[13px] text-secondary dark:text-accent/70">
                               {row.label}
                             </td>
-                            {CARD_TIERS.map(plan => (
+                            {TABLE_TIERS.map(plan => (
                               <td
                                 key={plan.id}
                                 className={`px-3 py-3 text-center ${
@@ -299,14 +354,14 @@ const Pricing = () => {
                             ))}
                           </tr>
                         ))}
-                      </>
+                      </Fragment>
                     ))}
                   </tbody>
 
                   <tfoot>
                     <tr className="border-t border-stroke-3 bg-background-2 dark:border-stroke-8 dark:bg-background-8">
                       <td className="py-4 pl-5 pr-3" />
-                      {CARD_TIERS.map(plan => (
+                      {TABLE_TIERS.map(plan => (
                         <td key={plan.id} className="px-3 py-4 text-center">
                           <Link
                             href={plan.ctaHref}
@@ -316,7 +371,7 @@ const Pricing = () => {
                                 : 'border border-stroke-3 bg-background text-foreground hover:bg-background-2 dark:border-stroke-8 dark:bg-background-9 dark:text-accent'
                             }`}
                           >
-                            Get started
+                            {plan.ctaLabel}
                           </Link>
                         </td>
                       ))}

@@ -4,17 +4,25 @@
  * and it must build without the app package present.
  *
  * When plans change in the app (prices, limits), update this file too.
- * Last sync: 2026-07-19.
+ * Last sync: 2026-07-25 — added the `free` tier and removed the setup fee.
+ *
+ * Signup model: there is no purchase step before the dashboard. Everyone lands
+ * on `free` (a FREE_TRIAL_DAYS window, no card) and upgrades from inside the
+ * app. Free IS the trial — there is no separate per-plan trial, which is why
+ * the paid cards say "Get started" rather than "Start free trial": clicking
+ * one starts the free window, not a trial of that tier.
  */
 
 export type MarketingPlan = {
-  id: 'starter' | 'growth' | 'pro' | 'agency' | 'enterprise';
+  id: 'free' | 'starter' | 'growth' | 'pro' | 'agency' | 'enterprise';
   name: string;
   tagline: string;
   priceUsd: number; // 0 for enterprise
   annualPriceUsd: number; // 0 for enterprise
   popular?: boolean;
   contactOnly?: boolean;
+  /** The auto-granted $0 tier. Presented as a row, not a purchasable card. */
+  isFree?: boolean;
   ctaLabel: string;
   ctaHref: string;
   features: {
@@ -35,17 +43,48 @@ export type MarketingPlan = {
 };
 
 export const FREE_TRIAL_DAYS = 7;
-export const SETUP_FEE_USD = 5;
 export const ANNUAL_SAVE_PCT = 20;
 
 export const MARKETING_PLANS: MarketingPlan[] = [
+  {
+    id: 'free',
+    name: 'Free',
+    tagline: 'Test the waters. No card, no setup fee, no commitment.',
+    priceUsd: 0,
+    annualPriceUsd: 0,
+    isFree: true,
+    ctaLabel: 'Start free',
+    ctaHref: 'https://app.nativpost.com/sign-up',
+    features: {
+      postsPerMonth: 3,
+      platformsLimit: 2,
+      brandProfilesLimit: 1,
+      teamMembersLimit: 1,
+      monthlyAiCredits: 50,
+      blitzPostsPerDay: 2,
+      videoGeneration: false,
+      humanReview: false,
+      analyticsSync: false,
+      analyticsHistoryDays: 7,
+      apiAccess: false,
+      supportLevel: 'email',
+    },
+    highlights: [
+      `${FREE_TRIAL_DAYS} days free`,
+      'No credit card required',
+      '3 posts to publish',
+      '2 platforms connected',
+      '50 AI Studio credits',
+      'Full Brand Profile + calendar',
+    ],
+  },
   {
     id: 'starter',
     name: 'Starter',
     tagline: 'Get consistent, on-brand content without the agency price tag.',
     priceUsd: 19,
     annualPriceUsd: 182,
-    ctaLabel: 'Start free trial',
+    ctaLabel: 'Get started',
     ctaHref: 'https://app.nativpost.com/sign-up?plan=starter',
     features: {
       postsPerMonth: 15,
@@ -77,7 +116,7 @@ export const MARKETING_PLANS: MarketingPlan[] = [
     priceUsd: 39,
     annualPriceUsd: 374,
     popular: true,
-    ctaLabel: 'Start free trial',
+    ctaLabel: 'Get started',
     ctaHref: 'https://app.nativpost.com/sign-up?plan=growth',
     features: {
       postsPerMonth: 40,
@@ -110,7 +149,7 @@ export const MARKETING_PLANS: MarketingPlan[] = [
     tagline: 'Agency-quality content with a human eye on everything before it goes live.',
     priceUsd: 79,
     annualPriceUsd: 758,
-    ctaLabel: 'Start free trial',
+    ctaLabel: 'Get started',
     ctaHref: 'https://app.nativpost.com/sign-up?plan=pro',
     features: {
       postsPerMonth: 80,
@@ -143,7 +182,7 @@ export const MARKETING_PLANS: MarketingPlan[] = [
     tagline: 'Run content for multiple clients at scale, under one roof.',
     priceUsd: 149,
     annualPriceUsd: 1430,
-    ctaLabel: 'Start free trial',
+    ctaLabel: 'Get started',
     ctaHref: 'https://app.nativpost.com/sign-up?plan=agency',
     features: {
       postsPerMonth: -1,
@@ -203,6 +242,14 @@ export const MARKETING_PLANS: MarketingPlan[] = [
     ],
   },
 ];
+
+/** The $0 tier. Rendered as a full-width row above the paid cards. */
+export const FREE_PLAN = MARKETING_PLANS.find(p => p.isFree)!;
+
+/** Purchasable tiers, in upgrade order. Excludes free and enterprise. */
+export const PAID_PLANS = MARKETING_PLANS.filter(
+  p => !p.isFree && !p.contactOnly,
+);
 
 export function formatLimit(value: number, singular: string, plural?: string): string {
   if (value === -1) {

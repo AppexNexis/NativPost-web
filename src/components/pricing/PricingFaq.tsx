@@ -7,18 +7,26 @@
  */
 
 import RevealAnimation from '../animation/RevealAnimation';
-import { FREE_TRIAL_DAYS, SETUP_FEE_USD } from '@/data/plans';
+import { FREE_PLAN, FREE_TRIAL_DAYS } from '@/data/plans';
 
 type FaqItem = { q: string; a: string };
 
 const FAQ: FaqItem[] = [
   {
-    q: `Is there really a ${FREE_TRIAL_DAYS}-day free trial?`,
-    a: `Yes. Every paid plan starts with a ${FREE_TRIAL_DAYS}-day free trial. You get full access to the plan you pick, and you can cancel any time before the trial ends without being charged.`,
+    q: 'Do I need a credit card to start?',
+    a: `No. Signing up puts you straight into the product on the Free plan for ${FREE_TRIAL_DAYS} days — no card, no setup fee, no sales call. You build your Brand Profile, connect accounts, and publish real posts before you decide anything.`,
   },
   {
-    q: `What is the $${SETUP_FEE_USD} setup fee for?`,
-    a: `A one-time $${SETUP_FEE_USD} covers onboarding your Brand Profile, connecting your first platforms, and calibrating your voice on the AI Studio. It is charged once, not monthly.`,
+    q: 'What do I get on the Free plan?',
+    a: `${FREE_PLAN.features.postsPerMonth} posts, ${FREE_PLAN.features.platformsLimit} connected platforms, ${FREE_PLAN.features.monthlyAiCredits} AI Studio credits, and the full Brand Profile and calendar. Text posts only — images, carousels and video unlock on a paid plan.`,
+  },
+  {
+    q: `What happens after the ${FREE_TRIAL_DAYS} days?`,
+    a: 'Nothing disappears. Your posts, Brand Profile and connected accounts stay exactly as they are — you just need to pick a plan before you can publish again. Choose one from the billing page whenever you are ready.',
+  },
+  {
+    q: 'Is there a setup fee?',
+    a: 'No. We used to charge a one-time onboarding fee and we removed it. You pay the monthly or annual plan price and nothing else.',
   },
   {
     q: 'Can I switch plans later?',
