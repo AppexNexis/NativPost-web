@@ -100,7 +100,7 @@ const Pricing = () => {
             <RevealAnimation delay={0.35}>
               <p className="mx-auto max-w-[600px]">
                 Start free for {FREE_TRIAL_DAYS} days — no credit card, no setup fee. Every plan
-                includes your Brand Profile, AI Studio credits, and cross-platform publishing.
+                includes your Brand Profile, AI Studio credits, cross-platform publishing, and 24/7 support.
               </p>
             </RevealAnimation>
           </div>

@@ -103,7 +103,7 @@ const Hero = () => {
               </div>
 
               <p className="text-xs text-gray-500 dark:text-gray-400">
-                No credit card. Cancel any time.
+                No credit card. Cancel any time. 24/7 support.
               </p>
             </div>
           </RevealAnimation>
