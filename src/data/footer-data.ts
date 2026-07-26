@@ -26,6 +26,17 @@ export const footerLinks: FooterData[] = [
     ],
   },
   {
+    title: 'Compare',
+    links: [
+      { label: 'vs Buffer', href: '/compare/buffer' },
+      { label: 'vs Hootsuite', href: '/compare/hootsuite' },
+      { label: 'vs Later', href: '/compare/later' },
+      { label: 'vs Ocoya', href: '/compare/ocoya' },
+      { label: 'vs Fastlane', href: '/compare/usefastlane' },
+      { label: 'All comparisons', href: '/compare' },
+    ],
+  },
+  {
     title: 'Legal & Support',
     links: [
       { label: 'FAQ', href: '/faq' },

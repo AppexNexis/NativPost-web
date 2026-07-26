@@ -1,3 +1,4 @@
+import ManagedSocialPricing from '@/components/pricing/ManagedSocialPricing';
 import Pricing from '@/components/pricing/Pricing';
 import PricingFaq from '@/components/pricing/PricingFaq';
 import CTA from '@/components/shared/cta/CTA';
@@ -15,6 +16,7 @@ const page = () => {
   return (
     <main className="bg-background-3 dark:bg-background-7">
       <Pricing />
+      <ManagedSocialPricing />
       <PricingFaq />
       <CTA
         className="dark:bg-background-7 bg-background-3"

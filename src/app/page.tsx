@@ -6,6 +6,7 @@ import FeaturesV3 from '@/components/home/FeaturesV3';
 import GrowthFeatures from '@/components/home/GrowthFeatures';
 import Hero from '@/components/home/Hero';
 import HowItWorks from '@/components/home/HowItWorks';
+import ManagedInfrastructure from '@/components/home/ManagedInfrastructure';
 import Services from '@/components/home/Services';
 import ShowcaseGrid from '@/components/home/ShowcaseGrid';
 import SocialActivity from '@/components/home/SocialActivity';
@@ -51,6 +52,7 @@ const page = () => {
       <GrowthFeatures />
       <HowItWorks />
       <Services />
+      <ManagedInfrastructure />
       <Features />
       <FeaturesV2 />
       <FeaturesV3 />

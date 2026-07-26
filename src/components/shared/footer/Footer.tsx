@@ -72,7 +72,7 @@ const Footer = ({ className }: { className?: string }) => {
           {/* Footer link columns */}
           <div className="col-span-12 grid grid-cols-12 gap-x-0 gap-y-8 xl:col-span-8">
             {footerLinks.map(({ title, links }, index) => (
-              <div className="col-span-12 md:col-span-4" key={title}>
+              <div className="col-span-6 md:col-span-3" key={title}>
                 <RevealAnimation delay={0.2 + index * 0.1}>
                   <div className="space-y-8">
                     <p className="sm:text-heading-6 text-tagline-1 text-primary-50 font-normal">{title}</p>
