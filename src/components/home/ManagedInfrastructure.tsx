@@ -33,7 +33,7 @@ const valueProps: ValueProp[] = [
     icon: 'ns-shape-3',
     title: 'Real accounts, created in-country',
     description:
-      'We stand up genuine, brand-owned accounts in the market you want to reach — TikTok, Instagram, YouTube, Facebook, or LinkedIn — and warm them in your niche until they are ready to post.',
+      'We stand up genuine, brand-owned accounts in the market you want to reach, TikTok, Instagram, YouTube, Facebook, or LinkedIn, and warm them in your niche until they are ready to post.',
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const valueProps: ValueProp[] = [
     icon: 'ns-shape-12',
     title: 'Owned by you, compliant by design',
     description:
-      'Every account is yours — retrievable credentials, a written authorization grant, and posting through official platform APIs. No evasion, no gray-market inventory. Enterprise-safe.',
+      'Every account is yours, retrievable credentials, a written authorization grant, and posting through official platform APIs. No evasion, no gray-market inventory. Enterprise-safe.',
   },
   {
     id: 4,
@@ -76,7 +76,7 @@ const ManagedInfrastructure = () => {
             <RevealAnimation delay={0.3}>
               <p className="mx-auto max-w-[560px]">
                 Beyond content, NativPost creates, warms, and operates real social accounts on your
-                behalf — across every major platform — so you can enter new markets without building
+                behalf, across every major platform, so you can enter new markets without building
                 a team on the ground.
               </p>
             </RevealAnimation>

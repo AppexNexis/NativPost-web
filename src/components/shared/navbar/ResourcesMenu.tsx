@@ -40,12 +40,12 @@ const resourceSections: ResourceSection[] = [
   {
     title: 'Help & Documentation',
     links: [
-      // {
-      //   title: 'Documentation',
-      //   description: 'Detailed documentation of the product.',
-      //   href: '/documentation',
-      //   icon: DocsIcon,
-      // },
+      {
+        title: 'Documentation',
+        description: 'Detailed documentation of the product.',
+        href: '/documentation',
+        icon: DocsIcon,
+      },
       // {
       //   title: 'Tutorials',
       //   description: 'Step-by-step guides to help you get started.',

@@ -56,7 +56,7 @@ const page = () => {
             <RevealAnimation delay={0.3}>
               <p className="mx-auto max-w-[600px]">
                 Honest, side-by-side breakdowns against the tools you are probably weighing us against.
-                We tell you where each one wins — and where NativPost goes further.
+                We tell you where each one wins, and where NativPost goes further.
               </p>
             </RevealAnimation>
           </div>
