@@ -9,6 +9,7 @@ export const footerLinks: FooterData[] = [
     title: 'Product',
     links: [
       { label: 'Features', href: '/features' },
+      { label: 'Managed Infrastructure', href: '/managed' },
       { label: 'How It Works', href: '/process' },
       { label: 'Integrations', href: '/integration' },
       { label: 'Use Cases', href: '/use-case' },
